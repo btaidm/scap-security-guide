@@ -15,8 +15,9 @@ FUSE = 'JBoss Fuse'
 OPENSUSE = 'OpenSUSE'
 SUSE = 'SUSE Linux Enterprise'
 WRLINUX = 'Wind River Linux'
+ARCH = 'Arch Linux'
 
-multi_product_list = ['rhel', 'fedora', 'rhel-osp', 'debian', 'ubuntu', 'wrlinux', 'opensuse', 'sle']
+multi_product_list = ['rhel', 'fedora', 'rhel-osp', 'debian', 'ubuntu', 'wrlinux', 'opensuse', 'sle', 'archlinux']
 
 
 def parse_product_name(product):
@@ -66,6 +67,8 @@ def map_product(version):
         product_name = SUSE
     if re.findall('wrlinux', version):
         product_name = WRLINUX
+    if re.findall('archlinux', version):
+        product_name = ARCH
 
     if product_name is None:
         raise RuntimeError("Can't map version '%s' to any known product!"

@@ -39,6 +39,7 @@ option(SSG_PRODUCT_SUSE12 "If enabled, the SUSE/12 SCAP content will be built" T
 option(SSG_PRODUCT_UBUNTU1404 "If enabled, the Ubuntu/14.04 SCAP content will be built" TRUE)
 option(SSG_PRODUCT_UBUNTU1604 "If enabled, the Ubuntu/16.04 SCAP content will be built" TRUE)
 option(SSG_PRODUCT_WRLINUX "If enabled, the WRLinux SCAP content will be built" TRUE)
+option(SSG_PRODUCT_ARCH "If enabled, the Arch Linux SCAP content will be built" TRUE)
 option(SSG_PRODUCT_WEBMIN "If enabled, the Webmin SCAP content will be built" TRUE)
 
 option(SSG_CENTOS_DERIVATIVES_ENABLED "If enabled, CentOS derivative content will be built from the RHEL content" TRUE)
@@ -136,6 +137,7 @@ message("Ubuntu 14.04: ${SSG_PRODUCT_UBUNTU1404}")
 message("Ubuntu 16.04: ${SSG_PRODUCT_UBUNTU1604}")
 message("WRLinux: ${SSG_PRODUCT_WRLINUX}")
 message("Webmin: ${SSG_PRODUCT_WEBMIN}")
+message("Arch Linux: ${SSG_PRODUCT_ARCH}")
 
 message(" ")
 
@@ -211,6 +213,10 @@ if (SSG_PRODUCT_WRLINUX)
 endif()
 if (SSG_PRODUCT_WEBMIN)
     add_subdirectory("Webmin")
+endif()
+
+if (SSG_PRODUCT_ARCH)
+    add_subdirectory("Arch")
 endif()
 
 install(FILES "${CMAKE_SOURCE_DIR}/LICENSE"

@@ -87,6 +87,7 @@ def check_is_applicable_for_product(oval_check_def, product):
     otherwise"""
 
     product, product_version = parse_product_name(product)
+    # sys.stderr.write(oval_check_def + '\n')
 
     # Define general platforms
     multi_platforms = ['<platform>multi_platform_all',
