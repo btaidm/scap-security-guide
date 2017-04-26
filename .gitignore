@@ -8,7 +8,7 @@
 # Build files
 rpmbuild
 scap-security-guide.spec
-build/
+build*/
 
 # Ignore docs tmp directories
 docs/Developer_Guide/tmp
