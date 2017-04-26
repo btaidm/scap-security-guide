@@ -6,11 +6,11 @@ This is the initial profile for Arch Linux
 
 
 <select idref="no_empty_passwords" selected="true"/>
-<select idref="file_permissions_unauthorized_sgid" selected="true"/>
-<select idref="file_permissions_unauthorized_suid" selected="true"/>
-<select idref="file_permissions_unauthorized_world_writable" selected="true"/>
-<select idref="accounts_root_path_dirs_no_write" selected="true"/>
-<select idref="dir_perms_world_writable_sticky_bits" selected="true" />
+<!-- <select idref="file_permissions_unauthorized_sgid" selected="true"/> -->
+<!-- <select idref="file_permissions_unauthorized_suid" selected="true"/> -->
+<!-- <select idref="file_permissions_unauthorized_world_writable" selected="true"/> -->
+<!-- <select idref="accounts_root_path_dirs_no_write" selected="true"/> -->
+<!-- <select idref="dir_perms_world_writable_sticky_bits" selected="true" /> -->
 
 <!-- The following rules currently returns 'notapplicable' on RHEL-7 container -->
 <!-- Investigate why, fix the issues, and re-enable back once fixed -->
@@ -24,7 +24,7 @@ This is the initial profile for Arch Linux
 <!-- https://github.com/OpenSCAP/openscap/pull/344 -->
 <!-- <select idref="accounts_password_all_shadowed" selected="true"/> -->
 
-<select idref="mount_option_dev_shm_nodev" selected="true" />
-<select idref="mount_option_dev_shm_nosuid" selected="true" />
-
+<!-- <select idref="mount_option_dev_shm_nodev" selected="true" /> -->
+<!-- <select idref="mount_option_dev_shm_nosuid" selected="true" /> -->
+ 
 </Profile>

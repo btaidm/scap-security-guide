@@ -7,7 +7,7 @@
 <xsl:variable name="product_stig_id_name">empty</xsl:variable>
 <xsl:variable name="product_guide_id_name">ARCH-LINUX</xsl:variable>
 <xsl:variable name="platform_cpes">cpe:/o:arch:linux</xsl:variable>
-<xsl:variable name="prod_type">arch</xsl:variable>
+<xsl:variable name="prod_type">archlinux</xsl:variable>
 
 <!-- Define URI of official Center for Internet Security Benchmark for Ubuntu Linux v1.0 -->
 <xsl:variable name="cisuri">empty</xsl:variable>
