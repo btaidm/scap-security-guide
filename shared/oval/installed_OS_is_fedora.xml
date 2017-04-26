@@ -1,12 +1,15 @@
 <def-group>
-  <definition class="inventory" id="installed_OS_is_archlinx" version="3">
+  <definition class="inventory" id="installed_OS_is_fedora" version="3">
     <metadata>
-      <title>Installed operating system is Arch Linux</title>
+      <title>Installed operating system is Fedora</title>
       <affected family="unix">
         <platform>multi_platform_all</platform>
       </affected>
-      <reference ref_id="cpe:/o:arch:linux" source="CPE" />
-      <description>The operating system installed on the system is Arch Linux</description>
+      <reference ref_id="cpe:/o:fedoraproject:fedora:22" source="CPE" />
+      <reference ref_id="cpe:/o:fedoraproject:fedora:23" source="CPE" />
+      <reference ref_id="cpe:/o:fedoraproject:fedora:24" source="CPE" />
+      <reference ref_id="cpe:/o:fedoraproject:fedora:25" source="CPE" />
+      <description>The operating system installed on the system is Fedora</description>
     </metadata>
     <criteria operator="AND">
       <extend_definition comment="Installed OS is part of the Unix family" definition_ref="installed_OS_is_part_of_Unix_family" />
