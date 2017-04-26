@@ -28,22 +28,25 @@
 		for more detailed information on LVM.
 	</description>
 
-	<Rule id="partition_for_var">
-	<title>Ensure /var Located On Separate Partition</title>
-	<description>The <tt>/var</tt> directory is used by daemons and other system
-	services to store frequently-changing data. Ensure that <tt>/var</tt> has its own partition
-	or logical volume at installation time, or migrate it using LVM.
-	</description>
-	<ocil><partition-check-macro part="/var "/></ocil>
-	<rationale>
-	Ensuring that <tt>/var</tt> is mounted on its own partition enables the
-	setting of more restrictive mount options. This helps protect
-	system services such as daemons or other programs which use it.
-	It is not uncommon for the <tt>/var</tt> directory to contain
-	world-writable directories installed by other software packages.
-	</rationale>
-	<oval id="partition_for_var" />
-	<ref nist="SC-32"  anssi="NT28(R12)" />
+	<Rule id="partition_for_var" prodtype="archlinux,rhel7">
+		<title>Ensure /var Located On Separate Partition</title>
+		<description>
+			The <tt>/var</tt> directory is used by daemons and other system
+			services to store frequently-changing data. Ensure that <tt>/var</tt> has its own partition
+			or logical volume at installation time, or migrate it using LVM.
+		</description>
+		<ocil>
+			<partition-check-macro part="/var "/>
+		</ocil>
+		<rationale>
+			Ensuring that <tt>/var</tt> is mounted on its own partition enables the
+			setting of more restrictive mount options. This helps protect
+			system services such as daemons or other programs which use it.
+			It is not uncommon for the <tt>/var</tt> directory to contain
+			world-writable directories installed by other software packages.
+		</rationale>
+		<oval id="partition_for_var" />
+		<ref prodtype="archlinux,rhel7" nist="SC-32"  anssi="NT28(R12)" />
 	</Rule>
 
 </Group>
