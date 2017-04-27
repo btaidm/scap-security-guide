@@ -346,7 +346,7 @@ def main():
                             sys.exit(1)
 
     checks = xccdftree.findall(".//{%s}check" % xccdf_ns)
-    print(checks)
+    # print(checks)
     ovalfiles = get_checkfiles(checks, oval_cs)
     ocilfiles = get_checkfiles(checks, ocil_cs)
 

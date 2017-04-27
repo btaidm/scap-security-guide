@@ -30,6 +30,7 @@ class FilesGenerator(object):
 
         template_filename = os.path.join(self.product_input_dir, filename)
 
+        print(template_filename)
         if os.path.isfile(template_filename):
             return template_filename
 
