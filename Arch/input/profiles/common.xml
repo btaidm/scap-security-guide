@@ -147,5 +147,11 @@
 <!-- SRG-OS-000080-GPOS-00048, SV-86587r1_rule, RHEL-07-010490 -->
 <select idref="bootloader_uefi_password" selected="true" />
 
+<!-- SRG-OS-000363-GPOS-00150, SV-86597r1_rule, RHEL-07-020030 -->
+<select idref="aide_periodic_cron_checking" selected="true" />
+
+<!-- SRG-OS-000363-GPOS-00150, SV-86599r1_rule, RHEL-07-020040 -->
+<select idref="aide_scan_notification" selected="true" />
+
 
 </Profile>

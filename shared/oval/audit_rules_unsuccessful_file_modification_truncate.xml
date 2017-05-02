@@ -1,10 +1,11 @@
-<def-group>
+\<def-group>
   <definition class="compliance" id="audit_rules_unsuccessful_file_modification_truncate" version="1">
     <metadata>
       <title>Ensure auditd Collects Unauthorized Access Attempts to Files (unsuccessful) - truncate</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>Audit rules about the unauthorized access attempts to files (unsuccessful) are enabled.</description>
     </metadata>

@@ -8,6 +8,7 @@
         <platform>Red Hat Enterprise Linux 4</platform>
         <platform>Red Hat Enterprise Linux 5</platform>
         <platform>multi_platform_rhel</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>The nosuid mount option prevents set-user-identifier (suid)
       and set-group-identifier (sgid) permissions from taking effect. These

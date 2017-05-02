@@ -5,6 +5,7 @@
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>Audit rules about the information on the use of postdrop is enabled.</description>
     </metadata>

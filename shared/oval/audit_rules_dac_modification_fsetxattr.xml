@@ -5,6 +5,7 @@
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>The changing of file permissions and attributes should be audited.</description>
     </metadata>

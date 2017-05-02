@@ -9,6 +9,7 @@
         <platform>CentOS 5</platform>
         <platform>multi_platform_rhel</platform>
         <platform>multi_platform_fedora</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>All files should be owned by a group</description>
     </metadata>

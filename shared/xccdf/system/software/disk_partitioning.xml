@@ -24,7 +24,7 @@ listed above. The Logical Volume Manager (LVM) makes this possible.
 See the LVM HOWTO at <weblink-macro link="http://tldp.org/HOWTO/LVM-HOWTO/"/>
 for more detailed information on LVM.</description>
 
-<Rule id="partition_for_tmp" severity="low" prodtype="rhel7">
+<Rule id="partition_for_tmp" severity="low" prodtype="rhel7,archlinux">
 <title>Ensure /tmp Located On Separate Partition</title>
 <description>
 The <tt>/tmp</tt> directory is a world-writable directory used
@@ -38,13 +38,13 @@ Placing <tt>/tmp</tt> in its own partition enables the setting of more
 restrictive mount options, which can help protect programs which use it.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7" cce="27173-4" />
+<ident prodtype="rhel7,archlinux" cce="27173-4" />
 <oval id="partition_for_tmp" />
-<ref prodtype="rhel7" nist="SC-32(1)" disa="366" ossrg="SRG-OS-000480-GPOS-00227"
+<ref prodtype="rhel7,archlinux" nist="SC-32(1)" disa="366" ossrg="SRG-OS-000480-GPOS-00227"
 cis="1.1.1" stigid="021340" />
 </Rule>
 
-<Rule id="partition_for_var" severity="low" prodtype="rhel7">
+<Rule id="partition_for_var" severity="low" prodtype="rhel7,archlinux">
 <title>Ensure /var Located On Separate Partition</title>
 <description>The <tt>/var</tt> directory is used by daemons and other system
 services to store frequently-changing data. Ensure that <tt>/var</tt> has its own partition
@@ -59,13 +59,13 @@ It is not uncommon for the <tt>/var</tt> directory to contain
 world-writable directories installed by other software packages.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7" cce="26404-4" />
+<ident prodtype="rhel7,archlinux" cce="26404-4" />
 <oval id="partition_for_var" />
-<ref prodtype="rhel7" nist="SC-32(1)" cis="1.1.5" disa="366" ossrg="SRG-OS-000480-GPOS-00227"
+<ref prodtype="rhel7,archlinux" nist="SC-32(1)" cis="1.1.5" disa="366" ossrg="SRG-OS-000480-GPOS-00227"
 stigid="021320" />
 </Rule>
 
-<Rule id="partition_for_var_log" prodtype="rhel7">
+<Rule id="partition_for_var_log" prodtype="rhel7,archlinux">
 <title>Ensure /var/log Located On Separate Partition</title>
 <description>
 System logs are stored in the <tt>/var/log</tt> directory.
@@ -79,12 +79,12 @@ enables better separation between log files
 and other files in <tt>/var/</tt>.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7" cce="26967-0" />
+<ident prodtype="rhel7,archlinux" cce="26967-0" />
 <oval id="partition_for_var_log" />
-<ref prodtype="rhel7" nist="AU-9,SC-32" disa="" cis="1.1.7" />
+<ref prodtype="rhel7,archlinux" nist="AU-9,SC-32" disa="" cis="1.1.7" />
 </Rule>
 
-<Rule id="partition_for_var_log_audit" severity="low" prodtype="rhel7">
+<Rule id="partition_for_var_log_audit" severity="low" prodtype="rhel7,archlinux">
 <title>Ensure /var/log/audit Located On Separate Partition</title>
 <description>
 Audit logs are stored in the <tt>/var/log/audit</tt> directory.  Ensure that it
@@ -101,13 +101,13 @@ auditing cannot be halted due to the partition running out
 of space.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7" cce="26971-2" />
+<ident prodtype="rhel7,archlinux" cce="26971-2" />
 <oval id="partition_for_var_log_audit" />
-<ref prodtype="rhel7" nist="AU-4,AU-9,SC-32(1)" disa="366" cis="1.1.8"
+<ref prodtype="rhel7,archlinux" nist="AU-4,AU-9,SC-32(1)" disa="366" cis="1.1.8"
 ossrg="SRG-OS-000480-GPOS-00227" stigid="021330" />
 </Rule>
 
-<Rule id="partition_for_home" severity="low" prodtype="rhel7">
+<Rule id="partition_for_home" severity="low" prodtype="rhel7,archlinux">
 <title>Ensure /home Located On Separate Partition</title>
 <description>
 If user home directories will be stored locally, create a separate partition
@@ -123,13 +123,13 @@ setting of more restrictive mount options, and also helps ensure that
 users cannot trivially fill partitions used for log or audit data storage.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7" cce="80144-9" />
+<ident prodtype="rhel7,archlinux" cce="80144-9" />
 <oval id="partition_for_home" />
-<ref prodtype="rhel7" nist="SC-32(1)" disa="366,1208" cis="1.1.9"
+<ref prodtype="rhel7,archlinux" nist="SC-32(1)" disa="366,1208" cis="1.1.9"
 ossrg="SRG-OS-000480-GPOS-00227" stigid="021310" />
 </Rule>
 
-<Rule id="encrypt_partitions" severity="high" prodtype="rhel7">
+<Rule id="encrypt_partitions" severity="high" prodtype="rhel7,archlinux">
 <title>Encrypt Partitions</title>
 <description>
 Red Hat Enterprise Linux 7 natively supports partition encryption through the
@@ -172,8 +172,8 @@ laptops, places its data at risk of compromise.  Encrypting this data mitigates
 the risk of its loss if the system is lost.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7" cce="27128-8" />
-<ref prodtype="rhel7" nist="SC-13,SC-28(1)" disa="1199,2476" ossrg="SRG-OS-000405-GPOS-00184,SRG-OS-000185-GPOS-00079"
+<ident prodtype="rhel7,archlinux" cce="27128-8" />
+<ref prodtype="rhel7,archlinux" nist="SC-13,SC-28(1)" disa="1199,2476" ossrg="SRG-OS-000405-GPOS-00184,SRG-OS-000185-GPOS-00079"
 cui="3.13.16" />
 </Rule>
 

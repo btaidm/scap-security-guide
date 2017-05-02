@@ -5,6 +5,7 @@
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>Audit rules should be configured to log successful and unsuccessful login and logout events.</description>
     </metadata>
