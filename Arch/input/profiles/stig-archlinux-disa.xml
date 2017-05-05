@@ -297,7 +297,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="mount_option_nosuid_removable_partitions" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86669r1_rule, RHEL-07-021020 -->
-<select idref="mount_option_nosuid_remote_filesystems" selected="false" />
+<!-- <select idref="mount_option_nosuid_remote_filesystems" selected="false" /> -->
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86671r1_rule, RHEL-07-021030 -->
 <select idref="dir_perms_world_writable_system_owned" selected="false" />

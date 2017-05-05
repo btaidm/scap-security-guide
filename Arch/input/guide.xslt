@@ -47,10 +47,10 @@
     <xsl:copy>
       <xsl:copy-of select="@*|node()" />
       <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/accounts.xml'))" />
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/services/services.xml'))" /> -->
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/software/software.xml'))" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/permissions/permissions.xml'))" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/auditing.xml'))" />
+      <!-- <xsl:apply-templates select="document('xccdf/system/services/services.xml')" /> -->
+      <xsl:apply-templates select="document(concat($SHARED_RP,'/xccdf/system/software/software.xml'))" />
+      <xsl:apply-templates select="document(concat($SHARED_RP,'/xccdf/system/permissions/permissions.xml'))" />
+      <xsl:apply-templates select="document('xccdf/system/auditing.xml')" />
       <!-- <xsl:apply-templates select="document('xccdf/system/auditing.xml')" /> -->
     </xsl:copy>
   </xsl:template>
@@ -59,18 +59,18 @@
     <xsl:copy>
       <xsl:copy-of select="@*|node()" />
       <!-- <xsl:apply-templates select="document('xccdf/system/software/sudo.xml')" /> -->
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/software/sudo.xml'))" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/software/integrity.xml'))" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/software/disk_partitioning.xml'))" />
+      <xsl:apply-templates select="document('xccdf/system/software/sudo.xml')" />
+      <xsl:apply-templates select="document('xccdf/system/software/integrity.xml')" />
+      <xsl:apply-templates select="document('xccdf/system/software/disk_partitioning.xml')" />
     </xsl:copy>
   </xsl:template>
 
   <xsl:template match="Group[@id='permissions']">
     <xsl:copy>
       <xsl:copy-of select="@*|node()" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/permissions/mounting.xml'))" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/permissions/files.xml'))" />
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/permissions/partitions.xml'))" />
+      <xsl:apply-templates select="document('xccdf/system/permissions/mounting.xml')" />
+      <xsl:apply-templates select="document('xccdf/system/permissions/files.xml')" />
+      <xsl:apply-templates select="document('xccdf/system/permissions/partitions.xml')" />
     </xsl:copy>
   </xsl:template>
  
@@ -78,10 +78,10 @@
    <xsl:copy>
      <xsl:copy-of select="@*|node()" />
      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/restrictions/restrictions.xml'))" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/pam.xml'))" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/session.xml'))" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/physical.xml'))" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/banners.xml'))" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/pam.xml')" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/session.xml')" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/physical.xml')" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/banners.xml')" />
    </xsl:copy>
   </xsl:template>
 
@@ -89,10 +89,10 @@
   <xsl:template match="Group[@id='accounts-restrictions']">
    <xsl:copy>
      <xsl:copy-of select="@*|node()" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/restrictions/root_logins.xml'))" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/restrictions/password_storage.xml'))" /> 
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/restrictions/password_expiration.xml'))" />
-     <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/accounts/restrictions/account_expiration.xml'))" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/restrictions/root_logins.xml')" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/restrictions/password_storage.xml')" /> 
+     <xsl:apply-templates select="document('xccdf/system/accounts/restrictions/password_expiration.xml')" />
+     <xsl:apply-templates select="document('xccdf/system/accounts/restrictions/account_expiration.xml')" />
    </xsl:copy>
   </xsl:template>
 
@@ -103,7 +103,7 @@
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/base.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/cron.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/docker.xml'))" /> -->
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ssh.xml'))" />
+      <xsl:apply-templates select="document('xccdf/services/ssh.xml')" />
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/sssd.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/xorg.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/avahi.xml'))" /> -->
@@ -112,7 +112,7 @@
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ntp.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/mail.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ldap.xml'))" /> -->
-      <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/nfs.xml'))" />
+      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/nfs.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/dns.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ftp.xml'))" /> -->
       <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/http.xml'))" /> -->
