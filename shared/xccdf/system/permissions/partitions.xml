@@ -77,7 +77,7 @@ in the output are not removable media.
 </Rule>
 
 <!-- investigate: this is like obsoleted by gvfs/DeviceKit-based mounting now -->
-<Rule id="mount_option_nosuid_removable_partitions" prodtype="rhel7,archlinux">
+<Rule id="mount_option_nosuid_removable_partitions" prodtype="rhel7">
 <title>Add nosuid Option to Removable Media Partitions</title>
 <description>The <tt>nosuid</tt> mount option prevents set-user-identifier (SUID)
 and set-group-identifier (SGID) permissions from taking effect. These permissions
@@ -90,9 +90,9 @@ files into the system via partitions mounted from removeable media.
 users to introduce SUID or SGID binaries from partitions mounted off of
 removable media would allow them to introduce their own highly-privileged programs.</rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="80148-0" />
+<ident prodtype="rhel7" cce="80148-0" />
 <oval id="mount_option_nosuid_removable_partitions" value="var_removable_partition" />
-<ref prodtype="rhel7,archlinux" nist="AC-6,AC-19(a),AC-19(d),AC-19(e),CM-7,MP-2" cis="1.1.13" disa="366"
+<ref prodtype="rhel7" nist="AC-6,AC-19(a),AC-19(d),AC-19(e),CM-7,MP-2" cis="1.1.13" disa="366"
 ossrg="SRG-OS-000480-GPOS-00227" stigid="021010" />
 </Rule>
 
