@@ -225,6 +225,33 @@ macro(_ssg_build_remediations_for_language PRODUCT LANGUAGE)
 
 endmacro()
 
+macro(ssg_build_sce PRODUCT)
+    file(GLOB SCE_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/input/sce/*.sh")
+    set(BUILD_CHECKS_DIR "${CMAKE_BINARY_DIR}/sce/${PRODUCT}")
+    file(MAKE_DIRECTORY ${BUILD_CHECKS_DIR})
+
+
+    SET(OUT_FILES)
+
+    foreach(SCE_FILE ${SCE_DEPS})
+        get_filename_component(base ${SCE_FILE} NAME)
+        set(oFile "${BUILD_CHECKS_DIR}/${base}")
+        message("copying ${SCE_FILE}")
+        set(OUT_FILES ${OUT_FILES} ${oFile})
+        add_custom_command(
+            OUTPUT ${oFile}
+            COMMAND cp "${SCE_FILE}" "${oFile}"
+            DEPENDS ${SCE_FILE}
+            COMMENT "[${PRODUCT}-content] copying SCE: ${base}"
+        )
+    endforeach(SCE_FILE)
+
+    add_custom_target(
+        copy-internal-${PRODUCT}-sce
+        DEPENDS ${OUT_FILES}
+    )
+endmacro()
+
 macro(ssg_build_remediations PRODUCT)
     _ssg_build_remediations_for_language(${PRODUCT} "bash")
     _ssg_build_remediations_for_language(${PRODUCT} "ansible")
@@ -593,6 +620,29 @@ macro(ssg_build_sds PRODUCT)
             DEPENDS "${SSG_SHARED_TRANSFORMS}/shared_xml-remove-unneeded-xmlns.xslt"
             COMMENT "[${PRODUCT}-content] generating ssg-${PRODUCT}-ds.xml"
         )
+    elseif("${PRODUCT}" MATCHES "archlinux")
+        add_custom_command(
+            OUTPUT "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-compose "ssg-${PRODUCT}-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${SED_EXECUTABLE}" -i 's/schematron-version="[0-9].[0-9]"/schematron-version="1.2"/' "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add "ssg-${PRODUCT}-cpe-dictionary.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${SSG_SHARED_UTILS}/sds-move-ocil-to-checks.py" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${XSLTPROC_EXECUTABLE}" --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${SSG_SHARED_TRANSFORMS}/shared_xml-remove-unneeded-xmlns.xslt" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${XMLLINT_EXECUTABLE}" --format --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            DEPENDS generate-ssg-${PRODUCT}-xccdf-1.2.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-xccdf-1.2.xml"
+            DEPENDS generate-ssg-${PRODUCT}-oval.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-oval.xml"
+            DEPENDS generate-ssg-${PRODUCT}-ocil.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ocil.xml"
+            DEPENDS generate-ssg-${PRODUCT}-cpe-dictionary.xml
+            DEPENDS copy-internal-${PRODUCT}-sce
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-cpe-dictionary.xml"
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-cpe-oval.xml"
+            DEPENDS "${SSG_SHARED_TRANSFORMS}/shared_xml-remove-unneeded-xmlns.xslt"
+            COMMENT "[${PRODUCT}-content] generating ssg-${PRODUCT}-ds.xml"
+        )
     else()
         add_custom_command(
             OUTPUT "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
@@ -684,6 +734,9 @@ macro(ssg_build_product PRODUCT)
     if("${PRODUCT}" MATCHES "rhel(6|7)")
         ssg_build_pci_dss_xccdf(${PRODUCT})
     endif()
+    if("${PRODUCT}" MATCHES "archlinux")
+        ssg_build_sce(${PRODUCT})
+    endif()
     ssg_build_sds(${PRODUCT})
 
     add_custom_target(${PRODUCT} ALL)
@@ -698,6 +751,13 @@ macro(ssg_build_product PRODUCT)
         generate-ssg-${PRODUCT}-cpe-dictionary.xml
         generate-ssg-${PRODUCT}-ds.xml
     )
+
+    if("${PRODUCT}" MATCHES "archlinux")
+        add_dependencies(
+            ${PRODUCT}-content
+            copy-internal-${PRODUCT}-sce
+        )
+    endif()
 
     add_dependencies(
         ${PRODUCT}-validate

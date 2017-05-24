@@ -28,6 +28,7 @@
 <xsl:variable name="ssg-benchmark-latest-uri">https://github.com/OpenSCAP/scap-security-guide/releases/latest</xsl:variable>
 
 <xsl:variable name="ovaluri">http://oval.mitre.org/XMLSchema/oval-definitions-5</xsl:variable>
+<xsl:variable name="sceuri">http://open-scap.org/page/SCE</xsl:variable>
 
 <xsl:variable name="ociltransitional">ocil-transitional</xsl:variable>
 <xsl:variable name="ocil_cs">http://scap.nist.gov/schema/ocil/2</xsl:variable>

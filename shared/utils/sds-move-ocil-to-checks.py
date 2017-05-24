@@ -37,11 +37,7 @@
 #   $ ./sds-move-ocil-to-checks.py ssg-rhel6-ds.xml new-ds.xml
 
 import sys
-
-try:
-    from xml.etree import cElementTree as ElementTree
-except ImportError:
-    import cElementTree as ElementTree
+import lxml.etree as ET
 
 xlink_ns = "http://www.w3.org/1999/xlink"
 datastream_ns = "http://scap.nist.gov/schema/scap/source/1.2"
@@ -51,7 +47,7 @@ ocil_ns = "http://scap.nist.gov/schema/ocil/2.0"
 def parse_xml_file(xmlfile):
     with open(xmlfile, 'r') as xml_file:
         filestring = xml_file.read()
-        tree = ElementTree.fromstring(filestring)
+        tree = ET.fromstring(filestring)
     return tree
 
 
@@ -121,9 +117,9 @@ def move_ocil_content_from_ds_extended_component_to_ds_component(datastreamtree,
         sys.exit(1)
 
     # Decode possible HTML entities present in OCIL component
-    extnohtmlents = ElementTree.tostring(extendedcomp, method='html')
+    extnohtmlents = ET.tostring(extendedcomp, method='html')
     # Create new element tree from decoded HTML
-    extcomptree = ElementTree.fromstring(extnohtmlents)
+    extcomptree = ET.fromstring(extnohtmlents)
     # Locate the OCIL subcomponent within that element tree
     ocilcomp = extcomptree.find(".//{%s}ocil" % ocil_ns)
 
@@ -132,7 +128,7 @@ def move_ocil_content_from_ds_extended_component_to_ds_component(datastreamtree,
     # * future OCIL <ds:component> timestamp --> timestamp
     # * future OCIL <ds:component> content   --> ocilcomp
     # to be ables to create new <ds:component> for OCIL content
-    ocildscomp = ElementTree.Element('{' + datastream_ns + '}component',
+    ocildscomp = ET.Element('{' + datastream_ns + '}component',
                             attrib = { 'id' : ocildscompid, 'timestamp' : timestamp },
                             nsmap = {'ds' : datastream_ns})
     # Insert the OCIL content into newly created <ds:component>
@@ -201,7 +197,7 @@ def main():
         print("No extended-components, nothing to do...")
 
     # Write the updated benchmark into output datastream file
-    ElementTree.ElementTree(datastreamtree).write(outdatastreamfile)
+    ET.ElementTree(datastreamtree).write(outdatastreamfile)
     sys.exit(0)
 
 
