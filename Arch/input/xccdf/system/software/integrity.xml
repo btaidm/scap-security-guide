@@ -345,7 +345,7 @@ The hashes of important files like system executables should match the
 information given by the RPM database. Executables with erroneous hashes could
 be a sign of nefarious activity on the system.</rationale>
 <ident  cce="27157-7" />
-<oval id="rpm_verify_hashes" />
+<!-- <oval id="rpm_verify_hashes" /> -->
 <ref  stigid="010020" />
 <ref nist="CM-6(d),CM-6(3),SI-7(1)" disa="663" pcidss="Req-11.5" cis="1.2.6" ossrg="SRG-OS-000480-GPOS-00227" cjis="5.10.4.1" cui="3.3.8,3.4.1" />
 </Rule>
