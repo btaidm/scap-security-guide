@@ -1,0 +1,21 @@
+<Profile id="test-disa">
+<title>DISA STIG for Red Hat Enterprise Linux 7 (ported to Arch Linux)</title>
+<description>
+This profile contains configuration checks that align to the 
+DISA STIG for Red Hat Enterprise Linux V1R1.
+
+In addition to being applicable to RHEL7, DISA recognizes this 
+configuration baseline as applicable to the operating system
+tier of Red Hat technologies that are based off RHEL7, such as RHEL
+Server,  RHV-H, RHEL for HPC, RHEL Workstation, and Red Hat 
+Storage deployments.
+
+This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL7
+</description>
+
+<refine-value idref="var_auditd_space_left_action" selector="email" />
+
+<!-- SRG-OS-000343-GPOS-00134, SV-86715r1_rule, RHEL-07-030340 -->
+<select idref="auditd_data_retention_space_left_action" selected="true" />
+
+</Profile>

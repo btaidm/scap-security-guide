@@ -2,7 +2,7 @@
 #abrtd,abrt,
 #acpid,acpid,
 #atd,at,
-#autofs,autofs,
+autofs,autofs,
 #avahi-daemon,avahi,
 #bluetooth,bluez,
 #certmonger,certmonger,

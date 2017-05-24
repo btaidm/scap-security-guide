@@ -22,7 +22,7 @@ with a password and ensure its configuration file's permissions
 are set properly.
 </description>
 
-<Rule id="file_user_owner_grub2_cfg" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="file_user_owner_grub2_cfg" severity="medium" >
 <title>Verify /boot/grub2/grub.cfg User Ownership</title>
 <description>The file <tt>/boot/grub2/grub.cfg</tt> should
 be owned by the <tt>root</tt> user to prevent destruction
@@ -34,13 +34,13 @@ or modification of the file.
 Only root should be able to modify important boot parameters.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="26860-7" />
+<ident  cce="26860-7" />
 <oval id="file_user_owner_grub2_cfg" />
-<ref prodtype="rhel7,archlinux" nist="AC-6(7)" disa="225" pcidss="Req-7.1" cis="1.5.1" cjis="5.5.2.2"
+<ref nist="AC-6(7)" disa="225" pcidss="Req-7.1" cis="1.5.1" cjis="5.5.2.2"
 cui="3.4.5" />
 </Rule>
 
-<Rule id="file_group_owner_grub2_cfg" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="file_group_owner_grub2_cfg" severity="medium" >
 <title>Verify /boot/grub2/grub.cfg Group Ownership</title>
 <description>The file <tt>/boot/grub2/grub.cfg</tt> should
 be group-owned by the <tt>root</tt> group to prevent
@@ -53,13 +53,13 @@ The <tt>root</tt> group is a highly-privileged group. Furthermore, the group-own
 file should not have any access privileges anyway.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="26812-8" />
+<ident  cce="26812-8" />
 <oval id="file_group_owner_grub2_cfg" />
-<ref prodtype="rhel7,archlinux" nist="AC-6(7)" disa="225" pcidss="Req-7.1" cis="1.5.1" cjis="5.5.2.2"
+<ref nist="AC-6(7)" disa="225" pcidss="Req-7.1" cis="1.5.1" cjis="5.5.2.2"
 cui="3.4.5" />
 </Rule>
 
-<Rule id="file_permissions_grub2_cfg" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="file_permissions_grub2_cfg" severity="medium" >
 <title>Verify /boot/grub2/grub.cfg Permissions</title>
 <description>File permissions for <tt>/boot/grub2/grub.cfg</tt> should be set to 600.
 <fileperms-desc-macro file="/boot/grub2/grub.cfg" perms="600"/>
@@ -75,12 +75,12 @@ Proper permissions ensure that only the root user can modify important boot
 parameters.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="27054-6" />
+<ident  cce="27054-6" />
 <oval id="file_permissions_grub2_cfg" />
-<ref prodtype="rhel7,archlinux" nist="AC-6(7)" disa="225" cis="1.5.2" cui="3.4.5" />
+<ref nist="AC-6(7)" disa="225" cis="1.5.2" cui="3.4.5" />
 </Rule>
 
-<Rule id="bootloader_password" severity="high" prodtype="rhel7,archlinux">
+<Rule id="bootloader_password" severity="high" >
 <title>Set Boot Loader Password</title>
 <description>The grub2 boot loader should have a superuser account and password
 protection enabled to protect boot-time settings.
@@ -131,13 +131,13 @@ To prevent hard-coded passwords, automatic remediation of this control is not av
 must be automated as a component of machine provisioning, or followed manually as outlined above.
 </warning>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="27309-4" />
+<ident  cce="27309-4" />
 <oval id="bootloader_password" />
-<ref prodtype="rhel7,archlinux" nist="IA-2(1),IA-5(e),AC-3" disa="213" ossrg="SRG-OS-000080-GPOS-00048" 
-stigid="010480" cis="1.5.3" cui="3.4.5" />
+<ref  stigid="010480" />
+<ref nist="IA-2(1),IA-5(e),AC-3" disa="213" ossrg="SRG-OS-000080-GPOS-00048" cis="1.5.3" cui="3.4.5" />
 </Rule>
 
-<Rule id="bootloader_uefi_password" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="bootloader_uefi_password" severity="medium" >
 <title>Set the UEFI Boot Loader Password</title>
 <description>The UEFI grub2 boot loader should have a superuser account and password
 protection enabled to protect boot-time settings.
@@ -188,15 +188,15 @@ To prevent hard-coded passwords, automatic remediation of this control is not av
 must be automated as a component of machine provisioning, or followed manually as outlined above.
 </warning>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="80354-4" />
+<ident  cce="80354-4" />
 <oval id="bootloader_uefi_password" />
-<ref prodtype="rhel7,archlinux" nist="AC-3" disa="213" ossrg="SRG-OS-000080-GPOS-00048" 
-stigid="010490" cui="3.4.5" />
+<ref  stigid="010490" />
+<ref nist="AC-3" disa="213" ossrg="SRG-OS-000080-GPOS-00048" cui="3.4.5" />
 </Rule>
 
 </Group>
 
-<Rule id="require_singleuser_auth" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="require_singleuser_auth" severity="medium" >
 <title>Require Authentication for Single User Mode</title>
 <description>Single-user mode is intended as a system recovery
 method, providing a single user root access to the system by
@@ -219,12 +219,12 @@ on the machine and gaining root access. Such accesses are further prevented
 by configuring the bootloader password.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="27287-2" />
+<ident  cce="27287-2" />
 <oval id="require_singleuser_auth" />
-<ref prodtype="rhel7,archlinux" nist="IA-2(1),AC-3" disa="213" cui="3.1.1,3.4.5" />
+<ref nist="IA-2(1),AC-3" disa="213" cui="3.1.1,3.4.5" />
 </Rule>
 
-<Rule id="service_debug-shell_disabled" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="service_debug-shell_disabled" severity="medium" >
 <title>Disable debug-shell SystemD Service</title>
 <description>SystemD's <tt>debug-shell</tt> service is intended to
 diagnose SystemD related boot issues with various <tt>systemctl</tt>
@@ -245,13 +245,13 @@ on the machine through valid troubleshooting configurations and gaining root
 access when the system is rebooted.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="80206-6" />
+<ident  cce="80206-6" />
 <oval id="service_debug-shell_disabled" />
 <ref cui="3.4.5" />
 <!--ref nist="IA-2(1),AC-3" disa="213" /-->
 </Rule>
 
-<Rule id="disable_ctrlaltdel_reboot" severity="high" prodtype="rhel7,archlinux">
+<Rule id="disable_ctrlaltdel_reboot" severity="high" >
 <title>Disable Ctrl-Alt-Del Reboot Activation</title>
 <description>
 By default, <tt>SystemD</tt> will reboot the system if the <tt>Ctrl-Alt-Del</tt>
@@ -286,12 +286,12 @@ if running in <tt>graphical.target</tt> mode (e.g. in GNOME, KDE, etc.)! The
 the non-graphical <tt>multi-user.target</tt> mode.
 </warning>
 <oval id="disable_ctrlaltdel_reboot" />
-<ident prodtype="rhel7,archlinux" cce="27511-5" />
-<ref prodtype="rhel7,archlinux" nist="AC-6" disa="366" ossrg="SRG-OS-000480-GPOS-00227" 
-stigid="020230" cui="3.4.5" />
+<ident  cce="27511-5" />
+<ref  stigid="020230" />
+<ref nist="AC-6" disa="366" ossrg="SRG-OS-000480-GPOS-00227" cui="3.4.5" />
 </Rule>
 
-<Rule id="disable_interactive_boot" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="disable_interactive_boot" severity="medium" >
 <title>Verify that Interactive Boot is Disabled</title>
 <description>
 Red Hat Enterprise Linux systems support an "interactive boot" option that can
@@ -325,9 +325,9 @@ file. To update the GRUB 2 configuration file manually, use the
 <pre>~]# grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg</pre></li>
 </ul>
 </warning>
-<ident prodtype="rhel7,archlinux" cce="27335-9" />
+<ident  cce="27335-9" />
 <oval id="disable_interactive_boot" />
-<ref prodtype="rhel7,archlinux" nist="SC-2,AC-3" disa="213" cui="3.1.2,3.4.5" />
+<ref nist="SC-2,AC-3" disa="213" cui="3.1.2,3.4.5" />
 </Rule>
 
 <Group id="screen_locking">
@@ -348,7 +348,7 @@ A console screen locking mechanism is provided in the
 <tt>screen</tt> package, which is not installed by default.
 </description>
 
-<Rule id="package_screen_installed" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="package_screen_installed" severity="medium" >
 <title>Install the screen Package</title>
 <description>
 To enable console screen locking, install the <tt>screen</tt> package:
@@ -371,10 +371,11 @@ session lock.
 The <tt>screen</tt> package allows for a session lock to be implemented and configured.
 </rationale>
 <platform idref="cpe:/a:machine" />
-<ident prodtype="rhel7,archlinux" cce="27351-6" />
+<ident  cce="27351-6" />
 <oval id="package_screen_installed" />
-<ref prodtype="rhel7,archlinux" nist="AC-11(a)" disa="57" ossrg="SRG-OS-000029-GPOS-00010" stigid="010090"
-cui="3.1.10" />
+<sce id="screen-installed.sh"/>
+<ref  stigid="010090" />
+<ref nist="AC-11(a)" disa="57" ossrg="SRG-OS-000029-GPOS-00010" cui="3.1.10" />
 </Rule>
 </Group>
 
@@ -387,7 +388,7 @@ In Red Hat Enterprise Linux servers and workstations, hardware token login
 is not enabled by default and must be enabled in the system settings.
 </description>
 
-<Rule id="smartcard_auth" severity="medium" prodtype="rhel7,archlinux">
+<Rule id="smartcard_auth" severity="medium" >
 <title>Enable Smart Card Login</title>
 <description>
 To enable smart card authentication, consult the documentation at:
@@ -417,10 +418,10 @@ smart card (CAC) authentication:
 that provided by a username and password combination. Smart cards leverage PKI
 (public key infrastructure) in order to provide and verify credentials.
 </rationale>
-<ident prodtype="rhel7,archlinux" cce="80207-4" />
+<ident  cce="80207-4" />
 <oval id="smartcard_auth" />
-<ref prodtype="rhel7,archlinux" nist="IA-2(2)" disa="765,766,767,768,771,772,884" pcidss="Req-8.3" stigid="010500"
-ossrg="SRG-OS-000104-GPOS-00051,SRG-OS-000106-GPOS-00053,SRG-OS-000107-GPOS-00054,SRG-OS-000109-GPOS-00056,SRG-OS-000108-GPOS-00055,SRG-OS-000108-GPOS-00057,SRG-OS-000108-GPOS-00058" />
+<ref  stigid="010500" />
+<ref nist="IA-2(2)" disa="765,766,767,768,771,772,884" pcidss="Req-8.3" ossrg="SRG-OS-000104-GPOS-00051,SRG-OS-000106-GPOS-00053,SRG-OS-000107-GPOS-00054,SRG-OS-000109-GPOS-00056,SRG-OS-000108-GPOS-00055,SRG-OS-000108-GPOS-00057,SRG-OS-000108-GPOS-00058" />
 </Rule>
 
 </Group>
