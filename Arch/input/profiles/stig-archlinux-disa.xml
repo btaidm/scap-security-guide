@@ -214,10 +214,10 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- <select idref="clean_components_post_updating" selected="true" /> -->
 
 <!-- SRG-OS-000445-GPOS-00199, SV-86613r2_rule, RHEL-07-020210 -->
-<!-- <select idref="selinux_state" selected="true" /> -->
+<select idref="selinux_state" selected="true" />
 
 <!-- SRG-OS-000445-GPOS-00199, SV-86615r2_rule, RHEL-07-020220 -->
-<!-- <select idref="selinux_policytype" selected="true" /> -->
+<select idref="selinux_policytype" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86617r1_rule, RHEL-07-020230 -->
 <select idref="disable_ctrlaltdel_reboot" selected="true" />
