@@ -2,7 +2,7 @@
 #abrtd,abrt,
 #acpid,acpid,
 #atd,at,
-#autofs,autofs,
+autofs,autofs,
 #avahi-daemon,avahi,
 #bluetooth,bluez,
 #certmonger,certmonger,
@@ -44,3 +44,4 @@
 #xinetd,xinetd,
 #ypbind,ypbind,
 #zebra,quagga,
+sshd,openssh,
