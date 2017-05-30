@@ -116,28 +116,28 @@
   <xsl:template match="Group[@id='services']">
     <xsl:copy>
       <xsl:copy-of select="@*|node()" />
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/obsolete.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/base.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/cron.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/docker.xml'))" /> -->
+      <xsl:apply-templates select="document('xccdf/services/obsolete.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/base.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/cron.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/docker.xml')" />
       <xsl:apply-templates select="document('xccdf/services/ssh.xml')" />
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/sssd.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/xorg.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/avahi.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/printing.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/dhcp.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ntp.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/mail.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ldap.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/nfs.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/dns.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/ftp.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/http.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/imap.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/quagga.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/smb.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/squid.xml'))" /> -->
-      <!-- <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/services/snmp.xml'))" /> -->
+      <xsl:apply-templates select="document('xccdf/services/sssd.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/xorg.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/avahi.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/printing.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/dhcp.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/ntp.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/mail.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/ldap.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/nfs.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/dns.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/ftp.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/http.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/imap.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/quagga.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/smb.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/squid.xml')" />
+      <xsl:apply-templates select="document('xccdf/services/snmp.xml')" />
     </xsl:copy>
   </xsl:template>
 

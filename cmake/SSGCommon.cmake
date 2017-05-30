@@ -227,7 +227,7 @@ endmacro()
 
 macro(ssg_build_sce PRODUCT)
     file(GLOB SCE_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/input/sce/*.sh")
-    set(BUILD_CHECKS_DIR "${CMAKE_BINARY_DIR}/sce/${PRODUCT}")
+    set(BUILD_CHECKS_DIR "${CMAKE_BINARY_DIR}")
     file(MAKE_DIRECTORY ${BUILD_CHECKS_DIR})
 
 
@@ -235,7 +235,7 @@ macro(ssg_build_sce PRODUCT)
 
     foreach(SCE_FILE ${SCE_DEPS})
         get_filename_component(base ${SCE_FILE} NAME)
-        set(oFile "${BUILD_CHECKS_DIR}/${base}")
+        set(oFile "${BUILD_CHECKS_DIR}/${PRODUCT}-${base}")
         message("copying ${SCE_FILE}")
         set(OUT_FILES ${OUT_FILES} ${oFile})
         add_custom_command(

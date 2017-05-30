@@ -38,14 +38,14 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <refine-value idref="var_password_pam_maxrepeat" selector="2" />
 <refine-value idref="var_accounts_maximum_age_login_defs" selector="60" />
 <refine-value idref="var_account_disable_post_pw_expiration" selector="0" />
-<!-- <refine-value idref="var_removable_partition" selector="dev_cdrom" /> -->
+<refine-value idref="var_removable_partition" selector="dev_cdrom" />
 <refine-value idref="var_auditd_action_mail_acct" selector="root" />
 <refine-value idref="var_auditd_space_left_action" selector="email" />
 <refine-value idref="var_accounts_user_umask" selector="077" />
 <refine-value idref="var_password_pam_retry" selector="3" />
 <refine-value idref="var_accounts_max_concurrent_login_sessions" selector="10" />
 <refine-value idref="var_accounts_tmout" selector="10_min" />
-<!-- <refine-value idref="var_ntp_set_maxpoll" selector="disa" /> -->
+<refine-value idref="var_ntp_set_maxpoll" selector="disa" />
 <refine-value idref="sysctl_net_ipv4_conf_all_accept_source_route_value" selector="disabled" />
 <refine-value idref="sysctl_net_ipv4_conf_default_accept_source_route_value" selector="disabled" />
 <refine-value idref="sysctl_net_ipv4_icmp_echo_ignore_broadcasts_value" selector="enabled" />
@@ -56,25 +56,25 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- RULE ENABLEMENT -->
 
 <!-- SRG-OS-000257-GPOS-00098, SV-86473r2_rule, RHEL-07-010010 -->
-<!-- <select idref="pacman_verify_permissions" selected="true" /> -->
+<select idref="pacman_verify_permissions" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86479r2_rule, RHEL-07-010020 -->
-<!-- <select idref="pacman_verify_hashes" selected="true" /> -->
+<select idref="pacman_verify_hashes" selected="true" />
 
 <!-- SRG-OS-000023-GPOS-00006, SV-86483r2_rule, RHEL-07-010030 -->
-<!-- <select idref="dconf_gnome_banner_enabled" selected="true" /> -->
+<select idref="dconf_gnome_banner_enabled" selected="true" />
 
 <!-- SRG-OS-000023-GPOS-00006, SV-86485r2_rule, RHEL-07-010040 -->
-<!-- <select idref="dconf_gnome_login_banner_text" selected="true" /> -->
+<select idref="dconf_gnome_login_banner_text" selected="true" />
 
 <!-- SRG-OS-000023-GPOS-00006, SV-86487r1_rule, RHEL-07-010050 -->
 <select idref="banner_etc_issue" selected="true" />
 
 <!-- SRG-OS-000028-GPOS-00009, SV-86515r2_rule, RHEL-07-010060 -->
-<!-- <select idref="dconf_gnome_screensaver_lock_enabled" selected="true" /> -->
+<select idref="dconf_gnome_screensaver_lock_enabled" selected="true" />
 
 <!-- SRG-OS-000029-GPOS-00010, SV-86517r2_rule, RHEL-07-010070 -->
-<!-- <select idref="dconf_gnome_screensaver_idle_delay" selected="true" /> -->
+<select idref="dconf_gnome_screensaver_idle_delay" selected="true" />
 
 <!-- SRG-OS-000029-GPOS-00010, SV-86519r3_rule, RHEL-07-010080 -->
 <!-- TO DO -->
@@ -83,10 +83,10 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="package_screen_installed" selected="true" />
 
 <!-- SRG-OS-000029-GPOS-00010, SV-86523r1_rule, RHEL-07-010100 -->
-<!-- <select idref="dconf_gnome_screensaver_idle_activation_enabled" selected="true" /> -->
+<select idref="dconf_gnome_screensaver_idle_activation_enabled" selected="true" />
 
 <!-- SRG-OS-000029-GPOS-00010, SV-86525r1_rule, RHEL-07-010110 -->
-<!-- <select idref="dconf_gnome_screensaver_lock_delay" selected="true" /> -->
+<select idref="dconf_gnome_screensaver_lock_delay" selected="true" />
 
 <!-- SRG-OS-000069-GPOS-00037, SV-86527r2_rule, RHEL-07-010120 -->
 <select idref="accounts_password_pam_ucredit" selected="true" />
@@ -172,16 +172,16 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="accounts_logon_fail_delay" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00229, SV-86577r1_rule, RHEL-07-010440 -->
-<!-- <select idref="gnome_gdm_disable_automatic_login" selected="true" /> -->
+<select idref="gnome_gdm_disable_automatic_login" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00229, SV-86579r2_rule, RHEL-07-010450 -->
-<!-- <select idref="gnome_gdm_disable_guest_login" selected="true" /> -->
+<select idref="gnome_gdm_disable_guest_login" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00229, SV-86581r2_rule, RHEL-07-010460 -->
-<!-- <select idref="sshd_do_not_permit_user_env" selected="true" /> -->
+<select idref="sshd_do_not_permit_user_env" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00229, SV-86583r2_rule, RHEL-07-010470 -->
-<!-- <select idref="disable_host_auth" selectlected="true" /> -->
+<select idref="disable_host_auth" selected="true" />
 
 <!-- SRG-OS-000080-GPOS-00048, SV-86585r1_rule, RHEL-07-010480 -->
 <select idref="bootloader_password" selected="true" />
@@ -211,7 +211,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="service_autofs_disabled" selected="true" />
 
 <!-- SRG-OS-000437-GPOS-00194, SV-86611r1_rule, RHEL-07-020200 -->
-<!-- <select idref="clean_components_post_updating" selected="true" /> -->
+<select idref="clean_components_post_updating" selected="true" />
 
 <!-- SRG-OS-000445-GPOS-00199, SV-86613r2_rule, RHEL-07-020210 -->
 <select idref="selinux_state" selected="true" />
@@ -226,10 +226,10 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="accounts_umask_etc_login_defs" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86621r2_rule, RHEL-07-020250 -->
-<!-- <select idref="installed_OS_is_certified" selected="true" /> -->
+<select idref="installed_OS_is_certified" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86623r3_rule, RHEL-07-020260 -->
-<!-- <select idref="security_patches_up_to_date" selected="true" /> -->
+<select idref="security_patches_up_to_date" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86625r1_rule, RHEL-07-020270 -->
 
@@ -288,7 +288,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- TO DO -->
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86663r1_rule, RHEL-07-020900 -->
-<!-- <select idref="selinux_all_devicefiles_labeled" selected="true" /> -->
+<select idref="selinux_all_devicefiles_labeled" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86665r2_rule, RHEL-07-021000 -->
 <!-- TO DO --> 
@@ -297,25 +297,25 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="mount_option_nosuid_removable_partitions" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86669r1_rule, RHEL-07-021020 -->
-<!-- <select idref="mount_option_nosuid_remote_filesystems" selected="false" /> -->
+<select idref="mount_option_nosuid_remote_filesystems" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86671r1_rule, RHEL-07-021030 -->
-<select idref="dir_perms_world_writable_system_owned" selected="false" />
+<select idref="dir_perms_world_writable_system_owned" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86673r1_rule, RHEL-07-021040 -->
 <!-- TO DO -->
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86675r1_rule, RHEL-07-021100 -->
-<!-- <select idref="rsyslog_cron_logging" selected="true" /> -->
+<select idref="rsyslog_cron_logging" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86677r1_rule, RHEL-07-021110 -->
-<!-- <select idref="file_owner_cron_allow" selected="true" /> -->
+<select idref="file_owner_cron_allow" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86679r1_rule, RHEL-07-021120 -->
-<!-- <select idref="file_groupowner_cron_allow" selected="true" /> -->
+<select idref="file_groupowner_cron_allow" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86681r1_rule, RHEL-07-021300 -->
-<!-- <select idref="service_kdump_disabled" selected="true" /> -->
+<select idref="service_kdump_disabled" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86683r1_rule, RHEL-07-021310 -->
 <select idref="partition_for_home" selected="true" />
@@ -330,7 +330,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="partition_for_tmp" selected="true" />
 
 <!-- SRG-OS-000033-GPOS-00014, SV-86691r2_rule, RHEL-07-021350 -->
-<!-- <select idref="grub2_enable_fips_mode" selected="true" /> -->
+<select idref="grub2_enable_fips_mode" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86693r2_rule, RHEL-07-021600 -->
 <select idref="aide_verify_acls" selected="true" />
@@ -345,7 +345,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- TO DO -->
 
 <!-- SRG-OS-000095-GPOS-00049, SV-86701r1_rule, RHEL-07-021710 -->
-<!-- <select idref="package_telnet-server_removed" selected="true" /> -->
+<select idref="package_telnet-server_removed" selected="true" />
 
 <!-- SRG-OS-000038-GPOS-00016, SV-86703r1_rule, RHEL-07-030000 -->
 <select idref="service_auditd_enabled" selected="true" />
@@ -543,16 +543,16 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="audit_rules_file_deletion_events_unlinkat" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86833r1_rule, RHEL-07-031000 -->
-<!-- <select idref="rsyslog_remote_loghost" selected="true" /> -->
+<select idref="rsyslog_remote_loghost" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86835r1_rule, RHEL-07-031010 -->
-<!-- <select idref="rsyslog_nolisten" selected="true" /> -->
+<select idref="rsyslog_nolisten" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86837r1_rule, RHEL-07-032000 -->
-<!-- <select idref="install_mcafee_antivirus" selected="true" /> -->
+<select idref="install_mcafee_antivirus" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86839r1_rule, RHEL-07-032010 -->
-<!-- <select idref="mcafee_antivirus_definitions_updated" selected="true" /> -->
+<select idref="mcafee_antivirus_definitions_updated" selected="true" />
 
 <!-- SRG-OS-000027-GPOS-00008, SV-86841r1_rule, RHEL-07-040000 -->
 <select idref="accounts_max_concurrent_login_sessions" selected="true" />
@@ -561,16 +561,16 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- TO DO -->
 
 <!-- SRG-OS-000033-GPOS-00014, SV-86845r2_rule, RHEL-07-040110 -->
-<!-- <select idref="sshd_use_approved_ciphers" selected="true" /> -->
+<select idref="sshd_use_approved_ciphers" selected="true" />
 
 <!-- SRG-OS-000163-GPOS-00072, SV-86847r2_rule, RHEL-07-040160 -->
 <select idref="accounts_tmout" selected="true" />
 
 <!-- SRG-OS-000023-GPOS-00006, SV-86849r2_rule, RHEL-07-040170 -->
-<!-- <select idref="sshd_enable_warning_banner" selected="true" /> -->
+<select idref="sshd_enable_warning_banner" selected="true" />
 
 <!-- SRG-OS-000250-GPOS-00093, SV-86851r2_rule, RHEL-07-040180 -->
-<!-- <select idref="ldap_client_start_tls" selected="true" /> -->
+<select idref="ldap_client_start_tls" selected="true" />
 
 <!-- SRG-OS-000250-GPOS-00093, SV-86853r2_rule, RHEL-07-040190 -->
 <!-- TO DO -->
@@ -582,66 +582,66 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="package_openssh-server_installed" selected="true" />
 
 <!-- SRG-OS-000423-GPOS-00187, SV-86859r2_rule, RHEL-07-040310 -->
-<select idref="service_sshd_enabled" selected="false" />
+<select idref="service_sshd_enabled" selected="true" />
 
 <select idref="service_sshd_disabled" selected="true" />
 
 <!-- SRG-OS-000163-GPOS-00072, SV-86861r2_rule, RHEL-07-040320 -->
-<!-- <select idref="sshd_set_idle_timeout" selected="true" /> -->
+<select idref="sshd_set_idle_timeout" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86863r2_rule, RHEL-07-040330 -->
-<!-- <select idref="sshd_disable_rhosts_rsa" selected="true" /> -->
+<select idref="sshd_disable_rhosts_rsa" selected="true" />
 
 <!-- SRG-OS-000163-GPOS-00072, SV-86865r2_rule, RHEL-07-040340 -->
-<!-- <select idref="sshd_set_keepalive" selected="true" /> -->
+<select idref="sshd_set_keepalive" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86867r2_rule, RHEL-07-040350 -->
-<!-- <select idref="sshd_disable_rhosts" selected="true" /> -->
+<select idref="sshd_disable_rhosts" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86869r2_rule, RHEL-07-040360 -->
-<!-- <select idref="sshd_print_last_log" selected="true" /> -->
+<select idref="sshd_print_last_log" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86871r2_rule, RHEL-07-040370 -->
-<!-- <select idref="sshd_disable_root_login" selected="true" /> -->
+<select idref="sshd_disable_root_login" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86873r2_rule, RHEL-07-040380 -->
-<!-- <select idref="sshd_disable_user_known_hosts" selected="true" /> -->
+<select idref="sshd_disable_user_known_hosts" selected="true" />
 
 <!-- SRG-OS-000074-GPOS-00042, SV-86875r2_rule, RHEL-07-040390 -->
-<!-- <select idref="sshd_allow_only_protocol2" selected="true" /> -->
+<select idref="sshd_allow_only_protocol2" selected="true" />
 
 <!-- SRG-OS-000250-GPOS-00093, SV-86877r2_rule, RHEL-07-040400 -->
-<!-- <select idref="sshd_use_approved_macs" selected="true" /> -->
+<select idref="sshd_use_approved_macs" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86879r1_rule, RHEL-07-040410 -->
-<!-- <select idref="file_permissions_sshd_pub_key" selected="true" /> -->
+<select idref="file_permissions_sshd_pub_key" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86881r1_rule, RHEL-07-040420 -->
-<!-- <select idref="file_permissions_sshd_private_key" selected="true" /> -->
+<select idref="file_permissions_sshd_private_key" selected="true" />
 
 <!-- SRG-OS-000364-GPOS-00151, SV-86883r2_rule, RHEL-07-040430 -->
-<!-- <select idref="sshd_disable_gssapi_auth" selected="true" /> -->
+<select idref="sshd_disable_gssapi_auth" selected="true" />
 
 <!-- SRG-OS-000364-GPOS-00151, SV-86885r2_rule, RHEL-07-040440 -->
-<!-- <select idref="sshd_disable_kerb_auth" selected="true" /> -->
+<select idref="sshd_disable_kerb_auth" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86887r2_rule, RHEL-07-040450 -->
-<!-- <select idref="sshd_enable_strictmodes" selected="true" /> -->
+<select idref="sshd_enable_strictmodes" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86889r2_rule, RHEL-07-040460 -->
-<!-- <select idref="sshd_use_priv_separation" selected="true" /> -->
+<select idref="sshd_use_priv_separation" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86891r2_rule, RHEL-07-040470 -->
-<!-- <select idref="sshd_disable_compression" selected="true" /> -->
+<select idref="sshd_disable_compression" selected="true" />
 
 <!-- SRG-OS-000355-GPOS-00143, SV-86893r2_rule, RHEL-07-040500 -->
-<!-- <select idref="ntp_set_maxpoll" selected="true" /> -->
+<select idref="ntp_set_maxpoll" selected="true" />
 
 <!-- SRG-OS-000420-GPOS-00186, SV-86895r1_rule, RHEL-07-040510 -->
 <!-- TO DO -->
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86897r1_rule, RHEL-07-040520 -->
-<!-- <select idref="service_firewalld_enabled" selected="true" /> -->
+<select idref="service_firewalld_enabled" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86899r1_rule, RHEL-07-040530 -->
 <select idref="display_login_attempts" selected="true" />
@@ -653,70 +653,70 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- TO DO -->
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86905r1_rule, RHEL-07-040600 -->
-<!-- <select idref="network_configure_name_resolution" selected="true" /> -->
+<select idref="network_configure_name_resolution" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86907r1_rule, RHEL-07-040610 -->
-<!-- <select idref="sysctl_net_ipv4_conf_all_accept_source_route" selected="true" /> -->
+<select idref="sysctl_net_ipv4_conf_all_accept_source_route" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86909r1_rule, RHEL-07-040620 -->
-<!-- <select idref="sysctl_net_ipv4_conf_default_accept_source_route" selected="true" /> -->
+<select idref="sysctl_net_ipv4_conf_default_accept_source_route" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86911r1_rule, RHEL-07-040630 -->
-<!-- <select idref="sysctl_net_ipv4_icmp_echo_ignore_broadcasts" selected="true" /> -->
+<select idref="sysctl_net_ipv4_icmp_echo_ignore_broadcasts" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86913r2_rule, RHEL-07-040640 -->
-<!-- <select idref="sysctl_net_ipv4_conf_default_accept_redirects" selected="true" /> -->
+<select idref="sysctl_net_ipv4_conf_default_accept_redirects" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86915r2_rule, RHEL-07-040650 -->
-<!-- <select idref="sysctl_net_ipv4_conf_default_send_redirects" selected="true" /> -->
+<select idref="sysctl_net_ipv4_conf_default_send_redirects" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86917r2_rule, RHEL-07-040660 -->
-<!-- <select idref="sysctl_net_ipv4_conf_all_send_redirects" selected="true" /> -->
+<select idref="sysctl_net_ipv4_conf_all_send_redirects" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86919r1_rule, RHEL-07-040670 -->
-<!-- <select idref="network_sniffer_disabled" selected="true" /> -->
+<select idref="network_sniffer_disabled" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86921r2_rule, RHEL-07-040680 -->
 <!-- TO DO -->
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86923r1_rule, RHEL-07-040690 -->
-<!-- <select idref="package_vsftpd_removed" selected="true" /> -->
+<select idref="package_vsftpd_removed" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86925r1_rule, RHEL-07-040700 -->
-<!-- <select idref="package_tftp-server_removed" selected="true" /> -->
+<select idref="package_tftp-server_removed" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86927r2_rule, RHEL-07-040710 -->
-<!-- <select idref="enable_x11_forwarding" selected="true" /> -->
+<select idref="sshd_enable_x11_forwarding" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86929r1_rule, RHEL-07-040720 -->
-<!-- <select idref="tftpd_uses_secure_mode" selected="true" /> -->
+<select idref="tftpd_uses_secure_mode" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86931r2_rule, RHEL-07-040730 -->
-<!-- <select idref="package_xorg-x11-server-common_removed" selected="true" /> -->
+<select idref="package_xorg-x11-server-common_removed" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86933r1_rule, RHEL-07-040740 -->
-<!-- <select idref="sysctl_net_ipv4_ip_forward" selected="true" /> -->
+<select idref="sysctl_net_ipv4_ip_forward" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86935r3_rule, RHEL-07-040750 -->
-<!-- <select idref="mount_option_krb_sec_remote_filesystems" selected="true" /> -->
+<select idref="mount_option_krb_sec_remote_filesystems" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86937r1_rule, RHEL-07-040800 -->
-<!-- <select idref="snmpd_not_default_password" selected="true" /> -->
+<select idref="snmpd_not_default_password" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86939r1_rule, RHEL-07-040810 -->
-<!-- <select idref="set_firewalld_default_zone" selected="true" /> -->
+<select idref="set_firewalld_default_zone" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86941r1_rule, RHEL-07-040820 -->
-<!-- <select idref="libreswan_approved_tunnels" selected="true" /> -->
+<select idref="libreswan_approved_tunnels" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86943r1_rule, RHEL-07-040830 -->
-<!-- <select idref="sysctl_net_ipv6_conf_all_accept_source_route" selected="true" /> -->
+<select idref="sysctl_net_ipv6_conf_all_accept_source_route" selected="true" />
 
 <!-- SRG-OS-000375-GPOS-00160, SV-87041r2_rule, RHEL-07-041001 -->
 <!-- TO DO -->
 
 <!-- SRG-OS-000375-GPOS-00160, SV-87051r2_rule, RHEL-07-041002 -->
-<!-- <select idref="sssd_enable_pam_services" selected="true" /> -->
+<select idref="sssd_enable_pam_services" selected="true" />
 
 <!-- SRG-OS-000375-GPOS-00160, SV-87057r2_rule, RHEL-07-041003 -->
 <!-- TO DO -->
@@ -725,7 +725,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <!-- TO DO -->
 
 <!-- SRG-OS-000029-GPOS-00010, SV-87807r2_rule, RHEL-07-010081 -->
-<!-- <select idref="dconf_gnome_session_user_locks" selected="true" /> -->
+<select idref="dconf_gnome_session_user_locks" selected="true" />
 
 <!-- SRG-OS-000029-GPOS-00010, SV-87809r2_rule, RHEL-07-010082 -->
 <!-- TO DO -->
@@ -734,7 +734,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="accounts_password_pam_retry" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-87813r1_rule, RHEL-07-021021 -->
-<!-- <select idref="mount_option_noexec_remote_filesystems" selected="true" /> -->
+<select idref="mount_option_noexec_remote_filesystems" selected="true" />
 
 <!-- SRG-OS-000342-GPOS-00133, SV-87815r2_rule, RHEL-07-030321 -->
 <!-- TO DO -->
@@ -752,7 +752,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="audit_rules_usergroup_modification_opasswd" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-87827r2_rule, RHEL-07-040641 -->
-<!-- <select idref="sysctl_net_ipv4_conf_all_accept_redirects" selected="true" /> -->
+<select idref="sysctl_net_ipv4_conf_all_accept_redirects" selected="true" />
 
 <!-- SRG-OS-000424-GPOS-00188, SV-87829r1_rule, RHEL-07-041010 -->
 <!-- TO DO -->

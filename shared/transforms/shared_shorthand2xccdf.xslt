@@ -450,7 +450,7 @@
 
           <check-content-ref>
             <xsl:message><xsl:value-of select="@id"/></xsl:message>
-            <xsl:attribute name="href">sce/<xsl:value-of select="$prod_type"/>/<xsl:value-of select="@id" /></xsl:attribute>
+            <xsl:attribute name="href"><xsl:value-of select="$prod_type"/>-<xsl:value-of select="@id" /></xsl:attribute>
           </check-content-ref>
 
         </check>
