@@ -4,6 +4,7 @@
       <title>Configure NTP Maxpoll Interval</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>Configure the maxpoll setting in /etc/ntp.conf to
       continuously poll the NTP servers.</description>

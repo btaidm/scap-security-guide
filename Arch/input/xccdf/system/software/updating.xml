@@ -129,9 +129,9 @@ NOTE: U.S. Defense systems are required to be patched within 30 days or sooner a
 dictates.
 </description>
 <!-- Directly define remotely located OVAL to be executed when scanning this rule -->
-<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+<!-- <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
   <check-content-ref href="https://www.redhat.com/security/data/oval/com.redhat.rhsa-RHEL7.xml.bz2" />
-</check>
+</check> -->
 <ocil clause="updates are not installed">
 If the system is joined to the Red Hat Network, a Red Hat Satellite Server, or
 a yum server which provides updates, invoking the following command will
@@ -161,12 +161,10 @@ lack of prompt attention to patching could result in a system compromise.
 </Rule>
 
 <Rule id="clean_components_post_updating" severity="low" >
-<title>Ensure YUM Removes Previous Package Versions</title>
+<title>Ensure Pacman Removes Previous Package Versions</title>
 <description>
-<tt>Yum</tt> should be configured to remove previous software components after
-previous versions have been installed. To configure <tt>yum</tt> to remove the
-previous software components after updating, set the <tt>clean_requirements_on_remove</tt>
-to <tt>1</tt> in <tt>/etc/yum.conf</tt>.
+<tt>Pacamn</tt> should be configured to remove previous software components after
+previous versions have been installed. See <weblink-macro link="https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743" />.
 </description>
 <ocil clause="clean_requirements_on_remove is not enabled or configured correctly">
 To verify that <tt>clean_requirements_on_remove</tt> is configured properly, run the

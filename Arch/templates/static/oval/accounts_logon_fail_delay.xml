@@ -3,7 +3,6 @@
     <metadata>
       <title>Ensure that FAIL_DELAY is Configured in /etc/login.defs</title>
       <affected family="unix">
-        <platform>Red Hat Enterprise Linux 7</platform>
         <platform>Arch Linux</platform>
       </affected>
       <description>The delay between failed authentication attempts should be
