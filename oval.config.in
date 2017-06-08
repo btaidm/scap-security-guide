@@ -52,5 +52,5 @@ debian8_oval_version = 5.10
 ubuntu1604_oval_version = 5.11
 ubuntu1404_oval_version = 5.10
 wrlinux_oval_version = 5.10
-archlinux_oval_version = 5.10
+archlinux_oval_version = 5.11
 oval_version = 5.10

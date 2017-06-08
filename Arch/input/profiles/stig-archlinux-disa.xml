@@ -37,7 +37,7 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <refine-value idref="var_accounts_minimum_age_login_defs" selector="1" />
 <refine-value idref="var_password_pam_maxrepeat" selector="2" />
 <refine-value idref="var_accounts_maximum_age_login_defs" selector="60" />
-<refine-value idref="var_account_disable_post_pw_expiration" selector="0" />
+<refine-value idref="var_account_disable_post_pw_expiration" selector="90" />
 <refine-value idref="var_removable_partition" selector="dev_cdrom" />
 <refine-value idref="var_auditd_action_mail_acct" selector="root" />
 <refine-value idref="var_auditd_space_left_action" selector="email" />
