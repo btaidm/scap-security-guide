@@ -1,0 +1,15 @@
+<def-group>
+  <definition class="compliance" id="package_xorg-x11-server-common_removed"
+  version="1">
+    <metadata>
+      <title>Package xorg-x11-server-common Removed</title>
+      <affected family="unix">
+        <platform>Arch Linux</platform>
+      </affected>
+      <description>The Pacman package xorg-x11-server-common should be removed.</description>
+    </metadata>
+    <criteria>
+      <extend_definition comment="package xorg-x11-server-common is removed" definition_ref="package_xorg-server-common_removed" />
+    </criteria>
+  </definition>
+</def-group>

@@ -9,6 +9,8 @@
       <description>Rsyslog should be configured to capture cron messages.</description>
     </metadata>
     <criteria operator="OR">
+      <extend_definition comment="rsyslog is installed"
+      definition_ref="package_rsyslog_installed" negate="true" />
       <criterion comment="cron is configured in /etc/rsyslog.conf"
       test_ref="test_cron_logging_rsyslog" />
       <criterion comment="cron is configured in /etc/rsyslog.d"

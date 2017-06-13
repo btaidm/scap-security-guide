@@ -5,6 +5,7 @@
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>The GNOME3 screensaver should be blank.</description>
     </metadata>

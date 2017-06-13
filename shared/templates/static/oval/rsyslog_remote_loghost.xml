@@ -6,10 +6,12 @@
         <platform>multi_platform_rhel</platform>
         <platform>multi_platform_debian</platform>
         <platform>multi_platform_ubuntu</platform>
+        <platform>Arch Linux</platform>
       </affected>
       <description>Syslog logs should be sent to a remote loghost</description>
     </metadata>
     <criteria operator="OR">
+      <extend_definition comment="rsyslog is installed" definition_ref="package_rsyslog_installed" negate="true" />
       <criterion comment="Remote logging set within /etc/rsyslog.conf" test_ref="test_remote_rsyslog_conf" />
       <criterion comment="Remote logging set within /etc/rsyslog.d" test_ref="test_remote_rsyslog_d" />
     </criteria>

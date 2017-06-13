@@ -40,7 +40,7 @@ Verify any returned results for organizational approval.
 IP tunneling mechanisms can be used to bypass network filtering.
 </rationale>
 <ident  cce="80171-2" />
-<!--oval id="libreswan_approved_tunnels" /-->
+<oval id="libreswan_approved_tunnels" />
 <ref  stigid="040820" />
 <ref nist="AC-4" disa="336" ossrg="SRG-OS-000480-GPOS-00227" />
 </Rule>

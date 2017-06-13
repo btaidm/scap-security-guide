@@ -1,0 +1,15 @@
+<def-group>
+  <definition class="compliance" id="package_openssh-server_installed"
+  version="1">
+    <metadata>
+      <title>Package openssh-server Installed</title>
+      <affected family="unix">
+        <platform>Arch Linux</platform>
+      </affected>
+      <description>The Pacman package openssh-server should be installed.</description>
+    </metadata>
+    <criteria>
+      <extend_definition comment="package openssh-server is installed" definition_ref="package_openssh_installed" />
+    </criteria>
+  </definition>
+</def-group>

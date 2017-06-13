@@ -1,0 +1,13 @@
+aide
+audit
+vsftpd
+samba-common
+dracut-fips
+dconf
+gdm
+libreswan
+ntp
+rsyslog
+openssh
+firewalld
+nss-pam-ldapd
