@@ -9,7 +9,8 @@
       </affected>
       <description>Change the default firewalld zone to drop.</description>
     </metadata>
-    <criteria>
+    <criteria operator="OR">
+      <extend_definition definition_ref="package_firewalld_installed" negate="true"/>
       <criterion comment="Set default zone to drop" test_ref="test_firewalld_input_drop" />
     </criteria>
   </definition>

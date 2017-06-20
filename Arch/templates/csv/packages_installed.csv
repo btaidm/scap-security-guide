@@ -11,3 +11,4 @@ rsyslog
 openssh
 firewalld
 nss-pam-ldapd
+tftp-hpa

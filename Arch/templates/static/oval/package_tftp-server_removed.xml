@@ -1,0 +1,15 @@
+<def-group>
+  <definition class="compliance" id="package_tftp-server_removed"
+  version="1">
+    <metadata>
+      <title>Package tftp-server Removed</title>
+      <affected family="unix">
+        <platform>Arch Linux</platform>
+      </affected>
+      <description>The Pacman package tftp-server should be removed.</description>
+    </metadata>
+    <criteria>
+      <extend_definition comment="package tftp-server is removed" definition_ref="package_tftp-hpa_removed" />
+    </criteria>
+  </definition>
+</def-group>

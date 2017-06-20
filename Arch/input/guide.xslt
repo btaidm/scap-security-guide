@@ -30,9 +30,12 @@
 
       <!-- Adding remediation functions from concat($SHARED_RP, '/xccdf/remediation_functions.xml')
            location here -->
-      <xsl:if test=" string($SHARED_RP) != 'undef' ">
+     <!--  <xsl:if test=" string($SHARED_RP) != 'undef' ">
         <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/remediation_functions.xml'))" />
-      </xsl:if>
+      </xsl:if> -->
+
+      <xsl:apply-templates select="document(concat($BUILD_RP, '/bash-remediation-functions.xml'))" />
+      
       
       <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/intro/shared_intro_os.xml'))" />
       <xsl:apply-templates select="document(concat($SHARED_RP, '/xccdf/system/system.xml'))" />

@@ -18,6 +18,7 @@
       <description>The SERVICENAME service should be enabled if possible.</description>
     </metadata>
     <criteria operator="OR" comment="service SERVICENAME is configured to start">
+      <extend_definition comment="PACKAGENAME installed" definition_ref="package_PACKAGENAME_installed" />
       <criterion comment="multi-user.target wants SERVICENAME" test_ref="test_multi_user_wants_SERVICENAME" />
     </criteria>
   </definition>

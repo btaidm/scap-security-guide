@@ -1,0 +1,23 @@
+<def-group>
+  <definition class="compliance" id="clean_components_post_updating" version="1">
+    <metadata>
+      <title>Ensure Pacman Removes Previous Package Versions</title>
+      <affected family="unix">
+        <platform>Arch Linux</platform>
+      </affected>
+      <description>pacman should be configured to remove previous software components after previous versions have been installed</description>
+    </metadata>
+    <criteria>
+      <criterion comment="paccache is called as hook" test_ref="test_pacman_hook_paccache" />
+    </criteria>
+  </definition>
+
+  <ind:textfilecontent54_test check="all" check_existence="all_exist" comment="paccache is called as hook" id="test_pacman_hook_paccache" version="1">
+    <ind:object object_ref="object_test_pacman_hook_paccache" />
+  </ind:textfilecontent54_test>
+  <ind:textfilecontent54_object comment="notify personnel when aide completes" id="object_test_pacman_hook_paccache" version="1">
+    <ind:filepath operation="pattern match">/etc/pacman.d/hooks/.*\.hook</ind:filepath>
+    <ind:pattern operation="pattern match">^Exec\s*=\s*\/usr\/bin\/paccache\s+-rvk1\s*$</ind:pattern>
+    <ind:instance datatype="int">1</ind:instance>
+  </ind:textfilecontent54_object>
+</def-group>

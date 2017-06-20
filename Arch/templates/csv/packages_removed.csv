@@ -3,3 +3,4 @@ vsftpd
 sssd
 xorg-server-common
 nss-pam-ldapd
+tftp-hpa
