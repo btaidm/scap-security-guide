@@ -109,6 +109,22 @@
             </xsl:otherwise>
           </xsl:choose>
           <xsl:choose>
+            <xsl:when test="contains(requires/@prodtype, $prod_type) or requires/@prodtype = 'all'">
+              <xsl:apply-templates select="requires"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="requires[not(requires/@prodtype)]"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:choose>
+            <xsl:when test="contains(conflicts/@prodtype, $prod_type) or conflicts/@prodtype = 'all'">
+              <xsl:apply-templates select="conflicts"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="conflicts[not(conflicts/@prodtype)]"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:choose>
             <xsl:when test="contains(platform/@prodtype, $prod_type) or platform/@prodtype = 'all'">
               <xsl:apply-templates select="platform"/>
             </xsl:when>
@@ -133,22 +149,14 @@
               <xsl:apply-templates select="oval[not(@prodtype)]"/>
             </xsl:otherwise>
           </xsl:choose>
-          <xsl:choose>
-            <xsl:when test="contains(sce/@prodtype, $prod_type) or sce/@prodtype = 'all'">
-              <xsl:apply-templates select="sce"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:apply-templates select="sce[not(@prodtype)]"/>
-            </xsl:otherwise>
-          </xsl:choose>
-          <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::ident|self::oval|self::sce|self::prodtype)]"/>
+          <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::ident|self::oval|self::prodtype)]"/>
         </Rule>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
 
   <!-- Remove this template when prodtype is implemented in all Rule elements -->
-  <xsl:template match="Rule[not(@prod_type)]">
+  <xsl:template match="Rule[not(@prodtype)]">
     <Rule selected="false">
     <!-- set selected attribute to false, to enable profile-driven evaluation -->
       <xsl:apply-templates select="@*" />
@@ -167,8 +175,7 @@
       <xsl:apply-templates select="ident"/>
       <!-- order oval (shorthand tag) first, to indicate to tools to prefer its automated checks -->
       <xsl:apply-templates select="oval"/>
-      <xsl:apply-templates select="sce"/>
-      <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::ident|self::oval|self::sce)]"/>
+      <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::ident|self::oval)]"/>
     </Rule>
   </xsl:template>
 
@@ -219,6 +226,22 @@
             </xsl:otherwise>
           </xsl:choose>
           <xsl:choose>
+            <xsl:when test="contains(requires/@prodtype, $prod_type) or requires/@prodtype = 'all'">
+              <xsl:apply-templates select="requires"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="requires[not(requires/@prodtype)]"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:choose>
+            <xsl:when test="contains(conflicts/@prodtype, $prod_type) or conflicts/@prodtype = 'all'">
+              <xsl:apply-templates select="conflicts"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="conflicts[not(conflicts/@prodtype)]"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:choose>
             <xsl:when test="contains(platform/@prodtype, $prod_type) or platform/@prodtype = 'all'">
               <xsl:apply-templates select="platform"/>
             </xsl:when>
@@ -241,6 +264,8 @@
       <xsl:apply-templates select="warning"/>
       <xsl:apply-templates select="ref"/>
       <xsl:apply-templates select="rationale"/>
+      <xsl:apply-templates select="requires"/>
+      <xsl:apply-templates select="conflicts"/>
       <xsl:apply-templates select="platform"/>
       <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform)]"/>
     </Group>
@@ -289,6 +314,30 @@
             </xsl:choose>
           </ident>
         </xsl:for-each>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="requires">
+    <xsl:choose>
+      <xsl:when test="contains(@prodtype, $prod_type) or not(@prodtype)"> 
+        <requires>
+          <xsl:attribute name="idref">
+            <xsl:value-of select="@id" />
+          </xsl:attribute>
+        </requires>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="conflicts">
+    <xsl:choose>
+      <xsl:when test="contains(@prodtype, $prod_type) or not(@prodtype)">
+        <conflicts>
+          <xsl:attribute name="idref">
+            <xsl:value-of select="@id" />
+          </xsl:attribute>
+        </conflicts>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
@@ -424,35 +473,6 @@
               <xsl:value-of select="@id" />
             </xsl:attribute>
           </check-content-ref>
-        </check>
-      </xsl:when>
-    </xsl:choose>
-  </xsl:template>
-
-  <xsl:template match="Rule/sce">
-    <xsl:choose>
-      <xsl:when test="contains(@prodtype, $prod_type) or @prodtype = 'all' or not(@prodtype)">
-        <check>
-          <xsl:attribute name="system">
-            <xsl:value-of select="$sceuri" />
-          </xsl:attribute>
-
-          <xsl:if test="@value">
-            <check-export>
-              <xsl:attribute name="export-name">
-                <xsl:value-of select="@value" />
-              </xsl:attribute>
-              <xsl:attribute name="value-id">
-                <xsl:value-of select="@value" />
-              </xsl:attribute>
-            </check-export>
-          </xsl:if>
-
-          <check-content-ref>
-            <xsl:message><xsl:value-of select="@id"/></xsl:message>
-            <xsl:attribute name="href"><xsl:value-of select="$prod_type"/>-<xsl:value-of select="@id" /></xsl:attribute>
-          </check-content-ref>
-
         </check>
       </xsl:when>
     </xsl:choose>

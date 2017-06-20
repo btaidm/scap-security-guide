@@ -629,10 +629,11 @@ macro(ssg_build_sds PRODUCT)
         add_custom_command(
             OUTPUT "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
-            COMMAND "${OSCAP_EXECUTABLE}" ds sds-compose "ssg-${PRODUCT}-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            # use --skip-valid here to avoid repeatedly validating everything
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-compose --skip-valid "ssg-${PRODUCT}-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${SED_EXECUTABLE}" -i 's/schematron-version="[0-9].[0-9]"/schematron-version="1.2"/' "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
-            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add "ssg-${PRODUCT}-cpe-dictionary.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
-            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add "ssg-${PRODUCT}-pcidss-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add --skip-valid "ssg-${PRODUCT}-cpe-dictionary.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add --skip-valid "ssg-${PRODUCT}-pcidss-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${SSG_SHARED_UTILS}/sds-move-ocil-to-checks.py" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${XSLTPROC_EXECUTABLE}" --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${SSG_SHARED_TRANSFORMS}/shared_xml-remove-unneeded-xmlns.xslt" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${XMLLINT_EXECUTABLE}" --format --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
@@ -677,9 +678,10 @@ macro(ssg_build_sds PRODUCT)
         add_custom_command(
             OUTPUT "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
-            COMMAND "${OSCAP_EXECUTABLE}" ds sds-compose "ssg-${PRODUCT}-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            # use --skip-valid here to avoid repeatedly validating everything
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-compose --skip-valid "ssg-${PRODUCT}-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${SED_EXECUTABLE}" -i 's/schematron-version="[0-9].[0-9]"/schematron-version="1.2"/' "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
-            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add "ssg-${PRODUCT}-cpe-dictionary.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${OSCAP_EXECUTABLE}" ds sds-add --skip-valid "ssg-${PRODUCT}-cpe-dictionary.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${SSG_SHARED_UTILS}/sds-move-ocil-to-checks.py" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${XSLTPROC_EXECUTABLE}" --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${SSG_SHARED_TRANSFORMS}/shared_xml-remove-unneeded-xmlns.xslt" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
             COMMAND "${XMLLINT_EXECUTABLE}" --format --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
@@ -731,17 +733,17 @@ endmacro()
 
 macro(ssg_build_remediation_roles PRODUCT TEMPLATE EXTENSION)
     add_custom_command(
-        OUTPUT "${CMAKE_BINARY_DIR}/roles/ssg-${PRODUCT}-role.${EXTENSION}"
+        OUTPUT "${CMAKE_BINARY_DIR}/roles/all-roles-${PRODUCT}-${EXTENSION}"
         COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/roles"
         COMMAND "${SSG_SHARED_UTILS}/build-all-remediation-roles.py" --input "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" --output "${CMAKE_BINARY_DIR}/roles" --template "${TEMPLATE}" --extension "${EXTENSION}" build
-        COMMAND ${CMAKE_COMMAND} -E touch "${CMAKE_BINARY_DIR}/roles/ssg-${PRODUCT}-role.${EXTENSION}"
+        COMMAND ${CMAKE_COMMAND} -E touch "${CMAKE_BINARY_DIR}/roles/all-roles-${PRODUCT}-${EXTENSION}"
         DEPENDS generate-ssg-${PRODUCT}-ds.xml
         DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
         COMMENT "[${PRODUCT}-roles] generating ${TEMPLATE} remediation roles for all profiles in ssg-${PRODUCT}-ds.xml"
     )
     add_custom_target(
-        generate-ssg-${PRODUCT}-role.${EXTENSION}
-        DEPENDS "${CMAKE_BINARY_DIR}/roles/ssg-${PRODUCT}-role.${EXTENSION}"
+        generate-all-roles-${PRODUCT}-${EXTENSION}
+        DEPENDS "${CMAKE_BINARY_DIR}/roles/all-roles-${PRODUCT}-${EXTENSION}"
     )
 endmacro()
 
@@ -821,8 +823,8 @@ macro(ssg_build_product PRODUCT)
 
     add_custom_target(
         ${PRODUCT}-roles
-        DEPENDS generate-ssg-${PRODUCT}-role.yml
-        DEPENDS generate-ssg-${PRODUCT}-role.sh
+        DEPENDS generate-all-roles-${PRODUCT}-yml
+        DEPENDS generate-all-roles-${PRODUCT}-sh
     )
     add_dependencies(${PRODUCT} ${PRODUCT}-roles)
 
@@ -968,8 +970,8 @@ macro(ssg_build_derivative_product ORIGINAL SHORTNAME DERIVATIVE)
 
     add_custom_target(
         ${DERIVATIVE}-roles
-        DEPENDS generate-ssg-${DERIVATIVE}-role.yml
-        DEPENDS generate-ssg-${DERIVATIVE}-role.sh
+        DEPENDS generate-all-roles-${DERIVATIVE}-yml
+        DEPENDS generate-all-roles-${DERIVATIVE}-sh
     )
     add_dependencies(${DERIVATIVE} ${DERIVATIVE}-roles)
 
