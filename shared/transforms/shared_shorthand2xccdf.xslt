@@ -149,7 +149,15 @@
               <xsl:apply-templates select="oval[not(@prodtype)]"/>
             </xsl:otherwise>
           </xsl:choose>
-          <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::ident|self::oval|self::prodtype)]"/>
+          <xsl:choose>
+            <xsl:when test="contains(sce/@prodtype, $prod_type) or sce/@prodtype = 'all'">
+              <xsl:apply-templates select="sce"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="sce[not(@prodtype)]"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::requires|self::conflicts|self::platform|self::ident|self::oval|self::sce|self::prodtype)]"/>
         </Rule>
       </xsl:when>
     </xsl:choose>
@@ -172,10 +180,13 @@
       <xsl:apply-templates select="ref"/>
       <xsl:apply-templates select="rationale"/>
       <xsl:apply-templates select="platform"/>
+      <xsl:apply-templates select="requires"/>
+      <xsl:apply-templates select="conflicts"/>
       <xsl:apply-templates select="ident"/>
       <!-- order oval (shorthand tag) first, to indicate to tools to prefer its automated checks -->
       <xsl:apply-templates select="oval"/>
-      <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::ident|self::oval)]"/>
+      <xsl:apply-templates select="sce"/>
+      <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::requires|self::conflicts|self::platform|self::ident|self::oval|self::sce)]"/>
     </Rule>
   </xsl:template>
 
@@ -249,7 +260,7 @@
               <xsl:apply-templates select="platform[not(@prodtype)]"/>
             </xsl:otherwise>
           </xsl:choose>
-          <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform|self::prodtype)]"/>
+          <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::requires|self::conflicts|self::platform|self::prodtype)]"/>
         </Group>
       </xsl:when>
     </xsl:choose>
@@ -267,7 +278,7 @@
       <xsl:apply-templates select="requires"/>
       <xsl:apply-templates select="conflicts"/>
       <xsl:apply-templates select="platform"/>
-      <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::platform)]"/>
+      <xsl:apply-templates select="node()[not(self::title|self::description|self::warning|self::ref|self::rationale|self::requires|self::conflicts|self::platform)]"/>
     </Group>
   </xsl:template>
 
@@ -478,6 +489,34 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template match="Rule/sce">
+    <xsl:choose>
+      <xsl:when test="contains(@prodtype, $prod_type) or @prodtype = 'all' or not(@prodtype)">
+        <check>
+          <xsl:attribute name="system">
+            <xsl:value-of select="$sceuri" />
+          </xsl:attribute>
+
+          <xsl:if test="@value">
+            <check-export>
+              <xsl:attribute name="export-name">
+                <xsl:value-of select="@value" />
+              </xsl:attribute>
+              <xsl:attribute name="value-id">
+                <xsl:value-of select="@value" />
+              </xsl:attribute>
+            </check-export>
+          </xsl:if>
+
+          <check-content-ref>
+            <xsl:message><xsl:value-of select="@id"/></xsl:message>
+            <xsl:attribute name="href"><xsl:value-of select="$prod_type"/>-<xsl:value-of select="@id" /></xsl:attribute>
+          </check-content-ref>
+
+        </check>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
 
   <!-- expand reference to would-be OCIL (inline) -->
   <xsl:template match="Rule/ocil">

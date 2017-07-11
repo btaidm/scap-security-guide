@@ -549,10 +549,10 @@ This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL
 <select idref="rsyslog_nolisten" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86837r1_rule, RHEL-07-032000 -->
-<select idref="install_mcafee_antivirus" selected="true" />
+<select idref="install_antivirus" selected="true" />
 
 <!-- SRG-OS-000480-GPOS-00227, SV-86839r1_rule, RHEL-07-032010 -->
-<select idref="mcafee_antivirus_definitions_updated" selected="true" />
+<select idref="clamav_antivirus_definitions_updated" selected="true" />
 
 <!-- SRG-OS-000027-GPOS-00008, SV-86841r1_rule, RHEL-07-040000 -->
 <select idref="accounts_max_concurrent_login_sessions" selected="true" />
