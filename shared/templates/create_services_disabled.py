@@ -36,7 +36,7 @@ class ServiceDisabledGenerator(FilesGenerator):
                 "./template_BASH_service_disabled",
                 {
                     "SERVICENAME": servicename,
-                    "DAEMONNAME": servicename
+                    "DAEMONNAME": daemonname
                 },
                 "./bash/service_{0}_disabled.sh", servicename
             )
@@ -93,7 +93,3 @@ class ServiceDisabledGenerator(FilesGenerator):
     def csv_format(self):
         return("CSV should contains lines of the format: " +
                "servicename,packagename")
-
-
-if __name__ == "__main__":
-    ServiceDisabledGenerator().main()
