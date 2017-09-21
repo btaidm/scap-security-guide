@@ -82,7 +82,7 @@ system security.
 <ident prodtype="rhel7" cce="80104-3" />
 <oval id="gnome_gdm_disable_automatic_login" />
 <ref prodtype="rhel7" stigid="010440" />
-<ref nist="CM-6(b)" disa="366" ossrg="SRG-OS-000480-GPOS-00229" cui="3.1.1" />
+<ref nist="CM-6(b)" disa="366" srg="SRG-OS-000480-GPOS-00229" cui="3.1.1" />
 </Rule>
 
 <Rule id="gnome_gdm_disable_guest_login" severity="high" prodtype="rhel7">
@@ -110,7 +110,7 @@ system security.
 <ident prodtype="rhel7" cce="80105-0" />
 <oval id="gnome_gdm_disable_guest_login" />
 <ref prodtype="rhel7" stigid="010450" />
-<ref nist="CM-6(b)" disa="366" ossrg="SRG-OS-000480-GPOS-00229" cui="3.1.1" />
+<ref nist="CM-6(b)" disa="366" srg="SRG-OS-000480-GPOS-00229" cui="3.1.1" />
 </Rule>
 
 <Rule id="dconf_gnome_disable_user_list" severity="medium" prodtype="rhel7">
@@ -182,7 +182,7 @@ due to reboot.
 <ident prodtype="rhel7" cce="80107-6" />
 <oval id="dconf_gnome_disable_restart_shutdown" />
 <ref prodtype="rhel7" stigid="TBD" />
-<ref nist="AC-6" disa="366" ossrg="SRG-OS-000480-GPOS-00227" cui="3.1.2" />
+<ref nist="AC-6" disa="366" srg="SRG-OS-000480-GPOS-00227" cui="3.1.2" />
 </Rule>
 
 <Rule id="dconf_gnome_enable_smartcard_auth" severity="medium" prodtype="rhel7">
@@ -285,12 +285,22 @@ settings, see <b><weblink-macro link="https://access.redhat.com/documentation/en
 </description>
 
 <Value id="inactivity_timeout_value" type="number" operator="equals">
-<title>Inactivity timeout</title>
-<description>Choose allowed duration of inactive SSH connections, shells, and X sessions</description>
+<title>Screensaver Inactivity timeout</title>
+<description>Choose allowed duration (in seconds) of inactive graphical sessions</description>
 <value>900</value>
 <value selector="5_minutes">300</value>
 <value selector="10_minutes">600</value>
 <value selector="15_minutes">900</value>
+<value selector="30_minutes">1800</value>
+</Value>
+
+<Value id="var_screensaver_lock_delay" type="number" operator="equals">
+<title>Screensaver Inactivity timeout</title>
+<description>Choose allowed duration (in seconds) of inactive graphical sessions</description>
+<value>0</value>
+<value selector="immediate">0</value>
+<value selector="5_seconds">5</value>
+<value selector="10_seconds">10</value>
 </Value>
 
 <Rule id="dconf_gnome_screensaver_idle_delay" severity="medium" prodtype="rhel7">
@@ -329,7 +339,7 @@ a user's session has idled and take action to initiate a session lock.
 <ident prodtype="rhel7" cce="80110-0" />
 <oval id="dconf_gnome_screensaver_idle_delay" value="inactivity_timeout_value" />
 <ref prodtype="rhel7" stigid="010070" />
-<ref nist="AC-11(a)" disa="57" pcidss="Req-8.1.8" ossrg="SRG-OS-000029-GPOS-00010" cjis="5.5.5" cui="3.1.10" />
+<ref nist="AC-11(a)" disa="57" pcidss="Req-8.1.8" srg="SRG-OS-000029-GPOS-00010" cjis="5.5.5" cui="3.1.10" />
 </Rule>
 
 <Rule id="dconf_gnome_screensaver_idle_activation_enabled" severity="medium" prodtype="rhel7">
@@ -371,7 +381,7 @@ controlled-access area.
 <ident prodtype="rhel7" cce="80111-8" />
 <oval id="dconf_gnome_screensaver_idle_activation_enabled" />
 <ref prodtype="rhel7" stigid="010100" />
-<ref nist="AC-11(a)" disa="57" ossrg="SRG-OS-000029-GPOS-00010" pcidss="Req-8.1.8"
+<ref nist="AC-11(a)" disa="57" srg="SRG-OS-000029-GPOS-00010" pcidss="Req-8.1.8"
 cjis="5.5.5" cui="3.1.10" />
 </Rule>
 
@@ -406,17 +416,17 @@ of the information system but does not want to logout because of the temporary n
 <ident prodtype="rhel7" cce="80112-6" />
 <oval id="dconf_gnome_screensaver_lock_enabled" />
 <ref prodtype="rhel7" stigid="010060" />
-<ref nist="AC-11(b)" disa="56" pcidss="Req-8.1.8" ossrg="SRG-OS-000028-GPOS-00009,OS-SRG-000030-GPOS-00011" cjis="5.5.5" cui="3.1.10" />
+<ref nist="AC-11(b)" disa="56" pcidss="Req-8.1.8" srg="SRG-OS-000028-GPOS-00009,OS-SRG-000030-GPOS-00011" cjis="5.5.5" cui="3.1.10" />
 </Rule>
 
 <Rule id="dconf_gnome_screensaver_lock_delay" severity="medium" prodtype="rhel7">
 <title>Set GNOME3 Screensaver Lock Delay After Activation Period</title>
 <description>
 To activate the locking delay of the screensaver in the GNOME3 desktop when 
-the screensaver is activated, add or set <tt>lock-delay</tt> to <tt>uint32 0</tt> in
+the screensaver is activated, add or set <tt>lock-delay</tt> to <tt>uint32 <sub idref="var_screensaver_lock_delay"/></tt> in
 <tt>/etc/dconf/db/local.d/00-security-settings</tt>. For example:
 <pre>[org/gnome/desktop/screensaver]
-lock-delay=uint32 0
+lock-delay=uint32 <sub idref="var_screensaver_lock_delay"/>
 </pre>
 Once the setting has been added, add a lock to
 <tt>/etc/dconf/db/local.d/locks/00-security-settings-lock</tt> to prevent user modification.
@@ -424,10 +434,10 @@ For example:
 <pre>/org/gnome/desktop/screensaver/lock-delay</pre>
 After the settings have been set, run <tt>dconf update</tt>.
 </description>
-<ocil clause="the screensaver lock delay has not been set or configured correctly">
+<ocil clause="the screensaver lock delay is missing, or is set to a value greater than 5">
 To check that the screen locks immediately when activated, run the following command:
 <pre>$ gsettings get org.gnome.desktop.screensaver lock-delay</pre>
-If properly configured, the output should be <tt>'uint32 0'</tt>.
+If properly configured, the output should be <tt>'uint32 <sub idref="var_screensaver_lock_delay"/>'</tt>.
 <br /><br/>
 To ensure that users cannot change how long until the the screensaver locks, run the following:
 <pre>$ grep lock-delay /etc/dconf/db/local.d/locks/*</pre>
@@ -439,9 +449,9 @@ of the information system but does not want to logout because of the temporary n
 </rationale>
 <platform idref="cpe:/a:machine" />
 <ident prodtype="rhel7" cce="80370-0" />
-<oval id="dconf_gnome_screensaver_lock_delay" />
+<oval id="dconf_gnome_screensaver_lock_delay" value="var_screensaver_lock_delay" />
 <ref prodtype="rhel7" stigid="010110" />
-<ref nist="AC-11(a)" disa="56" pcidss="Req-8.1.8" ossrg="OS-SRG-000029-GPOS-00010" cui="3.1.10" />
+<ref nist="AC-11(a)" disa="56" pcidss="Req-8.1.8" srg="OS-SRG-000029-GPOS-00010" cui="3.1.10" />
 </Rule>
 
 <Rule id="dconf_gnome_screensaver_mode_blank" prodtype="rhel7">
@@ -539,7 +549,7 @@ session lock. As such, users should not be allowed to change session settings.
 <ident prodtype="rhel7" cce="80371-8" />
 <oval id="dconf_gnome_session_user_locks" />
 <ref prodtype="rhel7" stigid="010081" />
-<ref nist="AC-11(a)" disa="57" ossrg="SRG-OS-00029-GPOS-0010" cui="3.1.10"/>
+<ref nist="AC-11(a)" disa="57" srg="SRG-OS-00029-GPOS-0010" cui="3.1.10"/>
 </Rule>
 
 </Group>
@@ -594,7 +604,7 @@ loss of availability of systems due to unintentional reboot.
 <oval id="dconf_gnome_disable_ctrlaltdel_reboot" />
 <ident prodtype="rhel7" cce="80124-1" />
 <ref prodtype="rhel7" stigid="TBD" />
-<ref nist="AC-6" disa="366" ossrg="SRG-OS-000480-GPOS-00227" cui="3.1.2" />
+<ref nist="AC-6" disa="366" srg="SRG-OS-000480-GPOS-00227" cui="3.1.2" />
 </Rule>
 
 <Rule id="dconf_gnome_disable_user_admin" severity="high" prodtype="rhel7">
@@ -873,7 +883,7 @@ remotely.
 <oval id="dconf_gnome_remote_access_encryption" />
 <ident prodtype="rhel7" cce="80121-7" />
 <ref prodtype="rhel7" stigid="TBD" />
-<ref nist="CM-2(1)(b)" disa="366" ossrg="SRG-OS-000480-GPOS-00227" cui="3.1.13" />
+<ref nist="CM-2(1)(b)" disa="366" srg="SRG-OS-000480-GPOS-00227" cui="3.1.13" />
 </Rule>
 
 </Group>
@@ -900,7 +910,7 @@ Once the settings have been added, add a lock to
 <tt>/etc/dconf/db/local.d/locks/00-security-settings-lock</tt> to prevent user modification.
 For example:
 <pre>/org/gnome/desktop/media-handling/automount
-/org/gnome/desktop/media-handling/auto-open
+/org/gnome/desktop/media-handling/automount-open
 /org/gnome/desktop/media-handling/autorun-never</pre>
 After the settings have been set, run <tt>dconf update</tt>.
 </description>

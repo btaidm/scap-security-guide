@@ -8,7 +8,8 @@
 # Build files
 rpmbuild
 scap-security-guide.spec
-build*/
+container_build/
+build/
 
 # Ignore docs tmp directories
 docs/Developer_Guide/tmp
@@ -29,3 +30,6 @@ shared/transforms/pcidss/PCI_DSS_v3-1.pdf
 # Ignore zipfile and tarball dirs
 zipfile/
 tarball/
+
+# Ignore QtCreator files
+CMakeLists.txt.user

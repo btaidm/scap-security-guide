@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/env python2
 
 import json
 import argparse
@@ -149,6 +149,8 @@ class XCCDFBenchmark(object):
         if not rule_stats:
             print('Unable to retrieve statistics for %s profile' % profile)
             sys.exit(1)
+        
+        rule_stats.sort(key=lambda r: r.dict['id'])
 
         profile_stats['profile_id'] = profile
         if ssg_version_elem is not None:

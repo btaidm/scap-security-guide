@@ -5,6 +5,7 @@
 # disruption = low
 # Include source function library.
 
-populate var_SEBOOLID
+. /usr/share/scap-security-guide/remediation_functions
+populate var_%SEBOOLID%
 
-setsebool -P SEBOOLID var_SEBOOLID
+setsebool -P %SEBOOLID% var_%SEBOOLID%

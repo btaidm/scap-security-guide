@@ -7,7 +7,6 @@ import sys
 import os
 import re
 from abc import abstractmethod
-import inspect
 
 
 class ActionType:
@@ -29,6 +28,8 @@ class TemplateNotFoundError(RuntimeError):
             "Template not found: '%s'. Looked in %s."
             % (template, ", ".join(paths))
         )
+
+TARGET_REGEX = re.compile(r"#\s*only-for:([\s\w,]*)")
 
 
 class FilesGenerator(object):
@@ -77,8 +78,6 @@ class FilesGenerator(object):
             return ""
 
         if self.action == ActionType.INPUT:
-            self.files.append(
-                os.path.abspath(inspect.getsourcefile(self.__class__)))
             self.files.append(template_filename)
             return ""
 
@@ -86,7 +85,27 @@ class FilesGenerator(object):
             filestring = template_file.read()
 
         for key, value in constants_dict.iteritems():
+            if not key.startswith("%") or not key.endswith("%"):
+                raise RuntimeError(
+                    "Refuse to replace '%s' because it doesn't start and end "
+                    "with the %% character. Please follow conventions! "
+                    "Class name: %s" % (key, self.__class__))
+
             filestring = filestring.replace(key, value)
+
+            trimmed_key = key[1:-1]  # the key without the % padding chars
+            if trimmed_key in filestring:
+                highlighted_filestring = filestring.replace(
+                    trimmed_key, "--->%s<---" % (trimmed_key)
+                )
+                raise RuntimeError(
+                    "Trimmed key '%s' was found in the filestring after the "
+                    "substitution was performed. This is usually a typo or a "
+                    "mistake in the template, the python generator or both. "
+                    "In the rare case where this is expected please rename the "
+                    "key to something unambiguous. Class name: %s. Filestring "
+                    "with the trimmed key highlighted:\n%s"
+                    % (trimmed_key, self.__class__, highlighted_filestring))
 
         for pattern, replacement in regex_replace:
             filestring = re.sub(pattern, replacement, filestring)
@@ -136,8 +155,7 @@ class FilesGenerator(object):
         """
 
         if target is not None:
-            regex = re.compile(r"#\s*only-for:([\s\w,]*)")
-            match = regex.search(line)
+            match = TARGET_REGEX.search(line)
 
             if match:
                 # if line contains restriction to target, check it

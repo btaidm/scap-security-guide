@@ -1,5 +1,3 @@
-#!/usr/bin/python2
-
 #
 # create_accounts_password.py
 #        generate template-based remediation for account passwords

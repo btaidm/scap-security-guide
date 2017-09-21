@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/env python2
 
 import os
 import sys
@@ -20,6 +20,15 @@ from create_services_disabled import ServiceDisabledGenerator
 from create_services_enabled import ServiceEnabledGenerator
 from create_sysctl import SysctlGenerator
 from create_audit_rules_dac_modification import AuditRulesDacModificationGenerator
+from create_audit_rules_unsuccessful_file_modification import AuditRulesUnsuccessfulFileModificationGenerator
+from create_audit_rules_file_deletion_events import AuditRulesFileDeletionEventsGenerator
+from create_audit_rules_login_events import AuditRulesLoginEventsGenerator
+from create_audit_rules_privileged_commands import AuditRulesPrivilegedCommandsGenerator
+from create_audit_rules_usergroup_modification import AuditRulesUserGroupModificationGenerator
+from create_audit_rules_execution import AuditRulesExecutionGenerator
+from create_file_groupowner import FileGroupOwnerGenerator
+from create_file_owner import FileOwnerGenerator
+from create_file_permissions import FilePermissionsGenerator
 
 
 class Builder(object):
@@ -40,6 +49,15 @@ class Builder(object):
             "mount_options.csv":                MountOptionsGenerator(),
             "selinux_booleans.csv":             SEBoolGenerator(),
             "audit_rules_dac_modification.csv": AuditRulesDacModificationGenerator(),
+            "audit_rules_unsuccessful_file_modification.csv":   AuditRulesUnsuccessfulFileModificationGenerator(),
+            "audit_rules_file_deletion_events.csv":  AuditRulesFileDeletionEventsGenerator(),
+            "audit_rules_login_events.csv":  AuditRulesLoginEventsGenerator(),
+            "audit_rules_privileged_commands.csv":  AuditRulesPrivilegedCommandsGenerator(),
+            "audit_rules_usergroup_modification.csv":  AuditRulesUserGroupModificationGenerator(),
+            "audit_rules_execution.csv":        AuditRulesExecutionGenerator(),
+            "file_groupowner.csv":              FileGroupOwnerGenerator(),
+            "file_owner.csv":                   FileOwnerGenerator(),
+            "file_permissions.csv":             FilePermissionsGenerator(),
         }
         self.supported_ovals = ["oval_5.10"]
         self.langs = ["bash", "ansible", "oval", "anaconda", "puppet"]
@@ -144,8 +162,7 @@ class Builder(object):
 
         list_ = []
         if action == ActionType.INPUT:
-            # add template_common source file
-            list_.append(os.path.abspath(inspect.getsourcefile(ActionType)))
+            pass
 
         for oval in self.supported_ovals:
             self._set_current_oval(oval)
