@@ -254,7 +254,7 @@ macro(_ssg_build_remediations_for_language PRODUCT LANGUAGE)
 endmacro()
 
 macro(ssg_build_sce PRODUCT)
-    file(GLOB SCE_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/input/sce/*.sh")
+    file(GLOB SCE_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/sce/*.sh")
     set(BUILD_CHECKS_DIR "${CMAKE_BINARY_DIR}")
     file(MAKE_DIRECTORY ${BUILD_CHECKS_DIR})
 
