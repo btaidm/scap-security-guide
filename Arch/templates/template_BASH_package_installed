@@ -5,4 +5,4 @@
 # disruption = low
 # Include source function library.
 
-pacman -S --needed PKGNAME
+pacman -S --needed %PKGNAME%

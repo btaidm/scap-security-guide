@@ -78,8 +78,8 @@ def map_product(version):
         return SUSE
     if version.startswith("wrlinux"):
         return WRLINUX
-	if version.startswith("archlinux"):
-		return ARCH
+    if version.startswith("archlinux"):
+        return ARCH
 
     raise RuntimeError("Can't map version '%s' to any known product!"
                        % (version))

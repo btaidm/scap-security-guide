@@ -12,3 +12,6 @@ openssh
 firewalld
 nss-pam-ldapd
 tftp-hpa
+docker
+cronie
+chrony
