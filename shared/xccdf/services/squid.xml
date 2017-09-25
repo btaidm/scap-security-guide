@@ -15,7 +15,7 @@ does not need to act as a proxy server, then it should be disabled
 and removed.
 </description>
 
-<Rule id="service_squid_disabled" prodtype="rhel7">
+<Rule id="service_squid_disabled" prodtype="rhel7,archlinux">
 <title>Disable Squid</title>
 <description>
 <systemd-service-macro enable="false" service="squid" />
@@ -27,12 +27,12 @@ and removed.
 Running proxy server software provides a network-based avenue
 of attack, and should be removed if not needed.
 </rationale>
-<ident prodtype="rhel7" cce="80285-0" />
+<ident prodtype="rhel7,archlinux" cce="80285-0" />
 <oval id="service_squid_disabled" />
 <ref cis="2.2.13" />
 </Rule>
 
-<Rule id="package_squid_removed" prodtype="rhel7">
+<Rule id="package_squid_removed" prodtype="rhel7,archlinux">
 <title>Uninstall squid Package</title>
 <description>
 <yum-macro install="false" package="squid" />
@@ -44,7 +44,7 @@ of attack, and should be removed if not needed.
 If there is no need to make the proxy server software available,
 removing it provides a safeguard against its activation.
 </rationale>
-<ident prodtype="rhel7" cce="80286-8" />
+<ident prodtype="rhel7,archlinux" cce="80286-8" />
 <oval id="package_squid_removed" />
 </Rule>
 </Group>

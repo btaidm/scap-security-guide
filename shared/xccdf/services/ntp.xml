@@ -70,7 +70,7 @@ information on the capabilities and configuration of each of the NTP daemons.
 <value selector="36_hours">17</value>
 </Value>
 
-<Rule id="service_chronyd_or_ntpd_enabled" severity="medium" prodtype="rhel7">
+<Rule id="service_chronyd_or_ntpd_enabled" severity="medium" prodtype="rhel7,archlinux">
 <title>Enable the NTP Daemon</title>
 <description>
 <systemd-service-macro enable="true" service="chronyd" />
@@ -99,12 +99,12 @@ The <tt>chronyd</tt> and <tt>ntpd</tt> NTP daemons offer all of the
 functionality of <tt>ntpdate</tt>, which is now deprecated. Additional
 information on this is available at
 <weblink-macro link="http://support.ntp.org/bin/view/Dev/DeprecatingNtpdate"/></rationale>
-<ident prodtype="rhel7" cce="27444-9" />
+<ident prodtype="rhel7,archlinux" cce="27444-9" />
 <oval id="service_chronyd_or_ntpd_enabled" />
 <ref nist="AU-8(1)" disa="160" pcidss="Req-10.4" cis="3.6" cui="3.3.7" />
 </Rule>
 
-<Rule id="chronyd_or_ntpd_specify_remote_server" severity="medium" prodtype="rhel7">
+<Rule id="chronyd_or_ntpd_specify_remote_server" severity="medium" prodtype="rhel7,archlinux">
 <title>Specify a Remote NTP Server</title>
 <description>Depending on specific functional requirements of a concrete
 production environment, the Red Hat Enterprise Linux 7 Server system can be
@@ -142,12 +142,12 @@ In the file, there should be a section similar to the following:
 <rationale>Synchronizing with an NTP server makes it possible to collate system
 logs from multiple sources or correlate computer events with real time events.
 </rationale>
-<ident prodtype="rhel7" cce="27278-1" />
+<ident prodtype="rhel7,archlinux" cce="27278-1" />
 <oval id="chronyd_or_ntpd_specify_remote_server" />
 <ref nist="AU-8(1)" disa="160" pcidss="Req-10.4.1,Req-10.4.3" cis="3.6" cui="3.3.7" />
 </Rule>
 
-<Rule id="chronyd_or_ntpd_specify_multiple_servers" prodtype="rhel7">
+<Rule id="chronyd_or_ntpd_specify_multiple_servers" prodtype="rhel7,archlinux">
 <title>Specify Additional Remote NTP Servers</title>
 <description>Depending on specific functional requirements of a concrete
 production environment, the Red Hat Enterprise Linux 7 Server system can be
@@ -174,12 +174,12 @@ accurate time data, in the event that one of the specified servers becomes
 unavailable. This is typical for a system acting as an NTP server for
 other systems.
 </rationale>
-<ident prodtype="rhel7" cce="27012-4" />
+<ident prodtype="rhel7,archlinux" cce="27012-4" />
 <oval id="chronyd_or_ntpd_specify_multiple_servers"/>
 <ref nist="AU-8(1)" pcidss="Req-10.4.3" />
 </Rule>
 
-<Rule id="chronyd_or_ntpd_set_maxpoll" prodtype="rhel7">
+<Rule id="chronyd_or_ntpd_set_maxpoll" prodtype="rhel7,archlinux">
 <title>Configure Time Service Maxpoll Interval</title>
 <description>The <tt>maxpoll</tt> should be configured to
 <sub idref="var_time_service_set_maxpoll" /> in <tt>/etc/ntp.conf</tt> or
@@ -200,9 +200,9 @@ time a particular event occurred on a system is critical when conducting
 forensic analysis and investigating system events. Sources outside the
 configured acceptable allowance (drift) may be inaccurate.
 </rationale>
-<ident prodtype="rhel7" cce="80439-3" />
+<ident prodtype="rhel7,archlinux" cce="80439-3" />
 <oval id="chronyd_or_ntpd_set_maxpoll" value="var_time_service_set_maxpoll" />
-<ref prodtype="rhel7" stigid="040500" />
+<ref prodtype="rhel7,archlinux" stigid="040500" />
 <ref nist="AU-8(1)(a)" disa="1891,2046" srg="SRG-OS-000355-GPOS-00143, SRG-OS-000356-GPOS-00144" />
 </Rule>
 

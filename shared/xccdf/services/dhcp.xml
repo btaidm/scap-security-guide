@@ -21,7 +21,7 @@ system does not need to act as a DHCP server, it should be disabled
 and removed.
 </description>
 
-<Rule id="service_dhcpd_disabled" severity="medium" prodtype="rhel7">
+<Rule id="service_dhcpd_disabled" severity="medium" prodtype="rhel7,archlinux">
 <title>Disable DHCP Service</title>
 <description>The <tt>dhcpd</tt> service should be disabled on
 any system that does not need to act as a DHCP server.
@@ -33,12 +33,12 @@ Unmanaged or unintentionally activated DHCP servers may provide faulty informati
 to clients, interfering with the operation of a legitimate site
 DHCP server if there is one.
 </rationale>
-<ident prodtype="rhel7" cce="80330-4" />
+<ident prodtype="rhel7,archlinux" cce="80330-4" />
 <oval id="service_dhcpd_disabled" />
 <ref nist="CM-7" disa="366" cis="2.2.5" />
 </Rule>
 
-<Rule id="package_dhcp_removed" severity="medium" prodtype="rhel7">
+<Rule id="package_dhcp_removed" severity="medium" prodtype="rhel7,archlinux">
 <title>Uninstall DHCP Server Package</title>
 <description>If the system does not need to act as a DHCP server,
 the dhcp package can be uninstalled.
@@ -49,7 +49,7 @@ the dhcp package can be uninstalled.
 Removing the DHCP server ensures that it cannot be easily or
 accidentally reactivated and disrupt network operation.
 </rationale>
-<ident prodtype="rhel7" cce="80331-2" />
+<ident prodtype="rhel7,archlinux" cce="80331-2" />
 <oval id="package_dhcp_removed" />
 <ref nist="CM-7" disa="366" />
 </Rule>
@@ -67,7 +67,7 @@ is divided into sections, one for each block of addresses offered by dhcpd,
 each of which contains configuration options specific to that address
 block.</description>
 
-<Rule id="dhcp_server_disable_ddns" prodtype="rhel7">
+<Rule id="dhcp_server_disable_ddns" prodtype="rhel7,archlinux">
 <title>Do Not Use Dynamic DNS</title>
 <description>To prevent the DHCP server from receiving DNS information from
 clients, edit <tt>/etc/dhcp/dhcpd.conf</tt>, and add or correct the following global
@@ -86,12 +86,12 @@ the DHCP server will attempt to act as a Dynamic DNS client. As long as the DNS
 server itself is correctly configured to reject DDNS attempts, an incorrect
 ddns-update-style setting on the client is harmless (but should be fixed as a
 best practice).</warning>
-<ident prodtype="rhel7" cce="80332-0" />
+<ident prodtype="rhel7,archlinux" cce="80332-0" />
 <!--<oval id="dhcp_server_disable_ddns" /> -->
 <ref nist="CM-7" />
 </Rule>
 
-<Rule id="dhcp_server_deny_decline" prodtype="rhel7">
+<Rule id="dhcp_server_deny_decline" prodtype="rhel7,archlinux">
 <title>Deny Decline Messages</title>
 <description>Edit <tt>/etc/dhcp/dhcpd.conf</tt> and add or correct the following
 global option to prevent the DHCP server from responding the DHCPDECLINE
@@ -101,12 +101,12 @@ that it does not consider the lease offered by the server to be valid. By
 issuing many DHCPDECLINE messages, a malicious client can exhaust the DHCP
 server's pool of IP addresses, causing the DHCP server to forget old address
 allocations.</rationale>
-<ident prodtype="rhel7" cce="80333-8" />
+<ident prodtype="rhel7,archlinux" cce="80333-8" />
 <!--<oval id="dhcp_server_deny_decline" /> -->
 <ref nist="CM-7" />
 </Rule>
 
-<Rule id="dhcp_server_deny_bootp" prodtype="rhel7">
+<Rule id="dhcp_server_deny_bootp" prodtype="rhel7,archlinux">
 <title>Deny BOOTP Queries</title>
 <description>Unless your network needs to support older BOOTP clients, disable
 support for the bootp protocol by adding or correcting the global option:
@@ -116,7 +116,7 @@ support for the bootp protocol by adding or correcting the global option:
 for this simpler protocol is not needed, it should be disabled to remove attack
 vectors against the DHCP server.
 </rationale>
-<ident prodtype="rhel7" cce="80334-6" />
+<ident prodtype="rhel7,archlinux" cce="80334-6" />
 <!--<oval id="dhcp_server_deny_bootp" /> -->
 <ref nist="CM-7" />
 </Rule>
@@ -145,12 +145,12 @@ to request much of the above information from the DHCP server. In particular,
 domain-name, domain-name-servers, and routers are configured via DHCP.  These
 settings are typically necessary for proper network functionality, but are also
 usually static across systems at a given site.</warning>
-<!-- <ident prodtype="rhel7" cce="80335-3" /> -->
+<!-- <ident prodtype="rhel7,archlinux" cce="80335-3" /> -->
 <!--<oval id="dhcp_server_minimize_served_info" /> -->
 <ref nist="CM-7" />
 </Group>
 
-<Rule id="dhcp_server_configure_logging" prodtype="rhel7">
+<Rule id="dhcp_server_configure_logging" prodtype="rhel7,archlinux">
 <title>Configure Logging</title>
 <description>Ensure that the following line exists in
 <tt>/etc/rsyslog.conf</tt>:
@@ -160,7 +160,7 @@ reported by the dhcpd process.</description>
 <rationale>By default, dhcpd logs notices to the daemon facility. Sending all
 daemon messages to a dedicated log file is part of the syslog configuration
 outlined in the Logging and Auditing section</rationale>
-<ident prodtype="rhel7" cce="80336-1" />
+<ident prodtype="rhel7,archlinux" cce="80336-1" />
 <!--<oval id="dhcp_server_configure_logging" /> -->
 <ref nist="AU-12" />
 </Rule>
@@ -176,7 +176,7 @@ of IP addresses for systems implies a greater degree of management and
 accountability for network activity.
 </description>
 
-<Rule id="sysconfig_networking_bootproto_ifcfg" prodtype="rhel7">
+<Rule id="sysconfig_networking_bootproto_ifcfg" prodtype="rhel7,archlinux">
 <title>Disable DHCP Client</title>
 <description>
 For each interface on the system (e.g. eth0), edit
@@ -209,7 +209,7 @@ DHCP relies on trusting the local network. If the local network is not trusted,
 then it should not be used.  However, the automatic configuration provided by
 DHCP is commonly used and the alternative, manual configuration, presents an
 unacceptable burden in many circumstances.</rationale>
-<ident prodtype="rhel7" cce="80337-9" />
+<ident prodtype="rhel7,archlinux" cce="80337-9" />
 <oval id="sysconfig_networking_bootproto_ifcfg" />
 <ref nist="CM-7" disa="366"/>
 </Rule>

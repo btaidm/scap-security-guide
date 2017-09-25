@@ -6,7 +6,7 @@
   isolation features of the kernel.
 </description>
 
-<Rule id="service_docker_enabled" severity="medium" prodtype="rhel7">
+<Rule id="service_docker_enabled" severity="medium" prodtype="rhel7,archlinux">
 <title>Enable the Docker service</title>
 <description>The docker service is commonly needed to
   create containers.
@@ -21,12 +21,12 @@ the docker daemon and running containers, the docker service
 has to be enabled.
 </rationale>
 <platform idref="cpe:/a:machine"/>
-<ident prodtype="rhel7" cce="80440-1" />
+<ident prodtype="rhel7,archlinux" cce="80440-1" />
 <ref nist="" disa="" srg="" />
 <oval id="service_docker_enabled" />
 </Rule>
 
-<Rule id="docker_storage_configured" severity="low" prodtype="rhel7">
+<Rule id="docker_storage_configured" severity="low" prodtype="rhel7,archlinux">
 <title>Use direct-lvm with the Device Mapper Storage Driver</title>
 <description>
 To use Docker in production with the device mapper storage driver, the Docker
@@ -42,7 +42,7 @@ driver is direct-lvm. Choosing the right storage driver and backing filesystem
 is crucial to stability and performance.
 </rationale>
 <platform idref="cpe:/a:machine"/>
-<ident prodtype="rhel7" cce="80441-9" />
+<ident prodtype="rhel7,archlinux" cce="80441-9" />
 <oval id="docker_storage_configured" />
 </Rule>
 

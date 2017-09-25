@@ -4,13 +4,15 @@
 <!-- This transform assembles all fragments into one "shorthand" XCCDF document
      Accepts the following parameters:
 
-     * SHARED_RP	(required)	Holds the resolved ABSOLUTE path
-					to the SSG's "shared/" directory.
+     * SHARED_RP    (required)  Holds the resolved ABSOLUTE path
+                    to the SSG's "shared/" directory.
+     * BUILD_RP     (required)  Holds the resolved ABSOLUTE path
+                    to the SSG's build directory - $CMAKE_BINARY_PATH
 -->
 
 <!-- Define the default value of the required "SHARED_RP" parameter -->
 <xsl:param name="SHARED_RP" select='undef' />
-
+<xsl:param name="BUILD_RP" select='undef' />
 
   <xsl:template match="Benchmark">
     <xsl:copy>
@@ -44,9 +46,9 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- <xsl:include href="../../shared/xccdf/shared_guide.xslt"/> -->
+  <xsl:include href="../shared/xccdf/shared_guide.xslt"/>
 
-  <xsl:template match="Group[@id='system']">
+<!--   <xsl:template match="Group[@id='system']">
     <xsl:copy>
       <xsl:copy-of select="@*|node()" />
       <xsl:apply-templates select="document('xccdf/system/software/software.xml')" /> 
@@ -143,7 +145,7 @@
       <xsl:apply-templates select="document('xccdf/services/snmp.xml')" />
     </xsl:copy>
   </xsl:template>
-
+ -->
   <!-- copy everything else through to final output -->
   <xsl:template match="@*|node()">
     <xsl:copy>

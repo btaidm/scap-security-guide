@@ -31,7 +31,7 @@ communication over the loopback device, then disable this service.
 </description>
 </Group> 
 
-<Rule id="network_disable_ddns_interfaces" severity="medium" prodtype="rhel7">
+<Rule id="network_disable_ddns_interfaces" severity="medium" prodtype="rhel7,archlinux">
 <title>Disable Client Dynamic DNS Updates</title>
 <description>
 Dynamic DNS allows clients to dynamically update their own DNS records.
@@ -54,12 +54,12 @@ The output should return no results.
 Dynamic DNS updates transmit unencrypted information about a system
 including its name and address and should not be used unless needed.
 </rationale>
-<ident prodtype="rhel7" cce="80357-7" />
+<ident prodtype="rhel7,archlinux" cce="80357-7" />
 <oval id="network_disable_ddns_interfaces" />
 <ref nist="CM-6(b)" disa="366" srg="SRG-OS-000480-GPOS-00227" />
 </Rule>
 
-<Rule id="network_disable_zeroconf" prodtype="rhel7">
+<Rule id="network_disable_zeroconf" prodtype="rhel7,archlinux">
 <title>Disable Zeroconf Networking</title>
 <description>Zeroconf networking allows the system to assign itself an IP
 address and engage in IP communication without a statically-assigned address or
@@ -73,12 +73,12 @@ scripts add entries to the system's routing table for these addresses. Zeroconf
 address assignment commonly occurs when the system is configured to use DHCP
 but fails to receive an address assignment from the DHCP server.
 </rationale>
-<ident prodtype="rhel7" cce="80173-8" />
+<ident prodtype="rhel7,archlinux" cce="80173-8" />
 <oval id="network_disable_zeroconf" />
 <ref nist="CM-7" />
 </Rule>
 
-<Rule id="network_configure_name_resolution" prodtype="rhel7">
+<Rule id="network_configure_name_resolution" prodtype="rhel7,archlinux">
 <title>Configure Multiple DNS Servers in /etc/resolv.conf</title>
 <description>Multiple Domain Name System (DNS) Servers should be configured
 in <tt>/etc/resolv.conf</tt>. This provides redundant name resolution services
@@ -102,13 +102,13 @@ name servers are mandated. A failure in name resolution could lead to the
 failure of security functions requiring name resolution, which may include
 time synchronization, centralized authentication, and remote system logging.
 </rationale>
-<ident prodtype="rhel7" cce="80438-5" />
+<ident prodtype="rhel7,archlinux" cce="80438-5" />
 <oval id="network_configure_name_resolution" />
-<ref prodtype="rhel7" stigid="040600" />
+<ref prodtype="rhel7,archlinux" stigid="040600" />
 <ref nist="SC-22" disa="366" srg="SRG-OS-000480-GPOS-00227" />
 </Rule>
 
-<Rule id="network_sniffer_disabled" severity="medium" prodtype="rhel7">
+<Rule id="network_sniffer_disabled" severity="medium" prodtype="rhel7,archlinux">
 <title>Ensure System is Not Acting as a Network Sniffer</title>
 <description>The system should not be acting as a network sniffer, which can
 capture all traffic on the network to which it is connected. Run the following
@@ -129,9 +129,9 @@ If the system is being used to perform a network troubleshooting function, the u
 tools must be documented with the Information Systems Security Manager (ISSM) and restricted
 to only authorized personnel.
 </rationale>
-<ident prodtype="rhel7" cce="80174-6" />
+<ident prodtype="rhel7,archlinux" cce="80174-6" />
 <oval id="network_sniffer_disabled" />
-<ref prodtype="rhel7" stigid="040670" />
+<ref prodtype="rhel7,archlinux" stigid="040670" />
 <ref nist="CM-7,CM-7(2).1(i),,MA-3" disa="366" srg="SRG-OS-000480-GPOS-00227" />
 </Rule>
 

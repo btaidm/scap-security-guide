@@ -29,7 +29,7 @@ be expressed by the '\n' character and special characters like parentheses and q
 <value selector="dod_banners">^(You[\s\n]+are[\s\n]+accessing[\s\n]+a[\s\n]+U.S.[\s\n]+Government[\s\n]+\(USG\)[\s\n]+Information[\s\n]+System[\s\n]+\(IS\)[\s\n]+that[\s\n]+is[\s\n]+provided[\s\n]+for[\s\n]+USG-authorized[\s\n]+use[\s\n]+only.[\s\n]*By[\s\n]+using[\s\n]+this[\s\n]+IS[\s\n]+\(which[\s\n]+includes[\s\n]+any[\s\n]+device[\s\n]+attached[\s\n]+to[\s\n]+this[\s\n]+IS\),[\s\n]+you[\s\n]+consent[\s\n]+to[\s\n]+the[\s\n]+following[\s\n]+conditions\:[\s\n]*-[\s\n]*The[\s\n]+USG[\s\n]+routinely[\s\n]+intercepts[\s\n]+and[\s\n]+monitors[\s\n]+communications[\s\n]+on[\s\n]+this[\s\n]+IS[\s\n]+for[\s\n]+purposes[\s\n]+including,[\s\n]+but[\s\n]+not[\s\n]+limited[\s\n]+to,[\s\n]+penetration[\s\n]+testing,[\s\n]+COMSEC[\s\n]+monitoring,[\s\n]+network[\s\n]+operations[\s\n]+and[\s\n]+defense,[\s\n]+personnel[\s\n]+misconduct[\s\n]+\(PM\),[\s\n]+law[\s\n]+enforcement[\s\n]+\(LE\),[\s\n]+and[\s\n]+counterintelligence[\s\n]+\(CI\)[\s\n]+investigations.[\s\n]*-[\s\n]*At[\s\n]+any[\s\n]+time,[\s\n]+the[\s\n]+USG[\s\n]+may[\s\n]+inspect[\s\n]+and[\s\n]+seize[\s\n]+data[\s\n]+stored[\s\n]+on[\s\n]+this[\s\n]+IS.[\s\n]*-[\s\n]*Communications[\s\n]+using,[\s\n]+or[\s\n]+data[\s\n]+stored[\s\n]+on,[\s\n]+this[\s\n]+IS[\s\n]+are[\s\n]+not[\s\n]+private,[\s\n]+are[\s\n]+subject[\s\n]+to[\s\n]+routine[\s\n]+monitoring,[\s\n]+interception,[\s\n]+and[\s\n]+search,[\s\n]+and[\s\n]+may[\s\n]+be[\s\n]+disclosed[\s\n]+or[\s\n]+used[\s\n]+for[\s\n]+any[\s\n]+USG-authorized[\s\n]+purpose.[\s\n]*-[\s\n]*This[\s\n]+IS[\s\n]+includes[\s\n]+security[\s\n]+measures[\s\n]+\(e.g.,[\s\n]+authentication[\s\n]+and[\s\n]+access[\s\n]+controls\)[\s\n]+to[\s\n]+protect[\s\n]+USG[\s\n]+interests--not[\s\n]+for[\s\n]+your[\s\n]+personal[\s\n]+benefit[\s\n]+or[\s\n]+privacy.[\s\n]*-[\s\n]*Notwithstanding[\s\n]+the[\s\n]+above,[\s\n]+using[\s\n]+this[\s\n]+IS[\s\n]+does[\s\n]+not[\s\n]+constitute[\s\n]+consent[\s\n]+to[\s\n]+PM,[\s\n]+LE[\s\n]+or[\s\n]+CI[\s\n]+investigative[\s\n]+searching[\s\n]+or[\s\n]+monitoring[\s\n]+of[\s\n]+the[\s\n]+content[\s\n]+of[\s\n]+privileged[\s\n]+communications,[\s\n]+or[\s\n]+work[\s\n]+product,[\s\n]+related[\s\n]+to[\s\n]+personal[\s\n]+representation[\s\n]+or[\s\n]+services[\s\n]+by[\s\n]+attorneys,[\s\n]+psychotherapists,[\s\n]+or[\s\n]+clergy,[\s\n]+and[\s\n]+their[\s\n]+assistants.[\s\n]+Such[\s\n]+communications[\s\n]+and[\s\n]+work[\s\n]+product[\s\n]+are[\s\n]+private[\s\n]+and[\s\n]+confidential.[\s\n]+See[\s\n]+User[\s\n]+Agreement[\s\n]+for[\s\n]+details.|I\'ve[\s\n]+read[\s\n]+\&amp;[\s\n]+consent[\s\n]+to[\s\n]+terms[\s\n]+in[\s\n]+IS[\s\n]+user[\s\n]+agreem\'t.)$</value>
 </Value>
 
-<Rule id="banner_etc_issue" severity="medium" prodtype="rhel7">
+<Rule id="banner_etc_issue" severity="medium" prodtype="rhel7,archlinux">
 <title>Modify the System Login Banner</title>
 <description>
 To configure the system login banner edit <tt>/etc/issue</tt>. Replace 
@@ -74,9 +74,9 @@ Executive Orders, directives, policies, regulations, standards, and guidance.
 System use notifications are required only for access via login interfaces with human users and
 are not required when such human interfaces do not exist.
 </rationale>
-<ident prodtype="rhel7" cce="27303-7" />
+<ident prodtype="rhel7,archlinux" cce="27303-7" />
 <oval id="banner_etc_issue" value="login_banner_text"/>
-<ref prodtype="rhel7" stigid="010050" />
+<ref prodtype="rhel7,archlinux" stigid="010050" />
 <ref nist="AC-8(a),AC-8(b),AC-8(c)(1),AC-8(c)(2),AC-8(c)(3)" disa="48"
 srg="SRG-OS-000023-GPOS-00006,SRG-OS-000024-GPOS-00007"
 cis="1.7.1.2" cui="3.1.9"/>
@@ -92,7 +92,7 @@ The following sections describe how to configure the GDM login
 banner.
 </description>
 
-<Rule id="dconf_gnome_banner_enabled" severity="medium" prodtype="rhel7">
+<Rule id="dconf_gnome_banner_enabled" severity="medium" prodtype="rhel7,archlinux">
 <title>Enable GNOME3 Login Warning Banner</title>
 <description>
 In the default graphical environment, displaying a login warning banner
@@ -126,13 +126,13 @@ Executive Orders, directives, policies, regulations, standards, and guidance.
 For U.S. Government systems, system use notifications are required only for access via login interfaces
 with human users and are not required when such human interfaces do not exist.
 </rationale>
-<ident prodtype="rhel7" cce="26970-4" />
+<ident prodtype="rhel7,archlinux" cce="26970-4" />
 <oval id="dconf_gnome_banner_enabled" />
-<ref prodtype="rhel7" stigid="010030" />
+<ref prodtype="rhel7,archlinux" stigid="010030" />
 <ref nist="AC-8(a),AC-8(b),AC-8(c)(1),AC-8(c)(2),AC-8(c)(3)" disa="48" srg="OS-SRG-000023-GPOS-00006,SRG-OS-000024-GPOS-00007,SRG-OS-000228-GPOS-00088" cui="3.1.9" />
 </Rule>
 
-<Rule id="dconf_gnome_login_banner_text" severity="medium" prodtype="rhel7">
+<Rule id="dconf_gnome_login_banner_text" severity="medium" prodtype="rhel7,archlinux">
 <title>Set the GNOME3 Login Warning Banner Text</title>
 <description>
 In the default graphical environment, configuring the login warning banner text
@@ -164,9 +164,9 @@ If properly configured, the output should be <tt>/org/gnome/login-screen/banner-
 An appropriate warning message reinforces policy awareness during the logon
 process and facilitates possible legal action against attackers.
 </rationale>
-<ident prodtype="rhel7" cce="26892-0" />
+<ident prodtype="rhel7,archlinux" cce="26892-0" />
 <oval id="dconf_gnome_login_banner_text" value="login_banner_text"/>
-<ref prodtype="rhel7" stigid="010040" />
+<ref prodtype="rhel7,archlinux" stigid="010040" />
 <ref nist="AC-8(a),AC-8(b),AC-8(c)" disa="48" srg="SRG-OS-000023-GPOS-00006,SRG-OS-000024-GPOS-00007,SRG-OS-000228-GPOS-00088" cui="3.1.9" />
 </Rule>
 
