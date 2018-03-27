@@ -11,6 +11,7 @@ from template_common import ActionType
 
 from create_accounts_password import AccountsPasswordGenerator
 from create_kernel_modules_disabled import KernelModulesDisabledGenerator
+from create_mounts import MountsGenerator
 from create_mount_options import MountOptionsGenerator
 from create_package_installed import PackageInstalledGenerator
 from create_package_removed import PackageRemovedGenerator
@@ -46,6 +47,7 @@ class Builder(object):
             "kernel_modules_disabled.csv":      KernelModulesDisabledGenerator(),
             "file_dir_permissions.csv":         PermissionGenerator(),
             "accounts_password.csv":            AccountsPasswordGenerator(),
+            "mounts.csv":                       MountsGenerator(),
             "mount_options.csv":                MountOptionsGenerator(),
             "selinux_booleans.csv":             SEBoolGenerator(),
             "audit_rules_dac_modification.csv": AuditRulesDacModificationGenerator(),
@@ -220,7 +222,7 @@ if __name__ == "__main__":
                    help="output directory")
     p.add_argument("-s", "--shared", metavar="PATH", required=True,
                    help="Full absolute path to SSG shared directory")
-    p.add_argument('--oval_version', action="store", default="oval_5.10",
+    p.add_argument('--oval_version', action="store", default="5.10",
                    help="oval version")
 
     args, unknown = p.parse_known_args()
@@ -238,10 +240,10 @@ if __name__ == "__main__":
     builder.output_dir = args.output
     builder.ssg_shared = args.shared
 
-    if args.oval_version == "oval_5.10":
+    if args.oval_version == "5.10":
         builder.supported_ovals = ["oval_5.10"]
 
-    elif args.oval_version == "oval_5.11":
+    elif args.oval_version == "5.11":
         builder.supported_ovals = ["oval_5.10", "oval_5.11"]
 
     else:

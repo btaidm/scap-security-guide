@@ -10,10 +10,10 @@ import shlex
 import string
 import subprocess
 import sys
-import xml.etree.cElementTree as ET
 
 import ssg_test_suite.oscap as oscap
 import ssg_test_suite.virt
+from ssg_test_suite import xml_operations
 from ssg_test_suite.virt import SnapshotStack
 from ssg_test_suite.log import LogHelper
 from data import iterate_over_rules
@@ -23,11 +23,14 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 def _parse_parameters(script):
     """Parse parameters from script header"""
-    params = {}
+    params = {'profiles': [],
+              'templates': [],
+              'remediation': ['all']}
     with open(script, 'r') as script_file:
-        for parameter in ['profiles', 'templates']:
+        script_content = script_file.read()
+        for parameter in params:
             found = re.search('^# {0} = ([ ,_\.\-\w]*)$'.format(parameter),
-                              script_file.read(),
+                              script_content,
                               re.MULTILINE)
             if found is None:
                 continue
@@ -39,15 +42,11 @@ def get_viable_profiles(selected_profiles, datastream, benchmark):
     """Read datastream, and return set intersection of profiles of given
     benchmark and those provided in `selected_profiles` parameter.
     """
-    NS = {'xccdf': "http://checklists.nist.gov/xccdf/1.2"}
 
     valid_profiles = []
-    root = ET.parse(datastream).getroot()
-    benchmark_node = root.find("*//xccdf:Benchmark[@id='{0}']".format(benchmark), NS)
-    if benchmark_node is None:
-        logging.error('Benchmark not found within DataStream')
-        return []
-    for ds_profile_element in benchmark_node.findall('xccdf:Profile', NS):
+    all_profiles = xml_operations.get_all_profiles_in_benchmark(
+        datastream, benchmark, logging)
+    for ds_profile_element in all_profiles:
         ds_profile = ds_profile_element.attrib['id']
         if 'ALL' in selected_profiles:
             valid_profiles += [ds_profile]
@@ -58,7 +57,8 @@ def get_viable_profiles(selected_profiles, datastream, benchmark):
             if sel_profile in ds_profile:
                 valid_profiles += [ds_profile]
     if not valid_profiles:
-        logging.error('No profile matched with "{0}"'.format(", ".join(selected_profiles)))
+        logging.error('No profile matched with "{0}"'
+                      .format(", ".join(selected_profiles)))
     return valid_profiles
 
 
@@ -98,7 +98,7 @@ def _apply_script(rule_dir, domain_ip, script):
             subprocess.check_call(shlex.split(command),
                                   stdout=log_file,
                                   stderr=subprocess.STDOUT)
-        except subprocess.CalledProcessError, e:
+        except subprocess.CalledProcessError as e:
             logging.error(("Rule testing script {0} "
                            "failed with exit code {1}").format(script,
                                                                e.returncode))
@@ -175,6 +175,8 @@ def perform_rule_check(options):
 
             if not _apply_script(rule_dir, domain_ip, script):
                 logging.error("Environment failed to prepare, skipping test")
+                snapshot_stack.revert()
+                continue
             script_params = _parse_parameters(script_path)
             has_worked = False
             profiles = get_viable_profiles(script_params['profiles'],
@@ -196,27 +198,12 @@ def perform_rule_check(options):
                                                               profile),
                                       log_target='fail')
                 has_worked = True
-                if oscap.run_rule(domain_ip=domain_ip,
-                                  profile=profile,
-                                  stage="initial",
-                                  datastream=options.datastream,
-                                  benchmark_id=options.benchmark_id,
-                                  rule_id=rule,
-                                  context=script_context,
-                                  script_name=script,
-                                  remediation=False,
-                                  dont_clean=options.dont_clean):
-                    if script_context in ['fail', 'error']:
-                        oscap.run_rule(domain_ip=domain_ip,
-                                       profile=profile,
-                                       stage="remediation",
-                                       datastream=options.datastream,
-                                       benchmark_id=options.benchmark_id,
-                                       rule_id=rule,
-                                       context='fixed',
-                                       script_name=script,
-                                       remediation=True,
-                                       dont_clean=options.dont_clean)
+                run_rule_checks(
+                    domain_ip, profile, options.datastream,
+                    options.benchmark_id, rule, script_context,
+                    script, script_params, options.remediate_using,
+                    options.dont_clean,
+                )
                 snapshot_stack.revert(delete=False)
             if not has_worked:
                 logging.error("Nothing has been tested!")
@@ -225,3 +212,51 @@ def perform_rule_check(options):
                 snapshot_stack.revert()
     if not scanned_something:
         logging.error("Rule {0} has not been found".format(options.target))
+
+
+def run_rule_checks(
+        domain_ip, profile, datastream, benchmark_id, rule,
+        script_context, script_name, script_params, runner, dont_clean):
+    def oscap_run_rule(stage, context):
+        return oscap.run_rule(
+            domain_ip=domain_ip,
+            profile=profile,
+            stage=stage,
+            datastream=datastream,
+            benchmark_id=benchmark_id,
+            rule_id=rule,
+            context=context,
+            script_name=script_name,
+            runner=runner,
+            dont_clean=dont_clean)
+
+    success = oscap_run_rule('initial', script_context)
+    if not success:
+        msg = ("The initial scan failed for rule '{}'."
+               .format(rule))
+        logging.error(msg)
+        return False
+
+    is_supported = set(['all'])
+    is_supported.add(
+        oscap.REMEDIATION_RUNNER_TO_REMEDIATION_MEANS[runner])
+    supported_and_available_remediations = set(
+        script_params['remediation']).intersection(is_supported)
+
+    if (script_context not in ['fail', 'error'] or
+            len(supported_and_available_remediations) == 0):
+        return success
+
+    success = oscap_run_rule('remediation', 'fixed')
+    if not success:
+        msg = ("The remediation failed for rule '{}'."
+               .format(rule))
+        logging.error(msg)
+        return success
+
+    success = oscap_run_rule('final', 'pass')
+    if not success:
+        msg = ("The check after remediation failed for rule '{}'."
+               .format(rule))
+        logging.error(msg)
+    return success

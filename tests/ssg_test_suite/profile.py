@@ -4,7 +4,6 @@ from __future__ import print_function
 import atexit
 import logging
 import sys
-import xml.etree.cElementTree as ET
 
 import ssg_test_suite.oscap
 import ssg_test_suite.virt
@@ -43,22 +42,25 @@ def perform_profile_check(options):
     for profile in profiles:
         logging.info("Evaluation of profile {0}.".format(profile))
         has_worked = True
+        runner = options.remediate_using
         ssg_test_suite.oscap.run_profile(domain_ip,
                                          profile,
                                          'initial',
                                          options.datastream,
-                                         options.benchmark_id)
+                                         options.benchmark_id,
+                                         runner=runner)
         ssg_test_suite.oscap.run_profile(domain_ip,
                                          profile,
                                          'remediation',
                                          options.datastream,
                                          options.benchmark_id,
-                                         remediation=True)
+                                         runner=runner)
         ssg_test_suite.oscap.run_profile(domain_ip,
                                          profile,
                                          'final',
                                          options.datastream,
-                                         options.benchmark_id)
+                                         options.benchmark_id,
+                                         runner=runner)
         snapshot_stack.revert(delete=False)
     if not has_worked:
         logging.error("Nothing has been tested!")

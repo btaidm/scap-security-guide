@@ -88,10 +88,10 @@ remote machine but the SSG content doesn't need to be.
 # oscap-ssh root@192.168.1.123 22 xccdf eval --profile xccdf_org.ssgproject.content_profile_usgcb-rhel6-server --results-arf arf.xml --report report.html /usr/share/xml/scap/ssg/content/ssg-rhel6-ds.xml
 ```
 
-## Legacy Content
+## Deprecated Content
 
-- Red Hat Enterprise Linux 5 is considered End-of-Life as of March 31, 2017. [SSG 0.1.34](https://github.com/OpenSCAP/scap-security-guide/releases/tag/v0.1.34) contains the last release with Red Hat Enterprise Linux 5 content.
-- JBoss EAP 5 is considered End-of-Life as of November 30, 2016 [SSG 0.1.35](https://github.com/OpenSCAP/scap-security-guide/releases/tag/v0.1.35) contains the last release with JBoss EAP 5 content.
+For a list of deprecated content, review the [Deprecated Content Table](https://github.com/OpenSCAP/scap-security-guide/blob/master/docs/manual/user_guide.adoc#Deprecated-Content)
+in the User Guide.
 
 ## Support
 
@@ -109,8 +109,6 @@ The COPR repository is located on:
 https://copr.fedorainfracloud.org/coprs/openscapmaint/openscap-latest/
 
 The repo enables you to test the latest greatest OpenSCAP bits on RHEL and CentOS.
-
-The former repository isimluk/OpenSCAP will not be maintained anymore. Sorry for inconvenience.
 
 #### Health Checks
 * Python Code via landscape.io: [![Code Health](https://landscape.io/github/OpenSCAP/scap-security-guide/master/landscape.png)](https://landscape.io/github/OpenSCAP/scap-security-guide/master)

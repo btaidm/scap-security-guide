@@ -1,9 +1,9 @@
 #!/usr/bin/env python2
 
 # OpenSCAP as of version 1.2.8 doesn't support OCIL check system yet. For
-# example attempt to build RHEL/6 SSG benchmark produces the following error:
+# example attempt to build rhel6 SSG benchmark produces the following error:
 #
-# scap-security-guide/RHEL/6 ] make content
+# scap-security-guide/rhel6 ] make content
 # ..
 # OpenSCAP Error: Unknown document type: 'ocil-ssg.xml' [oscap_source.c:172]
 #
@@ -37,15 +37,22 @@
 #   $ ./sds-move-ocil-to-checks.py ssg-rhel6-ds.xml new-ds.xml
 
 import sys
+import os
 
 try:
     from xml.etree import cElementTree as ElementTree
 except ImportError:
     import cElementTree as ElementTree
 
+# Put shared python modules in path
+sys.path.insert(0, os.path.join(
+        os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
+        "modules"))
+import ssgcommon
+
 xlink_ns = "http://www.w3.org/1999/xlink"
-datastream_ns = "http://scap.nist.gov/schema/scap/source/1.2"
-ocil_ns = "http://scap.nist.gov/schema/ocil/2.0"
+datastream_ns = ssgcommon.datastream_namespace
+ocil_ns = ssgcommon.ocil_namespace
 
 
 def parse_xml_file(xmlfile):

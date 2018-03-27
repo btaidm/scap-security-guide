@@ -6,19 +6,18 @@ FEDORA = 'Fedora'
 FIREFOX = 'Mozilla Firefox'
 JRE = 'Java Runtime Environment'
 RHEL = 'Red Hat Enterprise Linux'
-WEBMIN = 'Webmin'
 DEBIAN = 'Debian'
 UBUNTU = 'Ubuntu'
-RHEVM = 'Red Hat Enterprise Virtualization Manager'
 EAP = 'JBoss Enterprise Application Platform'
 FUSE = 'JBoss Fuse'
 OPENSUSE = 'OpenSUSE'
 SUSE = 'SUSE Linux Enterprise'
 WRLINUX = 'Wind River Linux'
 ARCH = 'Arch Linux'
+OL = 'Oracle Linux'
 
 multi_product_list = ["rhel", "fedora", "rhel-osp", "debian", "ubuntu",
-                      "wrlinux", "opensuse", "sle", "archlinux"]
+                      "wrlinux", "opensuse", "sle","ol","archlinux"]
 
 PRODUCT_NAME_PARSER = re.compile("([a-zA-Z\-]+)([0-9]+)")
 
@@ -60,14 +59,10 @@ def map_product(version):
         return JRE
     if version.startswith("rhel"):
         return RHEL
-    if version.startswith("webmin"):
-        return WEBMIN
     if version.startswith("debian"):
         return DEBIAN
     if version.startswith("ubuntu"):
         return UBUNTU
-    if version.startswith("rhevm"):
-        return RHEVM
     if version.startswith("eap"):
         return EAP
     if version.startswith("fuse"):
@@ -80,6 +75,9 @@ def map_product(version):
         return WRLINUX
     if version.startswith("archlinux"):
         return ARCH
+    if version.startswith("ol"):
+        return OL
+
 
     raise RuntimeError("Can't map version '%s' to any known product!"
                        % (version))

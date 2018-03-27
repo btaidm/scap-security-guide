@@ -103,6 +103,14 @@
                                 </xsl:for-each>
                         </xsl:if>
 
+                        <xsl:if test="$ref='ospp'">
+                                <xsl:for-each select="//cdf:reference[@href=$osppuri]" >
+                                        <xsl:call-template name="rule-output">
+                                                <xsl:with-param name="refinfo" select="." />
+                                        </xsl:call-template>
+                                </xsl:for-each>
+                        </xsl:if>
+
 			<xsl:if test="$ref='cui'">
                                 <xsl:for-each select="//cdf:reference[@href=$nist800-171uri]" >
                                         <xsl:call-template name="rule-output">
@@ -139,6 +147,10 @@
 
 			<xsl:if test="$ref='anssi'">
 				<xsl:for-each select="//cdf:reference[@href=$anssiuri]" >
+					<!-- There can be ANSSI references for NT28, NT007 and NT012,
+						let's sort by document and requirement number -->
+					<xsl:sort select="substring-before(.,'(')" data-type="text" />
+					<xsl:sort select="substring-before(substring-after(.,'(R'),')')" data-type="number" />
 					<xsl:call-template name="rule-output">
 						<xsl:with-param name="refinfo" select="." />
 					</xsl:call-template>

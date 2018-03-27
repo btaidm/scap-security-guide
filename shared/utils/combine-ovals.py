@@ -27,33 +27,10 @@ sys.path.insert(0, os.path.join(
         os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
         "modules"))
 from map_product_module import map_product, parse_product_name, multi_product_list
+import ssgcommon
 
-oval_ns = "http://oval.mitre.org/XMLSchema/oval-definitions-5"
-footer = "</oval_definitions>"
-
-
-def _header(schema_version, ssg_version):
-    timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")
-    return """<?xml version="1.0" encoding="UTF-8"?>
-<oval_definitions
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
-    xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5"
-    xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd
-        http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd
-        http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd
-        http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd
-        http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
-    <generator>
-        <oval:product_name>combine-ovals.py from SCAP Security Guide</oval:product_name>
-        <oval:product_version>ssg: %s, python: %s</oval:product_version>
-        <oval:schema_version>%s</oval:schema_version>
-        <oval:timestamp>%s</oval:timestamp>
-    </generator>""" % (ssg_version, platform.python_version(),
-                       schema_version, timestamp)
+oval_ns = ssgcommon.oval_namespace
+footer = ssgcommon.oval_footer
 
 
 def parse_conf_file(conf_file, product):
@@ -247,7 +224,7 @@ def append(element, newchild):
 def check_oval_version(oval_version):
     """Not necessary, but should help with typos"""
 
-    supported_versions = ["oval_5.10", "oval_5.11"]
+    supported_versions = ["5.10", "5.11"]
     if oval_version not in supported_versions:
         supported_versions_str = ", ".join(supported_versions)
         sys.stderr.write(
@@ -272,6 +249,21 @@ def check_is_loaded(loaded_dict, filename, version):
     return False
 
 
+def check_oval_version_from_oval(xml_content, oval_version):
+    oval_file_tree = ElementTree.fromstring(ssgcommon.oval_header + xml_content + footer)
+    for defgroup in oval_file_tree.findall("./{%s}def-group" % oval_ns):
+        file_oval_version = defgroup.get("oval_version")
+  
+    if file_oval_version is None:
+        # oval_version does not exist in <def-group/>
+        # which means the OVAL is supported for any version.
+        # By default, that version is 5.10
+        file_oval_version = "5.10"
+ 
+    if tuple(oval_version.split(".")) >= tuple(file_oval_version.split(".")):
+        return True
+
+
 def checks(product, oval_version, oval_dirs):
     """Concatenate all XML files in the oval directory, to create the document
        body
@@ -293,6 +285,8 @@ def checks(product, oval_version, oval_dirs):
                         if not check_is_applicable_for_product(xml_content, product):
                             continue
                         if check_is_loaded(already_loaded, filename, oval_version):
+                            continue
+                        if not check_oval_version_from_oval(xml_content, oval_version):
                             continue
                         body.append(xml_content)
                         included_checks_count += 1
@@ -335,7 +329,7 @@ def main():
     if os.path.isfile(args.oval_config):
         multi_platform = \
             parse_conf_file(args.oval_config, args.product)
-        header = _header(args.oval_version, args.ssg_version)
+        header = ssgcommon.oval_generated_header("combine-ovals.py", args.oval_version, args.ssg_version)
     else:
         sys.stderr.write("The directory specified does not contain the %s "
                          "file!\n" % (args.oval_config))
