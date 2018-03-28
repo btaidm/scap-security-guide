@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the git_system_use_nfs SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>git_system_use_nfs</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="git_system_use_nfs" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'git_system_use_nfs is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="git_system_use_nfs" />'

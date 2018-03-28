@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the smartmon_3ware SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>smartmon_3ware</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="smartmon_3ware" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'smartmon_3ware is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="smartmon_3ware" />'

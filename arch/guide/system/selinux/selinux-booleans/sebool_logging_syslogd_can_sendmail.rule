@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the logging_syslogd_can_sendmail SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>logging_syslogd_can_sendmail</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="logging_syslogd_can_sendmail" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'logging_syslogd_can_sendmail is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="logging_syslogd_can_sendmail" />'

@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the httpd_manage_ipa SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>httpd_manage_ipa</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="httpd_manage_ipa" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'httpd_manage_ipa is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="httpd_manage_ipa" />'

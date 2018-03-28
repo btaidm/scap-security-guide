@@ -1,0 +1,28 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Enable the postgresql_selinux_unconfined_dbadm SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>postgresql_selinux_unconfined_dbadm</tt> is enabled.
+    If this setting is disabled, it should be enabled as it allows Database Administrators to
+    execute Data Manipulation Language (DML) statements.
+    <sebool-macro enable="true" sebool="postgresql_selinux_unconfined_dbadm" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'postgresql_selinux_unconfined_dbadm is not enabled'
+
+ocil: '<sebool-check-macro enable="true" sebool="postgresql_selinux_unconfined_dbadm" />'

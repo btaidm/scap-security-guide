@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the fcron_crond SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>fcron_crond</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="fcron_crond" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'fcron_crond is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="fcron_crond" />'

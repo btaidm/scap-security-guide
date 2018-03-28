@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the samba_domain_controller SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>samba_domain_controller</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="samba_domain_controller" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'samba_domain_controller is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="samba_domain_controller" />'

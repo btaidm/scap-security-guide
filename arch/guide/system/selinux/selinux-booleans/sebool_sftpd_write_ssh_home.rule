@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the sftpd_write_ssh_home SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>sftpd_write_ssh_home</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="sftpd_write_ssh_home" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'sftpd_write_ssh_home is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="sftpd_write_ssh_home" />'

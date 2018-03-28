@@ -1,0 +1,28 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the squid_connect_any SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>squid_connect_any</tt> is enabled.
+    This setting should be disabled as squid should only connect on specified
+    ports.
+    <sebool-macro enable="false" sebool="squid_connect_any" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'squid_connect_any is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="squid_connect_any" />'

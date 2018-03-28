@@ -88,12 +88,7 @@ macro(ssg_build_shorthand_xml PRODUCT)
         COMMAND "${PYTHON_EXECUTABLE}" "${SSG_SHARED_UTILS}/yaml-to-shorthand.py" --product-yaml "${CMAKE_CURRENT_SOURCE_DIR}/product.yml" --bash_remediation_fns "${CMAKE_BINARY_DIR}/bash-remediation-functions.xml" --output "${CMAKE_CURRENT_BINARY_DIR}/shorthand.xml" list-inputs
         OUTPUT_VARIABLE SHORTHAND_INPUTS_STR
     )
-endmacro()
-
-macro(ssg_build_shorthand_xml PRODUCT)
-    file(GLOB AUXILIARY_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/auxiliary/*.xml")
-    file(GLOB PROFILE_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/profiles/*.xml")
-    file(GLOB XCCDF_RULE_DEPS "${CMAKE_CURRENT_SOURCE_DIR}/xccdf/**/*.xml")
+    string(REPLACE "\n" ";" SHORTHAND_INPUTS "${SHORTHAND_INPUTS_STR}")
 
     add_custom_command(
         OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/shorthand.xml"
@@ -707,17 +702,6 @@ macro(ssg_build_product PRODUCT)
         )
     endif()
 
-    add_dependencies(
-        ${PRODUCT}-validate
-        validate-ssg-${PRODUCT}-xccdf.xml
-        #validate-ssg-${PRODUCT}-xccdf-1.2.xml
-        validate-ssg-${PRODUCT}-oval.xml
-        #validate-ssg-${PRODUCT}-ocil.xml
-        validate-ssg-${PRODUCT}-cpe-dictionary.xml
-        validate-ssg-${PRODUCT}-cpe-oval.xml
-        validate-ssg-${PRODUCT}-ds.xml
-    )
-    add_dependencies(validate ${PRODUCT}-validate)
 
     add_dependencies(zipfile "generate-ssg-${PRODUCT}-ds.xml")
 
@@ -768,7 +752,7 @@ macro(ssg_build_product PRODUCT)
         # The globbing expression below is made loose so that it can also match
         # guides for PCIDSS centric benchmarks
         CODE "
-        file(GLOB GUIDE_FILES \"${CMAKE_BINARY_DIR}/guides/ssg-${PRODUCT}-guide-*.html\") \n
+        file(GLOB GUIDE_FILES \"${CMAKE_BINARY_DIR}/guides/ssg-${PRODUCT}-*.html\") \n
         if(NOT IS_ABSOLUTE ${SSG_GUIDE_INSTALL_DIR})
             file(INSTALL DESTINATION \"\${CMAKE_INSTALL_PREFIX}/${SSG_GUIDE_INSTALL_DIR}\"
                 TYPE FILE FILES \${GUIDE_FILES})
@@ -862,12 +846,12 @@ macro(ssg_build_derivative_product ORIGINAL SHORTNAME DERIVATIVE)
         generate-ssg-${DERIVATIVE}-ds.xml
     )
 
-    add_dependencies(
-        ${DERIVATIVE}-validate
-        validate-ssg-${DERIVATIVE}-xccdf.xml
-        validate-ssg-${DERIVATIVE}-ds.xml
-    )
-    add_dependencies(validate ${DERIVATIVE}-validate)
+ #   add_dependencies(
+ #       ${DERIVATIVE}-validate
+ #       validate-ssg-${DERIVATIVE}-xccdf.xml
+ #       validate-ssg-${DERIVATIVE}-ds.xml
+ #   )
+ #   add_dependencies(validate ${DERIVATIVE}-validate)
 
     add_dependencies(zipfile "generate-ssg-${DERIVATIVE}-ds.xml")
 

@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the selinuxuser_share_music SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>selinuxuser_share_music</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="selinuxuser_share_music" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'selinuxuser_share_music is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="selinuxuser_share_music" />'

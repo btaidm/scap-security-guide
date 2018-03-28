@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the exim_manage_user_files SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>exim_manage_user_files</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="exim_manage_user_files" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'exim_manage_user_files is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="exim_manage_user_files" />'

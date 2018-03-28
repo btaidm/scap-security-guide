@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the irc_use_any_tcp_ports SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>irc_use_any_tcp_ports</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="irc_use_any_tcp_ports" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'irc_use_any_tcp_ports is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="irc_use_any_tcp_ports" />'

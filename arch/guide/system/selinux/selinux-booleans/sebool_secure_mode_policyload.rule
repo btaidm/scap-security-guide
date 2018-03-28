@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the secure_mode_policyload SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>secure_mode_policyload</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="secure_mode_policyload" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'secure_mode_policyload is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="secure_mode_policyload" />'

@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the wine_mmap_zero_ignore SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>wine_mmap_zero_ignore</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="wine_mmap_zero_ignore" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'wine_mmap_zero_ignore is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="wine_mmap_zero_ignore" />'

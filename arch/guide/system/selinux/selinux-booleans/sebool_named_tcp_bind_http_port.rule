@@ -1,0 +1,27 @@
+documentation_complete: true
+
+prodtype: archlinux
+
+title: 'Disable the named_tcp_bind_http_port SELinux Boolean'
+
+description: |-
+    By default, the SELinux boolean <tt>named_tcp_bind_http_port</tt> is disabled.
+    If this setting is enabled, it should be disabled.
+    <sebool-macro enable="false" sebool="named_tcp_bind_http_port" />
+
+rationale: ""
+
+severity: medium
+
+identifiers:
+    cce@archlinux: archlinux-CCE-TBD
+
+references:
+    disa: TBD
+    nist: TBD
+    srg: TBD
+    stigid@archlinux: TBD
+
+ocil_clause: 'named_tcp_bind_http_port is not disabled'
+
+ocil: '<sebool-check-macro enable="false" sebool="named_tcp_bind_http_port" />'
