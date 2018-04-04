@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall Samba Package'
 
@@ -16,6 +16,6 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80278-5
+    cce@archlinux: 80278-5
 
 ocil: '<package-check-macro package="samba" />'

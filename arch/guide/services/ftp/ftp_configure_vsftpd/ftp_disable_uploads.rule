@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable FTP Uploads if Possible'
 
@@ -19,4 +19,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80250-4
+    cce@archlinux: 80250-4

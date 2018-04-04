@@ -12,7 +12,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 27433-2
+    cce@archlinux: 27433-2
 
 references:
     cis: 5.2.12
@@ -22,7 +22,7 @@ references:
     nist: AC-2(5),SA-8(i),AC-12
     pcidss: Req-8.1.8
     srg: SRG-OS-000163-GPOS-00072,SRG-OS-000279-GPOS-00109
-    stigid@rhel7: "040320"
+    stigid@archlinux: "040320"
 
 ocil_clause: 'it is commented out or not configured properly'
 

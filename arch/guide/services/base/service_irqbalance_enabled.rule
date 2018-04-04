@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Enable IRQ Balance (irqbalance)'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80257-9
+    cce@archlinux: 80257-9
 
 references:
     nist: CM-7

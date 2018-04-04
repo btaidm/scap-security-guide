@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Restrict NFS Clients to Privileged Ports'
 
@@ -21,7 +21,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80242-1
+    cce@archlinux: 80242-1
 
 references:
     nist: AC-3

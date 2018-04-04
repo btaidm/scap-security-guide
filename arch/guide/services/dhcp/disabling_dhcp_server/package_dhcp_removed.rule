@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall DHCP Server Package'
 
@@ -16,7 +16,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80331-2
+    cce@archlinux: 80331-2
 
 references:
     disa: 366

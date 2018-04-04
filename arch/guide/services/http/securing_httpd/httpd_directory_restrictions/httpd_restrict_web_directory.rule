@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Restrict Web Directory'
 
@@ -26,4 +26,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80317-1
+    cce@archlinux: 80317-1

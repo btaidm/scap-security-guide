@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Configure SNMP Service to Use Only SNMPv3 or Newer'
 
@@ -14,7 +14,7 @@ rationale: "Earlier versions of SNMP are considered insecure, as they potentiall
 severity: medium
 
 identifiers:
-    cce@rhel7: 80276-9
+    cce@archlinux: 80276-9
 
 ocil_clause: 'there is output'
 

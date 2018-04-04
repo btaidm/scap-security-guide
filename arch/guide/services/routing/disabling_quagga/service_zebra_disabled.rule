@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Quagga Service'
 
@@ -15,7 +15,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27191-6
+    cce@archlinux: 27191-6
 
 references:
     disa: 366

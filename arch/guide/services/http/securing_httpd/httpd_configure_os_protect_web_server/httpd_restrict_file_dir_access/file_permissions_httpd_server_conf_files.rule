@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Set Permissions on All Configuration Files Inside <tt>/etc/httpd/conf/</tt>'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80324-7
+    cce@archlinux: 80324-7
 
 references:
     nist: CM-7

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall talk Package'
 
@@ -19,7 +19,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 27432-4
+    cce@archlinux: 27432-4
 
 references:
     cis: 2.3.3

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Configure Time Service Maxpoll Interval'
 
@@ -22,13 +22,13 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80439-3
+    cce@archlinux: 80439-3
 
 references:
     disa: 1891,2046
     nist: AU-8(1)(a)
     srg: 'SRG-OS-000355-GPOS-00143, SRG-OS-000356-GPOS-00144'
-    stigid@rhel7: "040500"
+    stigid@archlinux: "040500"
 
 ocil_clause: 'it does not exist or maxpoll has not been set to the expected value'
 

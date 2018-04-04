@@ -575,6 +575,29 @@ macro(ssg_build_sds PRODUCT)
             DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-pcidss-xccdf-1.2.xml"
             COMMENT "[${PRODUCT}-content] generating ssg-${PRODUCT}-ds.xml"
         )
+    elseif("${PRODUCT}" MATCHES "archlinux")
+        add_custom_command(
+            OUTPUT "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
+            # use --skip-valid here to avoid repeatedly validating everything
+            COMMAND "${OPENSCAP_OSCAP_EXECUTABLE}" ds sds-compose --skip-valid "ssg-${PRODUCT}-xccdf-1.2.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${SED_EXECUTABLE}" -i 's/schematron-version="[0-9].[0-9]"/schematron-version="1.2"/' "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${OPENSCAP_OSCAP_EXECUTABLE}" ds sds-add --skip-valid "ssg-${PRODUCT}-cpe-dictionary.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${PYTHON_EXECUTABLE}" "${SSG_SHARED_UTILS}/sds-move-ocil-to-checks.py" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            COMMAND "${XMLLINT_EXECUTABLE}" --nsclean --format --output "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml" "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
+            DEPENDS generate-ssg-${PRODUCT}-xccdf-1.2.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-xccdf-1.2.xml"
+            DEPENDS generate-ssg-${PRODUCT}-oval.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-oval.xml"
+            DEPENDS generate-ssg-${PRODUCT}-ocil.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ocil.xml"
+            DEPENDS generate-ssg-${PRODUCT}-cpe-dictionary.xml
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-cpe-dictionary.xml"
+            DEPENDS "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-cpe-oval.xml"
+            DEPENDS copy-internal-${PRODUCT}-sce
+            # DEPENDS "${SSG_SHARED_TRANSFORMS}/shared_xml-remove-unneeded-xmlns.xslt"
+            COMMENT "[${PRODUCT}-content] generating ssg-${PRODUCT}-ds.xml"
+        )
     else()
         add_custom_command(
             OUTPUT "${CMAKE_BINARY_DIR}/ssg-${PRODUCT}-ds.xml"
@@ -663,6 +686,9 @@ endmacro()
 macro(ssg_build_product PRODUCT)
     add_custom_target(${PRODUCT}-content)
 
+    if("${PRODUCT}" MATCHES "archlinux")
+        ssg_build_sce(${PRODUCT})
+    endif()
     ssg_build_shorthand_xml(${PRODUCT})
     ssg_build_xccdf_unlinked(${PRODUCT})
     ssg_build_ocil_unlinked(${PRODUCT})
@@ -676,9 +702,6 @@ macro(ssg_build_product PRODUCT)
     ssg_build_ocil_final(${PRODUCT})
     if("${PRODUCT}" MATCHES "rhel(6|7)")
         ssg_build_pci_dss_xccdf(${PRODUCT})
-    endif()
-    if("${PRODUCT}" MATCHES "archlinux")
-        ssg_build_sce(${PRODUCT})
     endif()
     ssg_build_sds(${PRODUCT})
 

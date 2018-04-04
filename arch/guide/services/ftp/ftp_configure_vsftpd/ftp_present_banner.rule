@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Create Warning Banners for All FTP Users'
 
@@ -14,7 +14,7 @@ rationale: 'This setting will cause the system greeting banner to be used for FT
 severity: medium
 
 identifiers:
-    cce@rhel7: 80248-8
+    cce@archlinux: 80248-8
 
 references:
     disa: 48

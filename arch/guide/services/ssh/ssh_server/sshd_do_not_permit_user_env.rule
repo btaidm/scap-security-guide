@@ -15,7 +15,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27363-1
+    cce@archlinux: 27363-1
 
 references:
     cis: 5.2.10
@@ -25,7 +25,7 @@ references:
     hipaa: 164.308(a)(4)(i),164.308(b)(1),164.308(b)(3),164.310(b),164.312(e)(1),164.312(e)(2)(ii)
     nist: CM-6(b)
     srg: SRG-OS-000480-GPOS-00229
-    stigid@rhel7: "010460"
+    stigid@archlinux: "010460"
 
 ocil_clause: 'PermitUserEnvironment is not disabled'
 

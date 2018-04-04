@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Enable the NTP Daemon'
 
@@ -32,7 +32,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27444-9
+    cce@archlinux: 27444-9
 
 references:
     cis: 2.2.1.1

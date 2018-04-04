@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall vsftpd Package'
 
@@ -13,12 +13,12 @@ rationale: |-
 severity: high
 
 identifiers:
-    cce@rhel7: 80245-4
+    cce@archlinux: 80245-4
 
 references:
     disa: 366
     nist: CM-6(b),CM-7
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "040690"
+    stigid@archlinux: "040690"
 
 ocil: '<package-check-macro package="vsftpd" />'

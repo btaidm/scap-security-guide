@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Mount Remote Filesystems with noexec'
 
@@ -15,13 +15,13 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80436-9
+    cce@archlinux: 80436-9
 
 references:
     disa: 366
     nist: AC-6
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "021021"
+    stigid@archlinux: "021021"
 
 ocil_clause: 'the setting does not show'
 

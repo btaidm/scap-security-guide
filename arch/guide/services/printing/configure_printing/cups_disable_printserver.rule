@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Print Server Capabilities'
 
@@ -26,7 +26,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80284-3
+    cce@archlinux: 80284-3
 
 references:
     nist: CM-7

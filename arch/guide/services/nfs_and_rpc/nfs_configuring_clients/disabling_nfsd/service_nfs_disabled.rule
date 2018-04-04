@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable Network File System (nfs)'
 
@@ -15,7 +15,7 @@ rationale: 'Unnecessary services should be disabled to decrease the attack surfa
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80237-1
+    cce@archlinux: 80237-1
 
 references:
     cis: 2.2.7

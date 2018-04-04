@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Dovecot Service'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80294-2
+    cce@archlinux: 80294-2
 
 references:
     cis: 2.2.11

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel6,rhel7
+prodtype: rhel6,archlinux
 
 title: 'System Security Services Daemon'
 
@@ -13,4 +13,4 @@ description: |-
     <br /><br />
     For more information, see
     <os-type-macro type="rhel6"><b><weblink-macro link="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/SSSD-Introduction.html" /></b></os-type-macro>
-    <os-type-macro type="rhel7"><b><weblink-macro link="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System-Level_Authentication_Guide/SSSD.html" /></b></os-type-macro>
+    <os-type-macro type="archlinux"><b><weblink-macro link="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System-Level_Authentication_Guide/SSSD.html" /></b></os-type-macro>

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable X Windows Startup By Setting Default Target'
 
@@ -23,7 +23,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: CCE-27285-6
+    cce@archlinux: CCE-27285-6
 
 references:
     disa: 366

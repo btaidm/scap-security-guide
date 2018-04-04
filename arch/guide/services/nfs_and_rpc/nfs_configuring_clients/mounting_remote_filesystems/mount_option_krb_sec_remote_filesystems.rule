@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Mount Remote Filesystems with Kerberos Security'
 
@@ -15,13 +15,13 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27458-9
+    cce@archlinux: 27458-9
 
 references:
     disa: 366
     nist: AC-14(1)
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "040750"
+    stigid@archlinux: "040750"
 
 ocil_clause: 'the setting is not configured, has the ''sys'' option added, or does not have all Kerberos options added'
 

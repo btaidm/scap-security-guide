@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Restrict Other Critical Directories'
 
@@ -17,4 +17,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80318-9
+    cce@archlinux: 80318-9

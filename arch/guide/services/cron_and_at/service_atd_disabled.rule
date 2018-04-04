@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable At Service (atd)'
 
@@ -21,7 +21,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80345-2
+    cce@archlinux: 80345-2
 
 references:
     disa: 381

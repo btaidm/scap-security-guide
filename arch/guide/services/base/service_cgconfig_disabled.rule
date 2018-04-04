@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Control Group Config (cgconfig)'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80254-6
+    cce@archlinux: 80254-6
 
 references:
     nist: CM-7

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable DNS Server'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80325-4
+    cce@archlinux: 80325-4
 
 references:
     cis: 2.2.8

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Cyrus SASL Authentication Daemon (saslauthd)'
 
@@ -21,7 +21,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80271-0
+    cce@archlinux: 80271-0
 
 references:
     nist: AC-17(8),CM-7

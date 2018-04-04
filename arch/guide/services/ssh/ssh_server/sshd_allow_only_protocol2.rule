@@ -18,7 +18,7 @@ rationale: |-
 severity: high
 
 identifiers:
-    cce@rhel7: 27320-1
+    cce@archlinux: 27320-1
 
 references:
     cis: 5.2.2
@@ -28,7 +28,7 @@ references:
     hipaa: 164.308(a)(4)(i),164.308(b)(1),164.308(b)(3),164.310(b),164.312(e)(1),164.312(e)(2)(ii)
     nist: AC-17(8).1(ii),IA-5(1)(c)
     srg: SRG-OS-000074-GPOS-00042,SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "040390"
+    stigid@archlinux: "040390"
 
 ocil_clause: 'it is commented out or is not set correctly to Protocol 2'
 

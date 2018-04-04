@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Server Activity Status'
 
@@ -20,4 +20,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80310-6
+    cce@archlinux: 80310-6

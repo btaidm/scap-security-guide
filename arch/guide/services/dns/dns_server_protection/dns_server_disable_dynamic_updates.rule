@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Dynamic Updates'
 
@@ -25,4 +25,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80329-6
+    cce@archlinux: 80329-6

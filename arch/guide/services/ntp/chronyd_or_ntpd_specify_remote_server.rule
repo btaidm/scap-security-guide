@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Specify a Remote NTP Server'
 
@@ -33,7 +33,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27278-1
+    cce@archlinux: 27278-1
 
 references:
     cis: 3.6

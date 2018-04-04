@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall bind Package'
 
@@ -16,7 +16,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80326-2
+    cce@archlinux: 80326-2
 
 references:
     disa: 366

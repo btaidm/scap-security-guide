@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Configure Logging'
 
@@ -19,7 +19,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80336-1
+    cce@archlinux: 80336-1
 
 references:
     nist: AU-12

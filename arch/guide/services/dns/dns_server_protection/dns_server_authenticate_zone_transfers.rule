@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Authenticate Zone Transfers'
 
@@ -54,7 +54,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80328-8
+    cce@archlinux: 80328-8
 
 references:
     nist: CM-7

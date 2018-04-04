@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Place the FTP Home Directory on its Own Partition'
 
@@ -15,4 +15,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80251-2
+    cce@archlinux: 80251-2

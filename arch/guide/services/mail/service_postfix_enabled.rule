@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Enable Postfix Service'
 
@@ -18,7 +18,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80287-6
+    cce@archlinux: 80287-6
 
 ocil_clause: 'the system is not a cross domain solution and the service is not enabled'
 

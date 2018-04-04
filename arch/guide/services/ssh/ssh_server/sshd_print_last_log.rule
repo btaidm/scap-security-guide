@@ -15,13 +15,13 @@ rationale: |-
 severity: low
 
 identifiers:
-    cce@rhel7: 80225-6
+    cce@archlinux: 80225-6
 
 references:
     disa: 366
     nist: AC-9
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "040360"
+    stigid@archlinux: "040360"
 
 ocil_clause: 'it is commented out or is not enabled'
 

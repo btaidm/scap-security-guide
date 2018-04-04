@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Uninstall <tt>net-snmp</tt> Package'
 
@@ -16,6 +16,6 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80275-1
+    cce@archlinux: 80275-1
 
 ocil: '<package-check-macro package="net-snmp" />'

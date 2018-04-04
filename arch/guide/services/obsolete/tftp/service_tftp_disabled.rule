@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable tftp Service'
 
@@ -15,7 +15,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80212-4
+    cce@archlinux: 80212-4
 
 references:
     cis: 2.1.6

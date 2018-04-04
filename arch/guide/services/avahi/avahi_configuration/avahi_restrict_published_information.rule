@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Restrict Information Published by Avahi'
 
@@ -31,7 +31,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80343-7
+    cce@archlinux: 80343-7
 
 references:
     nist: CM-7

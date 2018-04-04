@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Ensure <tt>tftp</tt> Daemon Uses Secure Mode'
 
@@ -19,13 +19,13 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80214-0
+    cce@archlinux: 80214-0
 
 references:
     disa: 366
     nist: AC-6,AC-17(8),CM-7
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "040720"
+    stigid@archlinux: "040720"
 
 ocil_clause: 'this flag is missing'
 

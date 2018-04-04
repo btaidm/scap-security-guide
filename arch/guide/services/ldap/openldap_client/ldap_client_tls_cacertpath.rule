@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Configure Certificate Directives for LDAP Use of TLS'
 
@@ -15,7 +15,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80292-6
+    cce@archlinux: 80292-6
 
 references:
     disa: 776,778,1453

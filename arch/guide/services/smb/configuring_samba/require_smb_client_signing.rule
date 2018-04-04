@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Require Client SMB Packet Signing, if using <tt>smbclient</tt>'
 
@@ -21,7 +21,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80280-1
+    cce@archlinux: 80280-1
 
 ocil_clause: 'it is not'
 

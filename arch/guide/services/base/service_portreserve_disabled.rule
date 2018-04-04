@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Portreserve (portreserve)'
 
@@ -18,7 +18,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80264-5
+    cce@archlinux: 80264-5
 
 references:
     nist: AC-17(8),CM-7

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable telnet Service'
 
@@ -39,7 +39,7 @@ rationale: |-
 severity: high
 
 identifiers:
-    cce@rhel7: 27401-9
+    cce@archlinux: 27401-9
 
 references:
     cis: 2.2.18

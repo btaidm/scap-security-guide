@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Zone Transfers from the Nameserver'
 
@@ -25,4 +25,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80327-0
+    cce@archlinux: 80327-0

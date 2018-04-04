@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable rexec Service'
 
@@ -15,7 +15,7 @@ rationale: |-
 severity: high
 
 identifiers:
-    cce@rhel7: 27408-4
+    cce@archlinux: 27408-4
 
 references:
     cis: 2.2.17

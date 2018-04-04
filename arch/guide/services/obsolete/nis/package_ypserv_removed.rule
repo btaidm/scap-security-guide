@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall ypserv Package'
 
@@ -14,7 +14,7 @@ rationale: "The NIS service provides an unencrypted authentication service which
 severity: high
 
 identifiers:
-    cce@rhel7: 27399-5
+    cce@archlinux: 27399-5
 
 references:
     cis: 2.2.16
@@ -22,6 +22,6 @@ references:
     hipaa: 164.308(a)(4)(i),164.308(b)(1),164.308(b)(3),164.310(b),164.312(e)(1),164.312(e)(2)(ii)
     nist: AC-17(8),CM-7(a)
     srg: SRG-OS-000095-GPOS-00049
-    stigid@rhel7: "020010"
+    stigid@archlinux: "020010"
 
 ocil: '<package-check-macro package="ypserv" />'

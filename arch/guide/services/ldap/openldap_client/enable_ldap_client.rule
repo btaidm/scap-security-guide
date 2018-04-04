@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Enable the LDAP Client For Use in Authconfig'
 
@@ -21,7 +21,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80448-4
+    cce@archlinux: 80448-4
 
 references:
     disa: 1453

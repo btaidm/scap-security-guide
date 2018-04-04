@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable ypbind Service'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27385-4
+    cce@archlinux: 27385-4
 
 references:
     disa: 305

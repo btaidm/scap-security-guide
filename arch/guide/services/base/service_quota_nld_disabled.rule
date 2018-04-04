@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Quota Netlink (quota_nld)'
 
@@ -22,7 +22,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80267-8
+    cce@archlinux: 80267-8
 
 references:
     nist: CM-7

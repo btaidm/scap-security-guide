@@ -17,7 +17,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80219-9
+    cce@archlinux: 80219-9
 
 references:
     cui: 3.1.12

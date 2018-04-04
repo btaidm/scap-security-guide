@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Install tcp_wrappers Package'
 
@@ -17,14 +17,14 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27361-5
+    cce@archlinux: 27361-5
 
 references:
     cis: 3.4.1
     disa: 366
     nist: CM-6(b)
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: TBD
+    stigid@archlinux: TBD
 
 ocil_clause: 'the package is not installed'
 

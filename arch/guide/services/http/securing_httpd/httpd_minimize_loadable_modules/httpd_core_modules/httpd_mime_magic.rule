@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable MIME Magic'
 
@@ -16,4 +16,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80308-0
+    cce@archlinux: 80308-0

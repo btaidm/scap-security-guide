@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Configure <tt>mountd</tt> to use static port'
 
@@ -18,4 +18,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80235-5
+    cce@archlinux: 80235-5

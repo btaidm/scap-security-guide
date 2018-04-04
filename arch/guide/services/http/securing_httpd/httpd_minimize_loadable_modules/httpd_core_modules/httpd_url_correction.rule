@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable URL Correction on Misspelled Entries'
 
@@ -17,4 +17,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80312-2
+    cce@archlinux: 80312-2

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Remove tftp Daemon'
 
@@ -18,6 +18,6 @@ rationale: |-
 severity: high
 
 identifiers:
-    cce@rhel7: 80443-5
+    cce@archlinux: 80443-5
 
 ocil: '<yum-macro install="false" package="tftp" />'

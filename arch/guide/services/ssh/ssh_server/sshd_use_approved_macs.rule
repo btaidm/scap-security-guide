@@ -2,7 +2,7 @@ documentation_complete: true
 
 title: 'Use Only FIPS 140-2 Validated MACs'
 
-description: "Limit the MACs to those hash algorithms which are FIPS-approved.\nThe following line in <tt>/etc/ssh/sshd_config</tt> demonstrates use \nof FIPS-approved MACs:\n<br /><br />\n<pre>MACs hmac-sha2-512,hmac-sha2-256</pre>\n<br /><br />\nOnly the following message authentication codes are FIPS 140-2 certified on RHEL 7:\n<br />- hmac-sha1\n<br />- hmac-sha2-256\n<br />- hmac-sha2-512\n<br />- hmac-sha1-etm@openssh.com\n<br />- hmac-sha2-256-etm@openssh.com\n<br />- hmac-sha2-512-etm@openssh.com\n<br /><br />\nAny combination of the above MACs will pass this check. Official FIPS 140-2 paperwork for\nRHEL7 can be found at http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140sp/140sp2630.pdf."
+description: "Limit the MACs to those hash algorithms which are FIPS-approved.\nThe following line in <tt>/etc/ssh/sshd_config</tt> demonstrates use \nof FIPS-approved MACs:\n<br /><br />\n<pre>MACs hmac-sha2-512,hmac-sha2-256</pre>\n<br /><br />\nOnly the following message authentication codes are FIPS 140-2 certified on RHEL 7:\n<br />- hmac-sha1\n<br />- hmac-sha2-256\n<br />- hmac-sha2-512\n<br />- hmac-sha1-etm@openssh.com\n<br />- hmac-sha2-256-etm@openssh.com\n<br />- hmac-sha2-512-etm@openssh.com\n<br /><br />\nAny combination of the above MACs will pass this check. Official FIPS 140-2 paperwork for\narchlinux can be found at http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140sp/140sp2630.pdf."
 
 rationale: |-
     DoD Information Systems are required to use FIPS-approved cryptographic hash
@@ -11,7 +11,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27455-5
+    cce@archlinux: 27455-5
 
 references:
     cis: 5.2.12
@@ -20,7 +20,7 @@ references:
     hipaa: 164.308(b)(1),164.308(b)(2),164.312(e)(1),164.312(e)(2)(i),164.312(e)(2)(ii),164.314(b)(2)(i)
     nist: AC-17(2),IA-7,SC-13
     srg: SRG-OS-000250-GPOS-00093
-    stigid@rhel7: "040400"
+    stigid@archlinux: "040400"
 
 ocil_clause: 'MACs option is commented out or not using FIPS-approved hash algorithms'
 

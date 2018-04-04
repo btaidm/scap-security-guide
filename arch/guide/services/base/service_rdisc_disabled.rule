@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Network Router Discovery Daemon (rdisc)'
 
@@ -20,7 +20,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80268-6
+    cce@archlinux: 80268-6
 
 references:
     disa: 382

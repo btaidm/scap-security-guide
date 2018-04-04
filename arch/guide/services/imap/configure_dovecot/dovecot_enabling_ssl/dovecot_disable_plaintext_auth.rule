@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Plaintext Authentication'
 
@@ -11,4 +11,4 @@ rationale: "Using plain text authentication to the mail server could allow an \n
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80299-1
+    cce@archlinux: 80299-1

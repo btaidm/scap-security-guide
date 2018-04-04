@@ -20,7 +20,7 @@ severity: low
 
 references:
     cis@debian8: 9.3.2
-    cis@rhel7: 5.2.3
+    cis@archlinux: 5.2.3
 
 ocil_clause: 'it is commented out or is not enabled'
 

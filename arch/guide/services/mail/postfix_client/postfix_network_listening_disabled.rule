@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Postfix Network Listening'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80289-2
+    cce@archlinux: 80289-2
 
 references:
     cis: 2.2.15

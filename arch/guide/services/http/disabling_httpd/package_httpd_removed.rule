@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall httpd Package'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80301-5
+    cce@archlinux: 80301-5
 
 references:
     nist: CM-7

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall rsh Package'
 
@@ -19,7 +19,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 27274-0
+    cce@archlinux: 27274-0
 
 references:
     cis: 2.3.2

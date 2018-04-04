@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable the CUPS Service'
 
@@ -11,7 +11,7 @@ rationale: 'Turn off unneeded services to reduce attack surface.'
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80282-7
+    cce@archlinux: 80282-7
 
 references:
     cis: 2.2.4

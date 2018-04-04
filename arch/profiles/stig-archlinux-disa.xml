@@ -4,13 +4,13 @@
 This profile contains configuration checks that align to the 
 DISA STIG for Red Hat Enterprise Linux V1R1.
 
-In addition to being applicable to RHEL7, DISA recognizes this 
+In addition to being applicable to archlinux, DISA recognizes this 
 configuration baseline as applicable to the operating system
-tier of Red Hat technologies that are based off RHEL7, such as RHEL
+tier of Red Hat technologies that are based off archlinux, such as RHEL
 Server,  RHV-H, RHEL for HPC, RHEL Workstation, and Red Hat 
 Storage deployments.
 
-This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL7
+This is the beginning of the port for Arch Linux based on the DISA STIG for archlinux
 </description>
 
 <!-- DISA FSO REFINEMENT VALUES

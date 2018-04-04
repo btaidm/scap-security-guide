@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable D-Bus IPC Service (messagebus)'
 
@@ -16,7 +16,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80260-3
+    cce@archlinux: 80260-3
 
 references:
     nist: CM-7

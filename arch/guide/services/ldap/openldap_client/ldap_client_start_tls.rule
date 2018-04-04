@@ -1,11 +1,11 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Configure LDAP Client to Use TLS For All Transactions'
 
 description: |-
-    This check verifies that RHEL7 implements cryptography
+    This check verifies that archlinux implements cryptography
     to protect the integrity of remote LDAP authentication sessions.
     <br /><br />
     To determine if LDAP is being used for authentication, use the following
@@ -21,7 +21,7 @@ rationale: "Without cryptographic integrity protections, information can be\nalt
 severity: medium
 
 identifiers:
-    cce@rhel7: 80291-8
+    cce@archlinux: 80291-8
 
 references:
     disa: 1453

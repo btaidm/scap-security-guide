@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall talk-server Package'
 
@@ -14,7 +14,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27210-4
+    cce@archlinux: 27210-4
 
 references:
     cis: 2.2.21

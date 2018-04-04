@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable RPC ID Mapping Service (rpcidmapd)'
 
@@ -15,4 +15,4 @@ rationale: ""
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80231-4
+    cce@archlinux: 80231-4

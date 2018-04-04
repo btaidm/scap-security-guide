@@ -5,3 +5,4 @@ xorg-server-common
 nss-pam-ldapd
 tftp-hpa
 ypserv
+rsh-server

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall quagga Package'
 
@@ -17,12 +17,12 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27594-1
+    cce@archlinux: 27594-1
 
 references:
     disa: 366
     nist: SC-32
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: TBD
+    stigid@archlinux: TBD
 
 ocil: '<package-check-macro package="quagga" />'

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall xinetd Package'
 
@@ -15,7 +15,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 27354-0
+    cce@archlinux: 27354-0
 
 references:
     disa: 305

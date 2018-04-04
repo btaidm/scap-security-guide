@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Ensure Insecure File Locking is Not Allowed'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80243-9
+    cce@archlinux: 80243-9
 
 references:
     disa: 764

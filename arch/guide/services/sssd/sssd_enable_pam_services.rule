@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Configure PAM in SSSD Services'
 
@@ -22,13 +22,13 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80437-7
+    cce@archlinux: 80437-7
 
 references:
     disa: 1948,1953,1954
     nist: IA-2(11)
     srg: SRG-OS-000375-GPOS-00160,SRG-OS-000375-GPOS-00161,SRG-OS-000375-GPOS-00162
-    stigid@rhel7: "041002"
+    stigid@archlinux: "041002"
 
 ocil_clause: 'it does not exist or ''pam'' is not added to the ''services'' option under the ''sssd'' section'
 

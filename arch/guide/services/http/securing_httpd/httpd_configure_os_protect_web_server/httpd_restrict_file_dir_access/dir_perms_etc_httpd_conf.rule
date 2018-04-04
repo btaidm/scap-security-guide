@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Set Permissions on the <tt>/etc/httpd/conf/</tt> Directory'
 
@@ -13,6 +13,6 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80323-9
+    cce@archlinux: 80323-9
 
 ocil: '<fileperms-check-macro file="/etc/http/conf" perms="-rwxr-x---" />'

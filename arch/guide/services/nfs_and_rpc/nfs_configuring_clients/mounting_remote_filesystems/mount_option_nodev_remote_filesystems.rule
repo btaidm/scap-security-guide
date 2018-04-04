@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Mount Remote Filesystems with nodev'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80239-7
+    cce@archlinux: 80239-7
 
 references:
     nist: CM-7,MP-2

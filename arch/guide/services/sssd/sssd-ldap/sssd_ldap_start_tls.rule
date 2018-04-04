@@ -1,11 +1,11 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Configure SSSD LDAP Backend to Use TLS For All Transactions'
 
 description: |-
-    This check verifies that RHEL7 implements cryptography
+    This check verifies that archlinux implements cryptography
     to protect the integrity of remote LDAP authentication sessions.
     <br /><br />
     To determine if LDAP is being used for authentication, use the following
@@ -25,13 +25,13 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80546-5
+    cce@archlinux: 80546-5
 
 references:
     disa: 1453
     nist: AC-17(2),CM-7
     srg: SRG-OS-000250-GPOS-00093
-    stigid@rhel7: "040180"
+    stigid@archlinux: "040180"
 
 ocil_clause: 'the ''ldap_id_use_start_tls'' option is not set to ''True'''
 

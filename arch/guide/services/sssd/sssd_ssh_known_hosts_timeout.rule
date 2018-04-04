@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel6,rhel7
+prodtype: rhel6,archlinux
 
 title: 'Configure SSSD to Expire SSH Known Hosts'
 
@@ -21,7 +21,7 @@ severity: medium
 
 identifiers:
     cce@rhel6: RHEL6-CCE-TBD
-    cce@rhel7: 80366-8
+    cce@archlinux: 80366-8
 
 references:
     disa: 2007

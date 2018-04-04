@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable rpcbind Service'
 
@@ -11,7 +11,7 @@ rationale: ""
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80230-6
+    cce@archlinux: 80230-6
 
 references:
     cis: 2.2.7

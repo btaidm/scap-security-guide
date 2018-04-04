@@ -6,13 +6,13 @@ description: |-
     This profile contains configuration checks that align to the 
     DISA STIG for Red Hat Enterprise Linux V1R1.
 
-    In addition to being applicable to RHEL7, DISA recognizes this 
+    In addition to being applicable to archlinux, DISA recognizes this 
     configuration baseline as applicable to the operating system
-    tier of Red Hat technologies that are based off RHEL7, such as RHEL
+    tier of Red Hat technologies that are based off archlinux, such as RHEL
     Server, RHV-H, RHEL for HPC, RHEL Workstation, and Red Hat 
     Storage deployments.
 
-    This is the beginning of the port for Arch Linux based on the DISA STIG for RHEL7
+    This is the beginning of the port for Arch Linux based on the DISA STIG for archlinux
 
 selections:
     - login_banner_text=dod_banners
@@ -120,8 +120,8 @@ selections:
     - security_patches_up_to_date
     - gid_passwd_group_same
     - accounts_no_uid_except_zero
-    - no_files_unowned_by_user
-    - file_permissions_ungroupowned
+    # - no_files_unowned_by_user
+    # - file_permissions_ungroupowned
     - accounts_user_interactive_home_directory_defined
     - accounts_have_homedir_login_defs
     - accounts_user_interactive_home_directory_exists
@@ -140,7 +140,7 @@ selections:
     - mount_option_home_nosuid
     - mount_option_nosuid_removable_partitions
     - mount_option_nosuid_remote_filesystems
-    - dir_perms_world_writable_system_owned
+    # - dir_perms_world_writable_system_owned
     - accounts_umask_interactive_users
     - rsyslog_cron_logging
     - file_owner_cron_allow

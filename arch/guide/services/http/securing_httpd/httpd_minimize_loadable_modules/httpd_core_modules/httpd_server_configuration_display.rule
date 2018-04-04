@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Web Server Configuration Display'
 
@@ -19,4 +19,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80311-4
+    cce@archlinux: 80311-4

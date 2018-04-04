@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Enable Process Accounting (psacct)'
 
@@ -19,7 +19,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80265-2
+    cce@archlinux: 80265-2
 
 references:
     nist: AU-12,CM-7

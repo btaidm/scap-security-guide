@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Enable cron Service'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27323-5
+    cce@archlinux: 27323-5
 
 references:
     cis: 5.1.1

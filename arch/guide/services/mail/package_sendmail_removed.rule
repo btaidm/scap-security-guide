@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Uninstall Sendmail Package'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80288-4
+    cce@archlinux: 80288-4
 
 references:
     nist: CM-7

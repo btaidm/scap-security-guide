@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable Automatic Bug Reporting Tool (abrtd)'
 
@@ -20,7 +20,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 26872-2
+    cce@archlinux: 26872-2
 
 references:
     disa: ""

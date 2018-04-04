@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Serve Avahi Only via Required Protocol'
 
@@ -16,7 +16,7 @@ rationale: ""
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80339-5
+    cce@archlinux: 80339-5
 
 references:
     nist: CM-7

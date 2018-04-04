@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Remove SSH Server <tt>firewalld</tt> Firewall exception (Unusual)'
 
@@ -18,7 +18,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80218-1
+    cce@archlinux: 80218-1
 
 references:
     cui: 3.1.12

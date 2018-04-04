@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Specify Additional Remote NTP Servers'
 
@@ -34,7 +34,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 27012-4
+    cce@archlinux: 27012-4
 
 references:
     nist: AU-8(1)

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Limit Available Methods'
 
@@ -27,4 +27,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80319-7
+    cce@archlinux: 80319-7

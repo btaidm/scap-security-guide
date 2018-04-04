@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Remove the X Windows Package Group'
 
@@ -19,14 +19,14 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: CCE-27218-7
+    cce@archlinux: CCE-27218-7
 
 references:
     cis: 2.2.2
     disa: 366
     nist: AC-17(8).1(ii)
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "040730"
+    stigid@archlinux: "040730"
 
 ocil_clause: 'the X Windows package group or xorg-x11-server-common has not be removed'
 

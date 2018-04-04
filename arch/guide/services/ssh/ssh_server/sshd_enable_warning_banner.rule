@@ -18,7 +18,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27314-4
+    cce@archlinux: 27314-4
 
 references:
     cis: 5.2.16
@@ -27,8 +27,8 @@ references:
     disa: 48,50,1384,1385,1386,1387,1388
     hipaa: 164.308(a)(4)(i),164.308(b)(1),164.308(b)(3),164.310(b),164.312(e)(1),164.312(e)(2)(ii)
     nist: AC-8(a),AC-8(b),AC-8(c)(1),AC-8(c)(2),AC-8(c)(3)
-    ospp@rhel7: FMT_MOF_EXT.1
+    ospp@archlinux: FMT_MOF_EXT.1
     srg: SRG-OS-000023-GPOS-00006,SRG-OS-000024-GPOS-00007,SRG-OS-000228-GPOS-00088
-    stigid@rhel7: "040170"
+    stigid@archlinux: "040170"
 
 ocil: '<sshd-check-macro default="no" option="Banner" value="/etc/issue" />'

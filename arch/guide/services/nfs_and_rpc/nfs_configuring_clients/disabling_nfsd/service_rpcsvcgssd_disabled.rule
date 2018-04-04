@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable Secure RPC Server Service (rpcsvcgssd)'
 
@@ -16,6 +16,6 @@ rationale: 'Unnecessary services should be disabled to decrease the attack surfa
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80238-9
+    cce@archlinux: 80238-9
 
 ocil: '<systemd-check-macro enable="false" service="rpcsvcgssd" />'

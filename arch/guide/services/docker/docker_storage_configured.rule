@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Use direct-lvm with the Device Mapper Storage Driver'
 
@@ -19,4 +19,4 @@ rationale: |-
 severity: low
 
 identifiers:
-    cce@rhel7: 80441-9
+    cce@archlinux: 80441-9

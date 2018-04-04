@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Use Kerberos Security on All Exports'
 
@@ -18,7 +18,7 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 27464-7
+    cce@archlinux: 27464-7
 
 references:
     disa: 366

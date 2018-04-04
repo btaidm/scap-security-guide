@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Install vsftpd Package'
 
@@ -15,7 +15,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80246-2
+    cce@archlinux: 80246-2
 
 references:
     nist: CM-7

@@ -1,0 +1,14 @@
+documentation_complete: true
+
+title: 'Verify Integrity with Pacman'
+
+description: |-
+   The Pacman Package Manager includes the ability
+   to verify the integrity of installed packages by comparing the
+   installed files with information about the files taken from the
+   package metadata stored in the RPM database. Although an attacker
+   could corrupt the Pacman database (analogous to attacking the AIDE
+   database as described above), this check can still reveal
+   modification of important files. To list which files on the system differ from what is expected by the Pacman database:
+   <pre>$ pacman -Qkk</pre>
+   See the man page for <tt>pacman</tt> to see a complete explanation of each column.

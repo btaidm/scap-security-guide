@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Configure <tt>statd</tt> to use static port'
 
@@ -18,4 +18,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80234-8
+    cce@archlinux: 80234-8

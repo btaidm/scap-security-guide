@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Set httpd <tt>ServerTokens</tt> Directive to <tt>Prod</tt>'
 
@@ -17,7 +17,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80302-3
+    cce@archlinux: 80302-3
 
 references:
     nist: CM-7

@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Enable SSH Server <tt>firewalld</tt> Firewall exception'
 
@@ -18,7 +18,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80361-9
+    cce@archlinux: 80361-9
 
 references:
     cui: 3.1.12

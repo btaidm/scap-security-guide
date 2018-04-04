@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7,fedora
+prodtype: archlinux,fedora
 
 title: 'Disable Secure RPC Client Service (rpcgssd)'
 
@@ -16,4 +16,4 @@ rationale: ""
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80229-8
+    cce@archlinux: 80229-8

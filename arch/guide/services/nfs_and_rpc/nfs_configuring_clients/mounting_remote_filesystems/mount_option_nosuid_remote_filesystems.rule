@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Mount Remote Filesystems with nosuid'
 
@@ -13,13 +13,13 @@ rationale: |-
 severity: medium
 
 identifiers:
-    cce@rhel7: 80240-5
+    cce@archlinux: 80240-5
 
 references:
     disa: 366
     nist: AC-6
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "021020"
+    stigid@archlinux: "021020"
 
 ocil_clause: 'the setting does not show'
 

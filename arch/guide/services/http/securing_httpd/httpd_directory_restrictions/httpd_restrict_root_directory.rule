@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Restrict Root Directory'
 
@@ -19,4 +19,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80316-3
+    cce@archlinux: 80316-3

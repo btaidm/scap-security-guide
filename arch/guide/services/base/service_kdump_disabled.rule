@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable KDump Kernel Crash Analyzer (kdump)'
 
@@ -15,13 +15,13 @@ rationale: "Kernel core dumps may contain the full contents of system memory at 
 severity: medium
 
 identifiers:
-    cce@rhel7: 80258-7
+    cce@archlinux: 80258-7
 
 references:
     disa: 366
     hipaa: 164.308(a)(1)(ii)(D),164.308(a)(3),164.308(a)(4),164.310(b),164.310(c),164.312(a),164.312(e)
     nist: AC-17(8),CM-7,CM-6(b)
     srg: SRG-OS-000480-GPOS-00227
-    stigid@rhel7: "021300"
+    stigid@archlinux: "021300"
 
 ocil: '<systemd-check-macro enable="false" service="kdump" />'

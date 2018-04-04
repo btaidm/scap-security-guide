@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable httpd Service'
 
@@ -13,7 +13,7 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80300-7
+    cce@archlinux: 80300-7
 
 references:
     cis: 2.2.10

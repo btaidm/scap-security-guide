@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: rhel7
+prodtype: archlinux
 
 title: 'Disable CGI Support'
 
@@ -19,4 +19,4 @@ rationale: |-
 severity: unknown
 
 identifiers:
-    cce@rhel7: 80315-5
+    cce@archlinux: 80315-5
