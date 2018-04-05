@@ -163,6 +163,8 @@ message(STATUS "Arch: ${SSG_PRODUCT_ARCH}")
 
 message(STATUS " ")
 
+enable_testing()
+
 include(SSGCommon)
 
 # Targets 'stats', 'profile-stats' and 'zipfile' need to be added
