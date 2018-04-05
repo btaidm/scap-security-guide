@@ -31,3 +31,6 @@ references:
     stigid@archlinux: "040380"
 
 ocil: '<sshd-check-macro default="no" option="IgnoreUserKnownHosts" value="yes" />'
+
+values:
+    - sshd_required

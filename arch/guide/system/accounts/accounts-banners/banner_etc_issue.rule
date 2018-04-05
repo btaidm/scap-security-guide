@@ -29,3 +29,5 @@ ocil: |-
     To check if the system login banner is compliant,
     run the following command:
     <pre>$ cat /etc/issue</pre>
+
+values: login_banner_text

@@ -33,3 +33,6 @@ references:
     stigid@archlinux: "010470"
 
 ocil: '<sshd-check-macro default="yes" option="HostbasedAuthentication" value="no" />'
+
+values:
+    - sshd_required

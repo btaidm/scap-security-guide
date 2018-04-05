@@ -32,3 +32,6 @@ references:
     stigid@archlinux: "040170"
 
 ocil: '<sshd-check-macro default="no" option="Banner" value="/etc/issue" />'
+
+values:
+    - sshd_required

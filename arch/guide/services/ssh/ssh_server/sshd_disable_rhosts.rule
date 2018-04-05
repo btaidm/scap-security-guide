@@ -31,3 +31,6 @@ references:
     stigid@archlinux: "040350"
 
 ocil: '<sshd-check-macro default="yes" option="IgnoreRhosts" value="yes" />'
+
+values:
+    - sshd_required

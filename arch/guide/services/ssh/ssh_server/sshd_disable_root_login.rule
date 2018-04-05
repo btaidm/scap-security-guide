@@ -33,3 +33,6 @@ references:
     stigid@archlinux: "040370"
 
 ocil: '<sshd-check-macro default="no" option="PermitRootLogin" value="no" />'
+
+values:
+    - sshd_required

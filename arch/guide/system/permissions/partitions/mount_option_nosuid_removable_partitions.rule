@@ -28,3 +28,5 @@ references:
     nist: AC-6,AC-19(a),AC-19(d),AC-19(e),CM-7,MP-2
     srg: SRG-OS-000480-GPOS-00227
     stigid@archlinux: "021010"
+
+values: var_removable_partition

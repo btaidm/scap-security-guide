@@ -29,3 +29,6 @@ references:
     stigid@archlinux: "040710"
 
 ocil: '<sshd-check-macro default="no" option="X11Forwarding" value="yes" />'
+
+values:
+    - sshd_required
