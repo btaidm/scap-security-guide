@@ -52,9 +52,9 @@ selections:
     - sysctl_net_ipv4_conf_default_accept_redirects_value=disabled
     - sysctl_net_ipv6_conf_all_accept_source_route_value=disabled
     - sysctl_net_ipv4_conf_all_accept_redirects_value=disabled
-    - rpm_verify_permissions
-    - rpm_verify_ownership
-    - rpm_verify_hashes
+    - pacman_verify_permissions
+    # - pacman_verify_ownership
+    - pacman_verify_hashes
     - dconf_gnome_banner_enabled
     - dconf_gnome_login_banner_text
     - banner_etc_issue
