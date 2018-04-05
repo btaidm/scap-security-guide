@@ -5,7 +5,7 @@
     <metadata>
       <title>SSH Server Private Key Permissions</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>File permissions for the SSH Server's private keys should be
 set to 0640 (or stronger). By default, these files are located at /etc/ssh.</description>

@@ -3,7 +3,7 @@
     <metadata>
       <title>Enable SSH Server's Strict Mode</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Enable StrictMode to check users home directory permissions
 and configurations.</description>

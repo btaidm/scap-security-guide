@@ -4,7 +4,7 @@
     <metadata>
       <title>Package openssh-server Removed</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>The Pacman package openssh-server should be removed.</description>
     </metadata>

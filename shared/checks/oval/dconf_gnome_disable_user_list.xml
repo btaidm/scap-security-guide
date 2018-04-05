@@ -5,7 +5,7 @@
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Disable the GNOME3 GUI listing of all known users on the login screen.</description>
     </metadata>

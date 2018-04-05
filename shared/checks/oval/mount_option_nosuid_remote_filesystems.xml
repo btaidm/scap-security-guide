@@ -4,7 +4,7 @@
       <title>Mount Remote Filesystems with nosuid</title>
       <affected family="unix">
         <platform>multi_platform_rhel</platform>
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>The nosuid option should be enabled for all NFS mounts in /etc/fstab.</description>
     </metadata>

@@ -4,7 +4,7 @@
     <metadata>
       <title>Verify Cron is Logging to Rsyslog</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Rsyslog should be configured to capture cron messages.</description>
     </metadata>

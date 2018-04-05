@@ -3,7 +3,7 @@
     <metadata>
       <title>Configure AIDE to Verify Extended Attributes</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>AIDE should be configured to verify extended file attributes.</description>
     </metadata>

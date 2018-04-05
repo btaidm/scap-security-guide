@@ -4,7 +4,7 @@
     <metadata>
       <title>Verify user who owns 'cron.allow' file</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>The /etc/cron.allow file should be owned by the
       appropriate user.</description>

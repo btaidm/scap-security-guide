@@ -4,7 +4,7 @@
     <metadata>
       <title>Disable usb-storage Kernel Module</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
         <platform>Red Hat Enterprise Linux 7</platform>
         <platform>multi_platform_fedora</platform>
       </affected>

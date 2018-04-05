@@ -3,7 +3,7 @@
     <metadata>
       <title>Ensure NOPASSWD Is Not Used in Sudo</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Checks interactive shell timeout</description>
     </metadata>

@@ -3,7 +3,7 @@
     <metadata>
       <title>Use Only FIPS MACs</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Limit the Message Authentication Codes (MACs) to those which are FIPS-approved.</description>
     </metadata>

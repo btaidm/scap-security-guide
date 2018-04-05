@@ -3,7 +3,7 @@
     <metadata>
       <title>Disable Compression Or Set Compression to delayed</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>SSH should either have compression disabled or set to delayed.</description>
     </metadata>

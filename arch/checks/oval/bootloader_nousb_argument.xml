@@ -3,7 +3,7 @@
     <metadata>
       <title>Disable Kernel Support for USB via Bootloader Configuration</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Look for 'nousb' argument in the kernel line in /etc/default/grub</description>
     </metadata>

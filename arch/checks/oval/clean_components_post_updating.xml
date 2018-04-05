@@ -3,7 +3,7 @@
     <metadata>
       <title>Ensure Pacman Removes Previous Package Versions</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>pacman should be configured to remove previous software components after previous versions have been installed</description>
     </metadata>

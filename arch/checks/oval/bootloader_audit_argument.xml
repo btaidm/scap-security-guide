@@ -3,7 +3,7 @@
     <metadata>
       <title>Enable Auditing for Processes Which Start Prior to the Audit Daemon</title>
       <affected family="unix">
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Look for argument audit=1 in the kernel line in /etc/default/grub.</description>
     </metadata>

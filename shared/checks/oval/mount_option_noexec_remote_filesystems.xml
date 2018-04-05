@@ -4,7 +4,7 @@
       <title>Mount Remote Filesystems with noexec</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
-        <platform>Arch Linux</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>The noexec option should be enabled for all NFS mounts in /etc/fstab.</description>
     </metadata>
