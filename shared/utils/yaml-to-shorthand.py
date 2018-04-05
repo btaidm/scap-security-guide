@@ -365,6 +365,7 @@ class Rule(object):
         rule.ocil_clause = yaml_contents.get("ocil_clause")
         rule.ocil = yaml_contents.get("ocil")
         rule.sce = yaml_contents.get("sce")
+        rule.values = yaml_contents.get("values",[])
         return rule
 
     def to_xml_element(self):
@@ -421,6 +422,11 @@ class Rule(object):
         else:
             oval_ref = ET.SubElement(rule, "oval")
             oval_ref.set("id", self.id_)
+            if not isinstance(self.values,(list,)):
+                self.values = [self.values]
+            for idx, value in enumerate(self.values, start=1):
+                vName = "value" if idx == 1 else "value"+str(idx)
+                oval_ref.set(vName,value)
 
         if self.ocil or self.ocil_clause:
             ocil = add_sub_element(rule, 'ocil', self.ocil if self.ocil else "")
