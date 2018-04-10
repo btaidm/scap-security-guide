@@ -4,9 +4,9 @@
     <metadata>
       <title>Package Clam A/V Installed</title>
       <affected family="unix">
-        <platform>multi_platform_all</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
-      <description>McAfee Antivirus software should be installed.</description>
+      <description>ClamAV Antivirus software should be installed.</description>
     </metadata>
     <criteria>
       <criterion comment="package clamav is installed"
