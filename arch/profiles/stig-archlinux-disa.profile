@@ -120,8 +120,8 @@ selections:
     - security_patches_up_to_date
     - gid_passwd_group_same
     - accounts_no_uid_except_zero
-    # - no_files_unowned_by_user
-    # - file_permissions_ungroupowned
+    - no_files_unowned_by_user
+    - file_permissions_ungroupowned
     - accounts_user_interactive_home_directory_defined
     - accounts_have_homedir_login_defs
     - accounts_user_interactive_home_directory_exists
@@ -140,7 +140,7 @@ selections:
     - mount_option_home_nosuid
     - mount_option_nosuid_removable_partitions
     - mount_option_nosuid_remote_filesystems
-    # - dir_perms_world_writable_system_owned
+    - dir_perms_world_writable_system_owned
     - accounts_umask_interactive_users
     - rsyslog_cron_logging
     - file_owner_cron_allow
@@ -222,8 +222,8 @@ selections:
     - audit_rules_file_deletion_events_unlinkat
     - rsyslog_remote_loghost
     - rsyslog_nolisten
-    - install_mcafee_antivirus
-    - mcafee_antivirus_definitions_updated
+    - install_clamav_antivirus
+    - clamav_definitions_updated
     - accounts_max_concurrent_login_sessions
     - configure_firewalld_ports
     - sshd_use_approved_ciphers
@@ -234,7 +234,7 @@ selections:
     - sssd_ldap_configure_tls_ca
     - sysctl_kernel_randomize_va_space
     - package_openssh-server_installed
-    - sshd_required=yes
+    - sshd_required=no
     - service_sshd_enabled
     - sshd_set_idle_timeout
     - sshd_disable_rhosts_rsa
