@@ -1,5 +1,7 @@
 #!/usr/bin/env python2
 
+from __future__ import print_function
+
 """
 Takes given XCCDF or DataStream and adds RHEL derivative operating system(s) CPE name next
 to RHEL CPE names. Can automatically recognize RHEL6, 7, etc. CPEs and adds the derivitive OS ones
@@ -208,13 +210,16 @@ def main():
     parser.add_option("--enable-sl", dest="sl", default=False,
                       action="store_true", help="Enable Scientific Linux")
     parser.add_option("-i", "--input", dest="input_content", default=False,
-                      action="store", help="INPUT can be XCCDF or Source DataStream")
+                      action="store",
+                      help="INPUT can be XCCDF or Source DataStream")
     parser.add_option("-o", "--output", dest="output", default=False,
                       action="store", help="XML Tree content")
     (options, args) = parser.parse_args()
 
     if options.centos and options.sl:
-        print "Cannot enable two derivative OS(s) at the same time"
+        sys.stderr.write(
+            "Cannot enable two derivative OS(s) at the same time\n"
+        )
         parser.print_help()
         sys.exit(1)
 
@@ -261,16 +266,18 @@ def main():
     for namespace, benchmark in benchmarks:
         if not add_derivative_cpes(benchmark, namespace, mapping):
             raise RuntimeError(
-                "Could not add derivative OS CPEs to Benchmark '%s'." % (benchmark)
+                "Could not add derivative OS CPEs to Benchmark '%s'."
+                % (benchmark)
             )
 
         if not add_derivative_notice(benchmark, namespace, notice, warning):
             raise RuntimeError(
-                "Managed to add derivative OS CPEs but failed to add the notice to "
-                "affected XCCDF Benchmark '%s'." % (benchmark)
+                "Managed to add derivative OS CPEs but failed to add the "
+                "notice to affected XCCDF Benchmark '%s'." % (benchmark)
             )
 
     tree.write(options.output)
+
 
 if __name__ == "__main__":
     main()
