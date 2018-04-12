@@ -36,3 +36,7 @@ ocil: |-
     determine how many logs the system is configured to retain after rotation:
     <tt>$ sudo grep num_logs /etc/audit/auditd.conf</tt>
     <pre>num_logs = 5</pre>
+
+
+values:
+    - var_auditd_num_logs

@@ -30,4 +30,5 @@ ocil: |-
     run the following command:
     <pre>$ cat /etc/issue</pre>
 
-values: login_banner_text
+values:
+    - login_banner_text

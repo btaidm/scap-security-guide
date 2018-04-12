@@ -29,4 +29,6 @@ references:
     srg: SRG-OS-000480-GPOS-00227
     stigid@archlinux: "021010"
 
-values: var_removable_partition
+
+values:
+    - var_removable_partition

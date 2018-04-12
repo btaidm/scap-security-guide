@@ -34,3 +34,4 @@ ocil: |-
 
 values:
     - sshd_required
+    - sshd_idle_timeout_value
