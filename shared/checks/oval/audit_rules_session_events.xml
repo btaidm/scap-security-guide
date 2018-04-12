@@ -4,6 +4,7 @@
       <title>Record Attempts to Alter Process and Session Initiation Information</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
         <platform>multi_platform_fedora</platform>
       </affected>
       <description>Audit rules should capture information about session initiation.</description>

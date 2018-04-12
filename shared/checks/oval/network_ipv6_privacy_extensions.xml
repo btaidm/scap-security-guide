@@ -5,6 +5,7 @@
       <title>Enable Privacy Extensions for IPv6</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Enable privacy extensions for IPv6</description>
     </metadata>

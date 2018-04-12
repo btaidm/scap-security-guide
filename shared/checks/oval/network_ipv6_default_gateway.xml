@@ -5,6 +5,7 @@
       <title>Manually Assign IPv6 Router Address</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Define default gateways for IPv6 traffic</description>
     </metadata>

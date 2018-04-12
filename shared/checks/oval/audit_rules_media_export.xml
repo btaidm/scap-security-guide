@@ -4,6 +4,7 @@
       <title>Audit Information Export To Media</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
         <platform>multi_platform_fedora</platform>
       </affected>
       <description>Audit rules that detect the mounting of filesystems should be enabled.</description>

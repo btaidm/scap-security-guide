@@ -4,6 +4,7 @@
       <title>Configure LDAP CA Certificate Path</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Require the use of TLS for ldap clients.</description>
     </metadata>

@@ -4,6 +4,7 @@
       <title>Service dovecot Disabled</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>The dovecot service should be disabled if possible.</description>
     </metadata>

@@ -4,6 +4,7 @@
       <title>File /boot/efi/EFI/redhat/grub.cfg Owned By root User</title>
       <affected family="unix">
         <platform>Red Hat Enterprise Linux 7</platform>
+        <platform>multi_platform_archlinux</platform>
         <platform>multi_platform_fedora</platform>
       </affected>
       <description>The /boot/efi/EFI/redhat/grub.cfg file should be owned by the root user.</description>

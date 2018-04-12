@@ -4,6 +4,7 @@
       <title>Mount Remote Filesystems with nodev</title>
       <affected family="unix">
         <platform>multi_platform_rhel</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>The nodev option should be enabled for all NFS mounts in /etc/fstab.</description>
     </metadata>
