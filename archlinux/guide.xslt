@@ -46,7 +46,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:include href="xccdf/guide.xslt"/>
+  <xsl:include href="../shared/xccdf/shared_guide.xslt"/>
 
 <!--   <xsl:template match="Group[@id='system']">
     <xsl:copy>

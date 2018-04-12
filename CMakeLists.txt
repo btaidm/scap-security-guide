@@ -239,7 +239,7 @@ if (SSG_PRODUCT_WRLINUX)
 endif()
 
 if (SSG_PRODUCT_ARCH)
-    add_subdirectory("arch")
+    add_subdirectory("archlinux")
 endif()
 
 if (SSG_PRODUCT_OL7)
