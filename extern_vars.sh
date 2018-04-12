@@ -2,7 +2,6 @@
 
 # line='./shared/checks/oval/accounts_passwords_pam_faillock_interval.xml: <external_variable comment="number of failed login attempts allowed" datatype="int" id="var_accounts_passwords_pam_faillock_fail_interval" version="2" />'
 grep -r external_variable ./shared/checks/oval | while read line; do
-	echo $line
 	OIFS=$IFS
 	IFS=':'
 	fileline=(${line})
@@ -11,17 +10,16 @@ grep -r external_variable ./shared/checks/oval | while read line; do
 
 	varxml=$(grep -A1 -h "external_variable" "${fileline[0]}" | tr '\n' ' ')
 
-	echo $varxml
+	# echo $varxml
 	# varxml=${fileline[1]}
 
 	[[ "$varxml" =~ id=\"([^\"]+?) ]] && var=${BASH_REMATCH[1]}
 
-	echo ${file%.*}
-	echo $var
+	# echo ${file%.*}
+	# echo $var
 
-	rulefile=`find ./archlinux -name '*'"${file%.*}"'*'`
+	rulefile=`find ./archlinux -name '*'"${file%.*}"'.rule'`
 
-	echo $rulefile
 
 	if ! [ -z "$rulefile" ]; then
 
@@ -36,6 +34,7 @@ DOC
 
 	if ! grep -q "\- $var" "$rulefile"
 	then
+		echo $rulefile
 		cat >> $rulefile <<-DOC
 	    - $var
 DOC
