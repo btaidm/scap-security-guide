@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # platform = archlinux
 
-
-if (paccheck --sha256sum --list-broken); then
+# ignore grub package since changes to its configuration files are required but cause the check to fail
+if ! ( paccheck --sha256sum --list-broken | grep --invert grub ); then
 	exit $XCCDF_RESULT_PASS
 else
 	echo Installed package files have been modified
