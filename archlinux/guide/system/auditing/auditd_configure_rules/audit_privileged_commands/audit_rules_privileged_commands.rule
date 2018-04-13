@@ -51,6 +51,8 @@ references:
 
 ocil_clause: 'it is not the case'
 
+sce: 'audit-rules-privileged-commands.sh'
+
 ocil: |-
     To verify that auditing of privileged command use is configured, run the
     following command for each local partition <i>PART</i> to find relevant
