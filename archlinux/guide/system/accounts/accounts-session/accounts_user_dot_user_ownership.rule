@@ -27,6 +27,8 @@ references:
 
 ocil_clause: 'they are not'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify all local initialization files for interactive users are owned by the
     primary user, run the following command:

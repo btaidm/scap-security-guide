@@ -33,6 +33,8 @@ references:
 
 ocil_clause: 'paths contain more than local home directories'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify that all interactive user initialization files executable search
     path statements do not contain statements that will reference a working
