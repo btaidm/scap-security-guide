@@ -27,6 +27,8 @@ references:
 
 ocil_clause: 'they are not 0740 or more permissive'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify that all user initialization files have a mode of <tt>0740</tt> or
     less permissive, run the following command:

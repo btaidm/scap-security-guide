@@ -30,6 +30,8 @@ references:
 
 ocil_clause: 'users home directory does not exist'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify the assigned home directory of all interactive users on the system
     exist, run the following command:

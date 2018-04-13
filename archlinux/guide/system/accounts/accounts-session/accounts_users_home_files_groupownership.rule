@@ -27,6 +27,8 @@ references:
 
 ocil_clause: 'the group ownership is incorrect'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify all files and directories in interactive user home directory are
     group-owned by a group the user is a member of, run the

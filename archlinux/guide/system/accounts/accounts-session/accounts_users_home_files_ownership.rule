@@ -28,6 +28,8 @@ references:
 
 ocil_clause: 'the user ownership is incorrect'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify all files and directories in interactive users home directory
     are owned by the user, run the following command:

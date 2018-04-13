@@ -29,6 +29,8 @@ references:
 
 ocil_clause: 'the group ownership is incorrect'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify the assigned home directory of all interactive users is group-
     owned by that users primary GID, run the following command:

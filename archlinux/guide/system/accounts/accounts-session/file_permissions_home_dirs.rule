@@ -35,6 +35,8 @@ references:
 
 ocil_clause: 'the user home directory is group-writable or world-readable'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To ensure the user home directory is not group-writable or world-readable, run the following:
     <pre># ls -ld /home/<i>USER</i></pre>

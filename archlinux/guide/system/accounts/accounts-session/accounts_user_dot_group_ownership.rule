@@ -28,6 +28,8 @@ references:
 
 ocil_clause: 'they are not'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify the local initialization files of all local interactive users are group-
     owned by the appropriate user, inspect the primary group of the respective

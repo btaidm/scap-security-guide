@@ -27,6 +27,8 @@ references:
 
 ocil_clause: 'they are more permissive'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify the assigned home directory of all interactive user home directories
     have a mode of <pre>0750</pre> or less permissive, run the following command:

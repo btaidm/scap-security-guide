@@ -26,6 +26,8 @@ references:
 
 ocil_clause: 'home directory files or folders have incorrect permissions'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify all files and directories contained in interactive user home
     directory, excluding local initialization files, have a mode of <tt>0750</tt>,

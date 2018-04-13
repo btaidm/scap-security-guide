@@ -220,8 +220,8 @@ selections:
     - audit_rules_file_deletion_events_rmdir
     - audit_rules_file_deletion_events_unlink
     - audit_rules_file_deletion_events_unlinkat
-    - rsyslog_remote_loghost
-    - rsyslog_nolisten
+#     - rsyslog_remote_loghost
+#     - rsyslog_nolisten
     - install_clam_antivirus
     - clamav_definitions_updated
     - accounts_max_concurrent_login_sessions

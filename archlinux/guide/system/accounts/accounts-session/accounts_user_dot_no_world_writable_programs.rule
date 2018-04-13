@@ -29,6 +29,8 @@ references:
 
 ocil_clause: 'files are executing world-writable programs'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify that local initialization files do not execute world-writable programs,
     execute the following command:
