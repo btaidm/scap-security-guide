@@ -110,7 +110,7 @@ selections:
     - ensure_gpgcheck_local_packages
     - ensure_gpgcheck_repo_metadata
     - kernel_module_usb-storage_disabled
-    - kernel_module_dccp_disabled
+#     - kernel_module_dccp_disabled
     - service_autofs_disabled
     - clean_components_post_updating
     - selinux_state
@@ -277,7 +277,7 @@ selections:
     - mount_option_krb_sec_remote_filesystems
     - snmpd_not_default_password
 #     - set_firewalld_default_zone
-    - libreswan_approved_tunnels
+#     - libreswan_approved_tunnels
 #     - sysctl_net_ipv6_conf_all_accept_source_route
 #     - install_smartcard_packages
 #     - sssd_enable_pam_services
