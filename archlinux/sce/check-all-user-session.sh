@@ -4,7 +4,7 @@
 if (
 sudo grep --invert-match '/\(nologin\|false\|git-shell\)$' /etc/passwd | awk -F':' '{print $1 ":" $6}' | while read line ; do
 	username=`echo "$line " | awk -F':' '{print $1}'`
-	homedir=`echo "$line" | awk -F':' '{print $6}'`
+	homedir=`echo "$line" | awk -F':' '{print $2}'`
 	
 	[ -z "$homedir" ] && exit 1  # each user has a homedir specified
 	[ `ls -ld "$homedir" | awk '{print $3}'` == "$username" ] || exit 1  # homedir is owned by user
