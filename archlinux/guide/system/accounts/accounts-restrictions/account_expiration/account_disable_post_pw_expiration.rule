@@ -43,6 +43,8 @@ references:
 
 ocil_clause: 'the value of INACTIVE is greater than the expected value'
 
+sce: 'check-password-lifetimes.sh'
+
 ocil: |-
     To verify the <tt>INACTIVE</tt> setting, run the following command:
     <pre>$ grep "INACTIVE" /etc/default/useradd</pre>
