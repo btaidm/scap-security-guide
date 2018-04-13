@@ -74,7 +74,7 @@ selections:
     - accounts_password_pam_maxclassrepeat
     - set_password_hashing_algorithm_systemauth
     - set_password_hashing_algorithm_logindefs
-    - set_password_hashing_algorithm_libuserconf
+#     - set_password_hashing_algorithm_libuserconf
     - accounts_minimum_age_login_defs
     - accounts_password_set_min_life_existing
     - accounts_maximum_age_login_defs
