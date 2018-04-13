@@ -18,3 +18,4 @@ options:
     default: targeted
     mls: mls
     targeted: targeted
+    refpolicy-arch: refpolicy-arch

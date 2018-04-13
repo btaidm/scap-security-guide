@@ -25,6 +25,8 @@ references:
 
 ocil_clause: 'users home directory is not defined'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     To verify interactive users on the system have a home directory assigned,
     run the following command:
