@@ -13,6 +13,7 @@ if (
 		find "$homedir" -type f -name '.*' -maxdepth 1 \( -perm -0002 -o -perm -0020 \) || exit 1  # all .bashrc-like files are not writeable by others
 		while read dotfile ; do
 			! grep --with-filename '\(^\|\s+\)PATH.*\.' "$dotfile" || exit 1 # check that PATH doesnt get "current" directory added
+			! grep --with-filename '\(^\|\s+\)UMASK=' "$dotfile" || exit 1 # check that UMASK is not modified in user files
 		done < <(find "$homedir" -type f -name '.*' -maxdepth 1)
 	done < <(grep --invert-match '/\(nologin\|false\|git-shell\)$' /etc/passwd | awk -F':' '{print $1 ":" $6}')
 ) ; then

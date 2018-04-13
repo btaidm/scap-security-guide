@@ -27,6 +27,8 @@ references:
 
 ocil_clause: 'the above command returns no output, or if the umask is configured incorrectly'
 
+sce: 'check-all-user-session.sh'
+
 ocil: |-
     Verify the <tt>UMASK</tt> setting is not configured for interactive users,
     run the following command:
