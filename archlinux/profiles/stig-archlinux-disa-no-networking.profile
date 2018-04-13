@@ -41,6 +41,7 @@ selections:
     - var_removable_partition=dev_cdrom
     - var_auditd_action_mail_acct=root
     - var_auditd_space_left_action=email
+    - var_auditd_space_left=default
     - var_accounts_user_umask=077
     - var_password_pam_retry=3
     - var_accounts_max_concurrent_login_sessions=10
@@ -52,9 +53,9 @@ selections:
 #     - sysctl_net_ipv4_conf_default_accept_redirects_value=disabled
 #     - sysctl_net_ipv6_conf_all_accept_source_route_value=disabled
 #     - sysctl_net_ipv4_conf_all_accept_redirects_value=disabled
-#     - pacman_verify_permissions
+#     - pacman_verify_permissions  # TODO: undo this...
     # - pacman_verify_ownership
-#     - pacman_verify_hashes
+#     - pacman_verify_hashes       # TODO: undo this...
 #     - dconf_gnome_banner_enabled
 #     - dconf_gnome_login_banner_text
     - banner_etc_issue
@@ -189,13 +190,13 @@ selections:
     - audit_rules_execution_chcon
     - audit_rules_execution_restorecon
     - audit_rules_login_events_tallylog
-    - audit_rules_login_events_faillock
+#     - audit_rules_login_events_faillock
     - audit_rules_login_events_lastlog
     - audit_rules_privileged_commands_passwd
     - audit_rules_privileged_commands_unix_chkpwd
     - audit_rules_privileged_commands_gpasswd
     - audit_rules_privileged_commands_chage
-    - audit_rules_privileged_commands_userhelper
+#     - audit_rules_privileged_commands_userhelper
     - audit_rules_privileged_commands_su
     - audit_rules_privileged_commands_sudo
     - audit_rules_sysadmin_actions
