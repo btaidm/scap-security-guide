@@ -37,7 +37,7 @@ selections:
     - var_accounts_minimum_age_login_defs=1
     - var_password_pam_maxrepeat=2
     - var_accounts_maximum_age_login_defs=60
-    - var_account_disable_post_pw_expiration=0
+    - var_account_disable_post_pw_expiration=never
     - var_removable_partition=dev_cdrom
     - var_auditd_action_mail_acct=root
     - var_auditd_space_left_action=email

@@ -18,4 +18,5 @@ options:
     40: 40
     60: 60
     90: 90
+    never: never
     default: 35
