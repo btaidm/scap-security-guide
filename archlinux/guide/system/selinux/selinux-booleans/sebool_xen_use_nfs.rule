@@ -25,3 +25,7 @@ references:
 ocil_clause: 'xen_use_nfs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="xen_use_nfs" />'
+
+
+values:
+    - var_xen_use_nfs

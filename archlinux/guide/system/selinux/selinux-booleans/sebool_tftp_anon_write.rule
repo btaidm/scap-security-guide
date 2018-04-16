@@ -25,3 +25,7 @@ references:
 ocil_clause: 'tftp_anon_write is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="tftp_anon_write" />'
+
+
+values:
+    - var_tftp_anon_write

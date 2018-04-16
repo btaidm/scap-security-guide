@@ -25,3 +25,7 @@ references:
 ocil_clause: 'rsync_anon_write is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="rsync_anon_write" />'
+
+
+values:
+    - var_rsync_anon_write

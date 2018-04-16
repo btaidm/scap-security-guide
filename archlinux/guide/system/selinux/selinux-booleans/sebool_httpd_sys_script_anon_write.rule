@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_sys_script_anon_write is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_sys_script_anon_write" />'
+
+
+values:
+    - var_httpd_sys_script_anon_write

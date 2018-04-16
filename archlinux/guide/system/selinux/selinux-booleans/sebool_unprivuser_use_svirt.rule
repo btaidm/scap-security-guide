@@ -25,3 +25,7 @@ references:
 ocil_clause: 'unprivuser_use_svirt is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="unprivuser_use_svirt" />'
+
+
+values:
+    - var_unprivuser_use_svirt

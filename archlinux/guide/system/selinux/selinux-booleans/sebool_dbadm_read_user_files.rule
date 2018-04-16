@@ -25,3 +25,7 @@ references:
 ocil_clause: 'dbadm_read_user_files is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="dbadm_read_user_files" />'
+
+
+values:
+    - var_dbadm_read_user_files

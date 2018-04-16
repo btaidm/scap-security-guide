@@ -25,3 +25,7 @@ references:
 ocil_clause: 'smbd_anon_write is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="smbd_anon_write" />'
+
+
+values:
+    - var_smbd_anon_write

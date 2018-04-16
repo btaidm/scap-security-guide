@@ -25,3 +25,7 @@ references:
 ocil_clause: 'nis_enabled is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="nis_enabled" />'
+
+
+values:
+    - var_nis_enabled

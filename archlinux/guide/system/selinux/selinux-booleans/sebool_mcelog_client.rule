@@ -25,3 +25,7 @@ references:
 ocil_clause: 'mcelog_client is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="mcelog_client" />'
+
+
+values:
+    - var_mcelog_client

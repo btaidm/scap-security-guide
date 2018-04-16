@@ -25,3 +25,7 @@ references:
 ocil_clause: 'xdm_sysadm_login is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="xdm_sysadm_login" />'
+
+
+values:
+    - var_xdm_sysadm_login

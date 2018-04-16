@@ -25,3 +25,7 @@ references:
 ocil_clause: 'git_session_users is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="git_session_users" />'
+
+
+values:
+    - var_git_session_users

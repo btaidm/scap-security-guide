@@ -25,3 +25,7 @@ references:
 ocil_clause: 'gluster_anon_write is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="gluster_anon_write" />'
+
+
+values:
+    - var_gluster_anon_write

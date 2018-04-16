@@ -25,3 +25,7 @@ references:
 ocil_clause: 'virt_use_usb is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="virt_use_usb" />'
+
+
+values:
+    - var_virt_use_usb

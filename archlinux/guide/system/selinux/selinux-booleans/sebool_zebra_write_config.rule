@@ -25,3 +25,7 @@ references:
 ocil_clause: 'zebra_write_config is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="zebra_write_config" />'
+
+
+values:
+    - var_zebra_write_config

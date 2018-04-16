@@ -25,3 +25,7 @@ references:
 ocil_clause: 'mcelog_foreground is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="mcelog_foreground" />'
+
+
+values:
+    - var_mcelog_foreground

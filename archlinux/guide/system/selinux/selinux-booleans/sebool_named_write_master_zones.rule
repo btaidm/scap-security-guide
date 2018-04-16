@@ -25,3 +25,7 @@ references:
 ocil_clause: 'named_write_master_zones is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="named_write_master_zones" />'
+
+
+values:
+    - var_named_write_master_zones

@@ -26,3 +26,7 @@ references:
 ocil_clause: 'authlogin_nsswitch_use_ldap is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="authlogin_nsswitch_use_ldap" />'
+
+
+values:
+    - var_authlogin_nsswitch_use_ldap

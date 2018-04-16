@@ -25,3 +25,7 @@ references:
 ocil_clause: 'git_cgi_enable_homedirs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="git_cgi_enable_homedirs" />'
+
+
+values:
+    - var_git_cgi_enable_homedirs

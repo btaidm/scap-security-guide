@@ -25,3 +25,7 @@ references:
 ocil_clause: 'pppd_can_insmod is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="pppd_can_insmod" />'
+
+
+values:
+    - var_pppd_can_insmod

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'xend_run_qemu is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="xend_run_qemu" />'
+
+
+values:
+    - var_xend_run_qemu

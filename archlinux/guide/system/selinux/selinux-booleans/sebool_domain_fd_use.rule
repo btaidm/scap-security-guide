@@ -25,3 +25,7 @@ references:
 ocil_clause: 'domain_fd_use is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="domain_fd_use" />'
+
+
+values:
+    - var_domain_fd_use

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_run_preupgrade is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_run_preupgrade" />'
+
+
+values:
+    - var_httpd_run_preupgrade

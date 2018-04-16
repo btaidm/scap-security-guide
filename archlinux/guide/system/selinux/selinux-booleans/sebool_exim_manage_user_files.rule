@@ -25,3 +25,7 @@ references:
 ocil_clause: 'exim_manage_user_files is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="exim_manage_user_files" />'
+
+
+values:
+    - var_exim_manage_user_files

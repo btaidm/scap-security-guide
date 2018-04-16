@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_run_stickshift is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_run_stickshift" />'
+
+
+values:
+    - var_httpd_run_stickshift

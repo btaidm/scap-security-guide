@@ -25,3 +25,7 @@ references:
 ocil_clause: 'sysadm_exec_content is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="sysadm_exec_content" />'
+
+
+values:
+    - var_sysadm_exec_content

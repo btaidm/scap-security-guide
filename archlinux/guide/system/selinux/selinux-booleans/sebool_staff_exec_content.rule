@@ -25,3 +25,7 @@ references:
 ocil_clause: 'staff_exec_content is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="staff_exec_content" />'
+
+
+values:
+    - var_staff_exec_content

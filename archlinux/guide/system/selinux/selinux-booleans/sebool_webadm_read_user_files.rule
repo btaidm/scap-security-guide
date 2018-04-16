@@ -25,3 +25,7 @@ references:
 ocil_clause: 'webadm_read_user_files is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="webadm_read_user_files" />'
+
+
+values:
+    - var_webadm_read_user_files

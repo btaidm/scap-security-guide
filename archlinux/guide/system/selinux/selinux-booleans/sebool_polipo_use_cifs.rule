@@ -25,3 +25,7 @@ references:
 ocil_clause: 'polipo_use_cifs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="polipo_use_cifs" />'
+
+
+values:
+    - var_polipo_use_cifs

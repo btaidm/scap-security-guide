@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_verify_dns is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_verify_dns" />'
+
+
+values:
+    - var_httpd_verify_dns

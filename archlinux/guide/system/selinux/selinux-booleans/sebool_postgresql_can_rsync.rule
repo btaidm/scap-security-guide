@@ -25,3 +25,7 @@ references:
 ocil_clause: 'postgresql_can_rsync is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="postgresql_can_rsync" />'
+
+
+values:
+    - var_postgresql_can_rsync

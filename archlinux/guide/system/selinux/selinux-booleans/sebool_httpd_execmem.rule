@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_execmem is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_execmem" />'
+
+
+values:
+    - var_httpd_execmem

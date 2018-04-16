@@ -24,3 +24,7 @@ references:
 ocil_clause: 'selinuxuser_execstack is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="selinuxuser_execstack" />'
+
+
+values:
+    - var_selinuxuser_execstack

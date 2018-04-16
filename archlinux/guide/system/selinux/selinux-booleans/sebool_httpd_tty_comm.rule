@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_tty_comm is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_tty_comm" />'
+
+
+values:
+    - var_httpd_tty_comm

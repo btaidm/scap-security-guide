@@ -25,3 +25,7 @@ references:
 ocil_clause: 'sge_domain_can_network_connect is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="sge_domain_can_network_connect" />'
+
+
+values:
+    - var_sge_domain_can_network_connect

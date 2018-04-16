@@ -25,3 +25,7 @@ references:
 ocil_clause: 'privoxy_connect_any is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="privoxy_connect_any" />'
+
+
+values:
+    - var_privoxy_connect_any

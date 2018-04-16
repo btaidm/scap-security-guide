@@ -25,3 +25,7 @@ references:
 ocil_clause: 'domain_kernel_load_modules is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="domain_kernel_load_modules" />'
+
+
+values:
+    - var_domain_kernel_load_modules

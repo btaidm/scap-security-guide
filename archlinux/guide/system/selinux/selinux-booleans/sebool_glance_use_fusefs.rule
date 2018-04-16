@@ -25,3 +25,7 @@ references:
 ocil_clause: 'glance_use_fusefs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="glance_use_fusefs" />'
+
+
+values:
+    - var_glance_use_fusefs

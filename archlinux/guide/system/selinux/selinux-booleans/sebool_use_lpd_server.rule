@@ -25,3 +25,7 @@ references:
 ocil_clause: 'use_lpd_server is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="use_lpd_server" />'
+
+
+values:
+    - var_use_lpd_server

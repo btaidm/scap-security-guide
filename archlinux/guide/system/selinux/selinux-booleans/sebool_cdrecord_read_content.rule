@@ -25,3 +25,7 @@ references:
 ocil_clause: 'cdrecord_read_content is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="cdrecord_read_content" />'
+
+
+values:
+    - var_cdrecord_read_content

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'daemons_enable_cluster_mode is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="daemons_enable_cluster_mode" />'
+
+
+values:
+    - var_daemons_enable_cluster_mode

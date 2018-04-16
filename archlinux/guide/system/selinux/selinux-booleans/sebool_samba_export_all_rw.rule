@@ -25,3 +25,7 @@ references:
 ocil_clause: 'samba_export_all_rw is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="samba_export_all_rw" />'
+
+
+values:
+    - var_samba_export_all_rw

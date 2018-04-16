@@ -25,3 +25,7 @@ references:
 ocil_clause: 'sftpd_enable_homedirs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="sftpd_enable_homedirs" />'
+
+
+values:
+    - var_sftpd_enable_homedirs

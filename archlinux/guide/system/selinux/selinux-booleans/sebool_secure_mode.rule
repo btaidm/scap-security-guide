@@ -25,3 +25,7 @@ references:
 ocil_clause: 'secure_mode is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="secure_mode" />'
+
+
+values:
+    - var_secure_mode

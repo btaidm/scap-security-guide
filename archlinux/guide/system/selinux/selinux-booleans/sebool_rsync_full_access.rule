@@ -25,3 +25,7 @@ references:
 ocil_clause: 'rsync_full_access is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="rsync_full_access" />'
+
+
+values:
+    - var_rsync_full_access

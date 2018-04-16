@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_read_user_content is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_read_user_content" />'
+
+
+values:
+    - var_httpd_read_user_content

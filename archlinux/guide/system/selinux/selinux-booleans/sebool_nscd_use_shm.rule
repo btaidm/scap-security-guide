@@ -26,3 +26,7 @@ references:
 ocil_clause: 'nscd_use_shm is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="nscd_use_shm" />'
+
+
+values:
+    - var_nscd_use_shm

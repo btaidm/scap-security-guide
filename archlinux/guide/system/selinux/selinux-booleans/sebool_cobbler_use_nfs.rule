@@ -25,3 +25,7 @@ references:
 ocil_clause: 'cobbler_use_nfs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="cobbler_use_nfs" />'
+
+
+values:
+    - var_cobbler_use_nfs

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'tftp_home_dir is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="tftp_home_dir" />'
+
+
+values:
+    - var_tftp_home_dir

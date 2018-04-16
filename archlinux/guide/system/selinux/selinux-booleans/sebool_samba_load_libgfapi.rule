@@ -25,3 +25,7 @@ references:
 ocil_clause: 'samba_load_libgfapi is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="samba_load_libgfapi" />'
+
+
+values:
+    - var_samba_load_libgfapi

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_use_sasl is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_use_sasl" />'
+
+
+values:
+    - var_httpd_use_sasl

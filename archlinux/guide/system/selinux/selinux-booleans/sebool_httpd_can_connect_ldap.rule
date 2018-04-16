@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_can_connect_ldap is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_can_connect_ldap" />'
+
+
+values:
+    - var_httpd_can_connect_ldap

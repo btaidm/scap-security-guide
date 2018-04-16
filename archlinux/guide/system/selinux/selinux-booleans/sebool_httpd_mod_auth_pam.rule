@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_mod_auth_pam is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_mod_auth_pam" />'
+
+
+values:
+    - var_httpd_mod_auth_pam

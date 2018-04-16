@@ -25,3 +25,7 @@ references:
 ocil_clause: 'xdm_bind_vnc_tcp_port is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="xdm_bind_vnc_tcp_port" />'
+
+
+values:
+    - var_xdm_bind_vnc_tcp_port

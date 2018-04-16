@@ -25,3 +25,7 @@ references:
 ocil_clause: 'sftpd_anon_write is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="sftpd_anon_write" />'
+
+
+values:
+    - var_sftpd_anon_write

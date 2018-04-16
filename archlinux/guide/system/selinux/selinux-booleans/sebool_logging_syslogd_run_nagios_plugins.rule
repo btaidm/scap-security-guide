@@ -25,3 +25,7 @@ references:
 ocil_clause: 'logging_syslogd_run_nagios_plugins is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="logging_syslogd_run_nagios_plugins" />'
+
+
+values:
+    - var_logging_syslogd_run_nagios_plugins

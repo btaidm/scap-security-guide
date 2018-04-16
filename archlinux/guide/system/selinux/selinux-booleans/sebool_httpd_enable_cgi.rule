@@ -26,3 +26,7 @@ references:
 ocil_clause: 'CGI is used with HTTPD or httpd_enable_cgi is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_enable_cgi" />'
+
+
+values:
+    - var_httpd_enable_cgi

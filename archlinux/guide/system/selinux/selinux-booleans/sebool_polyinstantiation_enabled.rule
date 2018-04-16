@@ -25,3 +25,7 @@ references:
 ocil_clause: 'polyinstantiation_enabled is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="polyinstantiation_enabled" />'
+
+
+values:
+    - var_polyinstantiation_enabled

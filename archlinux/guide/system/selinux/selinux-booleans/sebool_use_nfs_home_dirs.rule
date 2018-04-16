@@ -25,3 +25,7 @@ references:
 ocil_clause: 'use_nfs_home_dirs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="use_nfs_home_dirs" />'
+
+
+values:
+    - var_use_nfs_home_dirs

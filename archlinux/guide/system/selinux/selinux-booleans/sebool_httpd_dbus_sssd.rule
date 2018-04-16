@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_dbus_sssd is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_dbus_sssd" />'
+
+
+values:
+    - var_httpd_dbus_sssd

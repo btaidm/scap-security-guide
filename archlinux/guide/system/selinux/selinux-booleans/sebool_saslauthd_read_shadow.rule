@@ -25,3 +25,7 @@ references:
 ocil_clause: 'saslauthd_read_shadow is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="saslauthd_read_shadow" />'
+
+
+values:
+    - var_saslauthd_read_shadow

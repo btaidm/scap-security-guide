@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_tmp_exec is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_tmp_exec" />'
+
+
+values:
+    - var_httpd_tmp_exec

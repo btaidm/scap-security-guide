@@ -25,3 +25,7 @@ references:
 ocil_clause: 'openvpn_enable_homedirs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="openvpn_enable_homedirs" />'
+
+
+values:
+    - var_openvpn_enable_homedirs

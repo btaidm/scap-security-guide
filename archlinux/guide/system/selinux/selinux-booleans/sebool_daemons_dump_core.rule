@@ -25,3 +25,7 @@ references:
 ocil_clause: 'daemons_dump_core is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="daemons_dump_core" />'
+
+
+values:
+    - var_daemons_dump_core

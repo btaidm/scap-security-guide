@@ -25,3 +25,7 @@ references:
 ocil_clause: 'ssh_chroot_rw_homedirs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="ssh_chroot_rw_homedirs" />'
+
+
+values:
+    - var_ssh_chroot_rw_homedirs

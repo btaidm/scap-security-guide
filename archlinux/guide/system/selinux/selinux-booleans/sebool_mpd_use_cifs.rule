@@ -25,3 +25,7 @@ references:
 ocil_clause: 'mpd_use_cifs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="mpd_use_cifs" />'
+
+
+values:
+    - var_mpd_use_cifs

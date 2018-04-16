@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_manage_ipa is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_manage_ipa" />'
+
+
+values:
+    - var_httpd_manage_ipa

@@ -23,3 +23,7 @@ references:
 ocil_clause: 'selinuxuser_execmod is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="selinuxuser_execmod" />'
+
+
+values:
+    - var_selinuxuser_execmod

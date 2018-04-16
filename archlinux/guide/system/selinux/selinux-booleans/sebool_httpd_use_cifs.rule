@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_use_cifs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_use_cifs" />'
+
+
+values:
+    - var_httpd_use_cifs

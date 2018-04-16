@@ -25,3 +25,7 @@ references:
 ocil_clause: 'named_tcp_bind_http_port is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="named_tcp_bind_http_port" />'
+
+
+values:
+    - var_named_tcp_bind_http_port

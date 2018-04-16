@@ -25,3 +25,7 @@ references:
 ocil_clause: 'condor_tcp_network_connect is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="condor_tcp_network_connect" />'
+
+
+values:
+    - var_condor_tcp_network_connect

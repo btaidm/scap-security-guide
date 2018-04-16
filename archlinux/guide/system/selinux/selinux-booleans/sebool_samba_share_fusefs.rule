@@ -25,3 +25,7 @@ references:
 ocil_clause: 'samba_share_fusefs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="samba_share_fusefs" />'
+
+
+values:
+    - var_samba_share_fusefs

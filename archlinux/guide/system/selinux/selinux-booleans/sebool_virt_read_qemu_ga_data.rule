@@ -25,3 +25,7 @@ references:
 ocil_clause: 'virt_read_qemu_ga_data is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="virt_read_qemu_ga_data" />'
+
+
+values:
+    - var_virt_read_qemu_ga_data

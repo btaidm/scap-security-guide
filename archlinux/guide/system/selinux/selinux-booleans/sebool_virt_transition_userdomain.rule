@@ -25,3 +25,7 @@ references:
 ocil_clause: 'virt_transition_userdomain is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="virt_transition_userdomain" />'
+
+
+values:
+    - var_virt_transition_userdomain

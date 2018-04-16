@@ -25,3 +25,7 @@ references:
 ocil_clause: 'puppetmaster_use_db is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="puppetmaster_use_db" />'
+
+
+values:
+    - var_puppetmaster_use_db

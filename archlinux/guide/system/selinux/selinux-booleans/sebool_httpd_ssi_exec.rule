@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_ssi_exec is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_ssi_exec" />'
+
+
+values:
+    - var_httpd_ssi_exec

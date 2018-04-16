@@ -25,3 +25,7 @@ references:
 ocil_clause: 'daemons_use_tcp_wrapper is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="daemons_use_tcp_wrapper" />'
+
+
+values:
+    - var_daemons_use_tcp_wrapper

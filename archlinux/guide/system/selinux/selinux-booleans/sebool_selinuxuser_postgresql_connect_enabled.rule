@@ -25,3 +25,7 @@ references:
 ocil_clause: 'selinuxuser_postgresql_connect_enabled is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="selinuxuser_postgresql_connect_enabled" />'
+
+
+values:
+    - var_selinuxuser_postgresql_connect_enabled

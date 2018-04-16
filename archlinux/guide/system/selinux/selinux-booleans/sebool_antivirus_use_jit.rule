@@ -26,3 +26,7 @@ references:
 ocil_clause: 'antivirus_use_jit is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="antivirus_use_jit" />'
+
+
+values:
+    - var_antivirus_use_jit

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_serve_cobbler_files is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_serve_cobbler_files" />'
+
+
+values:
+    - var_httpd_serve_cobbler_files

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'unconfined_chrome_sandbox_transition is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="unconfined_chrome_sandbox_transition" />'
+
+
+values:
+    - var_unconfined_chrome_sandbox_transition

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'samba_run_unconfined is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="samba_run_unconfined" />'
+
+
+values:
+    - var_samba_run_unconfined

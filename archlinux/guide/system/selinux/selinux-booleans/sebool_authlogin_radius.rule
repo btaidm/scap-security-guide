@@ -26,3 +26,7 @@ references:
 ocil_clause: 'authlogin_radius is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="authlogin_radius" />'
+
+
+values:
+    - var_authlogin_radius

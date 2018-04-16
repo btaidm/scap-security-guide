@@ -25,3 +25,7 @@ references:
 ocil_clause: 'cups_execmem is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="cups_execmem" />'
+
+
+values:
+    - var_cups_execmem

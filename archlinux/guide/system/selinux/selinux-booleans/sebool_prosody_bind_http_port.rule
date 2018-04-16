@@ -25,3 +25,7 @@ references:
 ocil_clause: 'prosody_bind_http_port is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="prosody_bind_http_port" />'
+
+
+values:
+    - var_prosody_bind_http_port

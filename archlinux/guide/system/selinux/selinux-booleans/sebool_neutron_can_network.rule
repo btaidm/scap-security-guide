@@ -25,3 +25,7 @@ references:
 ocil_clause: 'neutron_can_network is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="neutron_can_network" />'
+
+
+values:
+    - var_neutron_can_network

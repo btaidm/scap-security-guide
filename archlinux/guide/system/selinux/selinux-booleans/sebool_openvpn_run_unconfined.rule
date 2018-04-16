@@ -25,3 +25,7 @@ references:
 ocil_clause: 'openvpn_run_unconfined is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="openvpn_run_unconfined" />'
+
+
+values:
+    - var_openvpn_run_unconfined

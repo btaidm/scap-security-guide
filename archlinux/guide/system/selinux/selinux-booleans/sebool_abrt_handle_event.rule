@@ -26,3 +26,7 @@ references:
 ocil_clause: 'abrt_handle_event is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="abrt_handle_event" />'
+
+
+values:
+    - var_abrt_handle_event

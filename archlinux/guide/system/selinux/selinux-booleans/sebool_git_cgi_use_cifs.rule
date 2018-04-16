@@ -25,3 +25,7 @@ references:
 ocil_clause: 'git_cgi_use_cifs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="git_cgi_use_cifs" />'
+
+
+values:
+    - var_git_cgi_use_cifs

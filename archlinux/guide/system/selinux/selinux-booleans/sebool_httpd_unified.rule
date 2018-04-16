@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_unified is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_unified" />'
+
+
+values:
+    - var_httpd_unified

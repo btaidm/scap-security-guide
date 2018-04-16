@@ -25,3 +25,7 @@ references:
 ocil_clause: 'irc_use_any_tcp_ports is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="irc_use_any_tcp_ports" />'
+
+
+values:
+    - var_irc_use_any_tcp_ports

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_can_network_connect is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_can_network_connect" />'
+
+
+values:
+    - var_httpd_can_network_connect

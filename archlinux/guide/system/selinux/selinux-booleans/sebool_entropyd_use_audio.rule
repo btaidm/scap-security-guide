@@ -25,3 +25,7 @@ references:
 ocil_clause: 'entropyd_use_audio is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="entropyd_use_audio" />'
+
+
+values:
+    - var_entropyd_use_audio

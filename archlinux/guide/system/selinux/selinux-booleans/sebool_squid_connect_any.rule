@@ -26,3 +26,7 @@ references:
 ocil_clause: 'squid_connect_any is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="squid_connect_any" />'
+
+
+values:
+    - var_squid_connect_any

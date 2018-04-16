@@ -25,3 +25,7 @@ references:
 ocil_clause: 'openshift_use_nfs is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="openshift_use_nfs" />'
+
+
+values:
+    - var_openshift_use_nfs

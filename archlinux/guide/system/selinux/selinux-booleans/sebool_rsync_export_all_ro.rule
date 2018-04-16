@@ -25,3 +25,7 @@ references:
 ocil_clause: 'rsync_export_all_ro is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="rsync_export_all_ro" />'
+
+
+values:
+    - var_rsync_export_all_ro

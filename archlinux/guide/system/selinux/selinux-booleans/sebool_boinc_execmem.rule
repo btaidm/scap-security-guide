@@ -26,3 +26,7 @@ references:
 ocil_clause: 'boinc_execmem is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="boinc_execmem" />'
+
+
+values:
+    - var_boinc_execmem

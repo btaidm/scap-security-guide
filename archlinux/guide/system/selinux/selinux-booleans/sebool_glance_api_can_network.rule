@@ -25,3 +25,7 @@ references:
 ocil_clause: 'glance_api_can_network is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="glance_api_can_network" />'
+
+
+values:
+    - var_glance_api_can_network

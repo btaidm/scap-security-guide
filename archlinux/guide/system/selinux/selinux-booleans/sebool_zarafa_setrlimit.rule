@@ -25,3 +25,7 @@ references:
 ocil_clause: 'zarafa_setrlimit is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="zarafa_setrlimit" />'
+
+
+values:
+    - var_zarafa_setrlimit

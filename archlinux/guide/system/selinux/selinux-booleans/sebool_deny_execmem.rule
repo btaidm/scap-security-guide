@@ -25,3 +25,7 @@ references:
 ocil_clause: 'deny_execmem is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="deny_execmem" />'
+
+
+values:
+    - var_deny_execmem

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'ssh_sysadm_login is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="ssh_sysadm_login" />'
+
+
+values:
+    - var_ssh_sysadm_login

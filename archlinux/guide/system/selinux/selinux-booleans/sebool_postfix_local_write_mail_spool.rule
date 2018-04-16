@@ -26,3 +26,7 @@ references:
 ocil_clause: 'postfix_local_write_mail_spool is not enabled'
 
 ocil: '<sebool-check-macro enable="true" sebool="postfix_local_write_mail_spool" />'
+
+
+values:
+    - var_postfix_local_write_mail_spool

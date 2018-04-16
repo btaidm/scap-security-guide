@@ -25,3 +25,7 @@ references:
 ocil_clause: 'nagios_run_pnp4nagios is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="nagios_run_pnp4nagios" />'
+
+
+values:
+    - var_nagios_run_pnp4nagios

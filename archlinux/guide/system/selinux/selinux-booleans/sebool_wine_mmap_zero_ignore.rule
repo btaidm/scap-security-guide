@@ -25,3 +25,7 @@ references:
 ocil_clause: 'wine_mmap_zero_ignore is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="wine_mmap_zero_ignore" />'
+
+
+values:
+    - var_wine_mmap_zero_ignore

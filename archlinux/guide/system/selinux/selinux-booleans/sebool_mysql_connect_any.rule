@@ -25,3 +25,7 @@ references:
 ocil_clause: 'mysql_connect_any is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="mysql_connect_any" />'
+
+
+values:
+    - var_mysql_connect_any

@@ -25,3 +25,7 @@ references:
 ocil_clause: 'zabbix_can_network is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="zabbix_can_network" />'
+
+
+values:
+    - var_zabbix_can_network

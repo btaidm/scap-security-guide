@@ -25,3 +25,7 @@ references:
 ocil_clause: 'cron_system_cronjob_use_shares is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="cron_system_cronjob_use_shares" />'
+
+
+values:
+    - var_cron_system_cronjob_use_shares

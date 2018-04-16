@@ -25,3 +25,7 @@ references:
 ocil_clause: 'httpd_use_openstack is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="httpd_use_openstack" />'
+
+
+values:
+    - var_httpd_use_openstack

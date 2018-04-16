@@ -25,3 +25,7 @@ references:
 ocil_clause: 'smartmon_3ware is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="smartmon_3ware" />'
+
+
+values:
+    - var_smartmon_3ware

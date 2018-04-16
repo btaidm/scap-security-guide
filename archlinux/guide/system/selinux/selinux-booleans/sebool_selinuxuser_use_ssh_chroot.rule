@@ -25,3 +25,7 @@ references:
 ocil_clause: 'selinuxuser_use_ssh_chroot is not disabled'
 
 ocil: '<sebool-check-macro enable="false" sebool="selinuxuser_use_ssh_chroot" />'
+
+
+values:
+    - var_selinuxuser_use_ssh_chroot
