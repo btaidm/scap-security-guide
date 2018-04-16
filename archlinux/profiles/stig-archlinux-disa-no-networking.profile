@@ -105,7 +105,7 @@ selections:
     - selinux_user_login_roles
     - package_aide_installed
     - aide_periodic_cron_checking
-    - aide_scan_notification
+#     - aide_scan_notification
     - ensure_gpgcheck_globally_activated
     - ensure_gpgcheck_local_packages
     - ensure_gpgcheck_repo_metadata
