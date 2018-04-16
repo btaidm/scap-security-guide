@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MAX_AGE=7
+MAX_AGE=30
 
 clamV=$(freshclam -V)
 [ $? -eq 0 ] || exit $XCCDF_RESULT_FAIL
