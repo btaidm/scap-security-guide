@@ -3,7 +3,7 @@
     <metadata>
       <title>Set Last Login/Access Notification</title>
       <affected family="unix">
-        <platform>multi_platform_fedora</platform>
+        <platform>multi_platform_archlinux</platform>
       </affected>
       <description>Configure the system to notify users of last login/access using pam_lastlog.</description>
     </metadata>
