@@ -2,7 +2,7 @@
 
 MAX_AGE=30
 
-clamV=$(freshclam -V)
+clamV=$(clamscan -V)
 [ $? -eq 0 ] || exit $XCCDF_RESULT_FAIL
 
 d2=$(date -d "${clamV##*/}" +%s)
