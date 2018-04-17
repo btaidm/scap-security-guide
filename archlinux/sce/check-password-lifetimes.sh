@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 # platform = archlinux
 
+function add_to_date()
+{
+    olddate=${1:?Need to supply date}
+    days=${2:?Need to supply number of days}
+    format=${3:-"+%s"}
+
+    d1=$(date -d "$olddate" "+%s")
+    d2=$(( d1 + (60*60*24) * days ))
+    newdate=$(date -d "@$d2" "$format")
+    echo "$newdate"
+}
+
 if (
 	while read username ; do
 		echo "$username"
@@ -13,6 +25,16 @@ if (
 		
 		inactive=`chage --list "$username" | grep '^Password inactive' | awk -F':' '{print $2}' | tr -d '[[:space:]]'`
 		[ "$inactive" == "never" ] || exit 1
+
+        expire=`chage --list "$username" | grep '^Password expires' | awk -F':' '{print $2}' | tr -d '[[:space:]]'`
+        [ "$expire" == "never" ] || exit 1
+
+        expiredate=$(date -d "$expire" "+%s")
+        laterdate=$(add_to_date "$(date)" 90)
+
+        [ "$expiredate" -ge "$laterdate"] || exit 1
+
+
 	done < <(grep --invert-match '/\(nologin\|false\|git-shell\)$' /etc/passwd | awk -F':' '{print $1}' | grep --invert-match '^root$')
 ) ; then
 	exit $XCCDF_RESULT_PASS
