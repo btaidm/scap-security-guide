@@ -21,7 +21,7 @@
     <ind:object object_ref="object_test_aide_periodic_systemd_checking_service" />
   </ind:textfilecontent54_test>
   <ind:textfilecontent54_object comment="run aide daily with systemd" id="object_test_aide_periodic_systemd_checking_service" version="1">
-    <ind:filepath>/etc/systemd/system/perform-aide-check.service</ind:filepath>
+    <ind:filepath>/etc/systemd/system/aide.service</ind:filepath>
     <ind:pattern operation="pattern match">^ExecStart=.*/usr/s?bin/aide[\s]*\-\-check.*$</ind:pattern>
     <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
   </ind:textfilecontent54_object>
@@ -30,7 +30,7 @@
     <ind:object object_ref="object_test_aide_periodic_systemd_checking_timer" />
   </ind:textfilecontent54_test>
   <ind:textfilecontent54_object comment="run aide daily with systemd" id="object_test_aide_periodic_systemd_checking_timer" version="1">
-    <ind:filepath>/etc/systemd/system/perform-aide-check.timer</ind:filepath>
+    <ind:filepath>/etc/systemd/system/aide.timer</ind:filepath>
     <ind:pattern operation="pattern match">^OnCalendar=daily$</ind:pattern>
     <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
   </ind:textfilecontent54_object>
