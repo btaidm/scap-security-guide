@@ -38,7 +38,7 @@
   </ind:textfilecontent54_test>
   <ind:textfilecontent54_object id="obj_require_rescue_service2" version="1">
     <ind:filepath>/usr/lib/systemd/system/rescue.service</ind:filepath>
-    <ind:pattern operation="pattern match">^ExecStart=\-.*/usr/bin/sulogin</ind:pattern>
+    <ind:pattern operation="pattern match">^ExecStart=\-.*/usr/bin/sulogin.*$</ind:pattern>
     <ind:instance datatype="int">1</ind:instance>
   </ind:textfilecontent54_object>
 
