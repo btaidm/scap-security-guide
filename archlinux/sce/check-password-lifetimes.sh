@@ -24,17 +24,11 @@ if (
 		[ "$maxdays" -le "60" ] || exit 1
 		
 		inactive=`chage --list "$username" | grep '^Password inactive' | awk -F':' '{print $2}' | tr -d '[[:space:]]'`
-		[ "$inactive" == "never" ] || exit 1
-
-        expire=`chage --list "$username" | grep '^Password expires' | awk -F':' '{print $2}' | tr -d '[[:space:]]'`
-        [ "$expire" == "never" ] || exit 1
-
-        expiredate=$(date -d "$expire" "+%s")
-        laterdate=$(add_to_date "$(date)" 90)
-
-        [ "$expiredate" -ge "$laterdate"] || exit 1
-
-
+		[ "$inactive" == "never" ] && exit 1
+		
+		expiredate=$(date -d "$inactive" "+%s")
+		laterdate=$(add_to_date `date` 90)
+		[ "$expiredate" -ge "$laterdate" ] && exit 1
 	done < <(grep --invert-match '/\(nologin\|false\|git-shell\)$' /etc/passwd | awk -F':' '{print $1}' | grep --invert-match '^root$')
 ) ; then
 	exit $XCCDF_RESULT_PASS
