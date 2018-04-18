@@ -9,8 +9,10 @@
       should be configured correctly.</description>
     </metadata>
     <criteria operator="AND">
-      <criterion comment="Conditions are satisfied"
-      test_ref="test_require_rescue_service" />
+    <criteria operator="OR">
+      <criterion comment="Conditions are satisfied" test_ref="test_require_rescue_service" />
+      <criterion comment="Conditions are satisfied" test_ref="test_require_rescue_service2" />
+    </criteria>
       <criterion test_ref="test_require_rescue_service_runlevel1" />
       <criterion test_ref="test_no_custom_runlevel1_target" negate="true"/>
       <criterion test_ref="test_no_custom_rescue_service" negate="true"/>
@@ -25,6 +27,18 @@
   <ind:textfilecontent54_object id="obj_require_rescue_service" version="1">
     <ind:filepath>/usr/lib/systemd/system/rescue.service</ind:filepath>
     <ind:pattern operation="pattern match">^ExecStart=\-.*/usr/lib/systemd/systemd-sulogin-shell\s+rescue$</ind:pattern>
+    <ind:instance datatype="int">1</ind:instance>
+  </ind:textfilecontent54_object>
+
+  <ind:textfilecontent54_test check="all" check_existence="all_exist"
+  comment="Tests that /sbin/sulogin was not removed from the default systemd rescue.service to ensure that a
+  password must be entered to access single user mode"
+  id="test_require_rescue_service2" version="1">
+    <ind:object object_ref="obj_require_rescue_service2" />
+  </ind:textfilecontent54_test>
+  <ind:textfilecontent54_object id="obj_require_rescue_service2" version="1">
+    <ind:filepath>/usr/lib/systemd/system/rescue.service</ind:filepath>
+    <ind:pattern operation="pattern match">^ExecStart=\-.*/usr/bin/sulogin</ind:pattern>
     <ind:instance datatype="int">1</ind:instance>
   </ind:textfilecontent54_object>
 
