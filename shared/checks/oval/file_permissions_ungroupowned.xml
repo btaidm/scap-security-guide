@@ -44,7 +44,7 @@
          Therefore traverse only directories -->
     <unix:behaviors recurse="directories" recurse_direction="down" recurse_file_system="local" />
     <unix:path>/</unix:path>
-    <unix:filename operation="pattern match">.*</unix:filename>
+    <unix:filename operation="pattern match">^\/(?!(proc|sys)).*</unix:filename>
     <filter action="exclude">state_file_permissions_ungroupowned</filter>
   </unix:file_object>
   <ind:textfilecontent54_object id="etc_group_object" version="1">
